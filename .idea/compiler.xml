@@ -6,11 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="FakeHouse-parent" />
+        <module name="FakeHouse-backer" />
+        <module name="FakeHouse-common" />
+        <module name="FakeHouse-interface" />
+        <module name="FakeHouse-presenter" />
+        <module name="FakeHouse-provider" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="FakeHouse-parent" target="1.5" />
+      <module name="FakeHouse-backer" target="1.8" />
+      <module name="FakeHouse-common" target="1.8" />
+      <module name="FakeHouse-interface" target="1.8" />
+      <module name="FakeHouse-parent" target="1.8" />
+      <module name="FakeHouse-presenter" target="1.8" />
+      <module name="FakeHouse-provider" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

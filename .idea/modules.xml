@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/FakeHouse-backer.iml" filepath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/FakeHouse-backer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/FakeHouse-common.iml" filepath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/FakeHouse-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/FakeHouse-interface.iml" filepath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/FakeHouse-interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-parent.iml" filepath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/FakeHouse-presenter.iml" filepath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/FakeHouse-presenter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/FakeHouse-provider.iml" filepath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/FakeHouse-provider.iml" />
     </modules>
   </component>
 </project>

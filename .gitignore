@@ -1,0 +1,7 @@
+
+# 取消对输出目录的管理
+FakeHouse-parent/FakeHouse-common/target/
+FakeHouse-parent/FakeHouse-interface/target/
+out/
+FakeHouse-parent/FakeHouse-presenter/target/
+FakeHouse-parent/FakeHouse-backer/target/

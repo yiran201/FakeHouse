@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yiran.dao.RoleDao" >
+
+
+    <resultMap id="BaseResultMap" type="com.yiran.pojo.Role" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="keyword" property="keyword" jdbcType="VARCHAR" />
+        <result column="description" property="description" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Example_Where_Clause" >
+        <where >
+            <foreach collection="oredCriteria" item="criteria" separator="or" >
+                <if test="criteria.valid" >
+                    <trim prefix="(" suffix=")" prefixOverrides="and" >
+                        <foreach collection="criteria.criteria" item="criterion" >
+                            <choose >
+                                <when test="criterion.noValue" >
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue" >
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue" >
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue" >
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause" >
+        <where >
+            <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+                <if test="criteria.valid" >
+                    <trim prefix="(" suffix=")" prefixOverrides="and" >
+                        <foreach collection="criteria.criteria" item="criterion" >
+                            <choose >
+                                <when test="criterion.noValue" >
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue" >
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue" >
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue" >
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List" >
+        id, name, keyword, description
+    </sql>
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yiran.pojo.RoleExample" >
+        select
+        <if test="distinct" >
+            distinct
+        </if>
+        'true' as QUERYID,
+        <include refid="Base_Column_List" />
+        from t_role
+        <if test="_parameter != null" >
+            <include refid="Example_Where_Clause" />
+        </if>
+        <if test="orderByClause != null" >
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+        select
+        <include refid="Base_Column_List" />
+        from t_role
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from t_role
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+
+
+    <!-- 注意要设置id为空再进行插入,否则会出问题  -->
+    <!--  需要将主键返回  -->
+    <insert id="insert" parameterType="com.yiran.pojo.Role" >
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into t_role (id, name, keyword,
+                            description)
+        values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{keyword,jdbcType=VARCHAR},
+                #{description,jdbcType=VARCHAR})
+    </insert>
+
+    <insert id="insertSelective" parameterType="com.yiran.pojo.Role" >
+        insert into t_role
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="name != null" >
+                name,
+            </if>
+            <if test="keyword != null" >
+                keyword,
+            </if>
+            <if test="description != null" >
+                description,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="name != null" >
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="keyword != null" >
+                #{keyword,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null" >
+                #{description,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+
+    <select id="countByExample" parameterType="com.yiran.pojo.RoleExample" resultType="java.lang.Integer" >
+        select count(*) from t_role
+        <if test="_parameter != null" >
+            <include refid="Example_Where_Clause" />
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map" >
+        update t_role
+        <set >
+            <if test="record.id != null" >
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.name != null" >
+                name = #{record.name,jdbcType=VARCHAR},
+            </if>
+            <if test="record.keyword != null" >
+                keyword = #{record.keyword,jdbcType=VARCHAR},
+            </if>
+            <if test="record.description != null" >
+                description = #{record.description,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null" >
+            <include refid="Update_By_Example_Where_Clause" />
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map" >
+        update t_role
+        set id = #{record.id,jdbcType=INTEGER},
+        name = #{record.name,jdbcType=VARCHAR},
+        keyword = #{record.keyword,jdbcType=VARCHAR},
+        description = #{record.description,jdbcType=VARCHAR}
+        <if test="_parameter != null" >
+            <include refid="Update_By_Example_Where_Clause" />
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.yiran.pojo.Role" >
+        update t_role
+        <set >
+            <if test="name != null" >
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="keyword != null" >
+                keyword = #{keyword,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null" >
+                description = #{description,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.yiran.pojo.Role" >
+        update t_role
+        set name = #{name,jdbcType=VARCHAR},
+            keyword = #{keyword,jdbcType=VARCHAR},
+            description = #{description,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+
+
+    <!--  根据用户id查询用户的角色  -->
+    <select id="findByUserId" resultType="com.yiran.pojo.Role" parameterType="Integer">
+        select t_role.*
+        from t_role,t_user_role
+        where t_user_role.user_id = #{value} and t_role.id = t_user_role.role_id
+    </select>
+
+
+    <!--  有条件分页查询  -->
+    <select id="findLikeName" resultType="com.yiran.pojo.Role" parameterType="string">
+        select * from t_role where name like #{value}
+    </select>
+
+
+    <!--  无条件分页查询  -->
+    <select id="findAll" resultType="com.yiran.pojo.Role">
+        select * from t_role
+    </select>
+
+
+    <!--  添加数据到中间表  -->
+    <insert id="connectwithPermission" parameterType="java.util.Map">
+        insert into t_role_permission
+        values (#{roleId},#{permissionId})
+    </insert>
+
+
+    <!--  通过角色id查询角色_权限中间表,查询角色关联的权限id集合  -->
+    <select id="findPermissionIds" resultType="int" parameterType="int">
+        SELECT rp.permission_id
+        FROM t_role_permission rp
+        WHERE rp.role_id = #{value}
+    </select>
+
+    <!--  取消角色与权限的关联关系  -->
+    <delete id="disconnectWithPermission" parameterType="int">
+        delete from t_role_permission where role_id = #{value}
+    </delete>
+
+    <!--  查询所有角色,封装为list集合  -->
+    <select id="findList" resultType="com.yiran.pojo.Role">
+        select * from t_role
+    </select>
+
+</mapper>

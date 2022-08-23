@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yiran.dao.PermissionDao" >
+
+    <!--  查询  -->
+    <!--  通过角色id查询权限信息  -->
+    <select id="findByRoleId" resultType="com.yiran.pojo.Permission" parameterType="Integer">
+        select t_permission.*
+        from t_permission,t_role_permission
+        where t_role_permission.role_id = #{value} and t_permission.id = t_role_permission.permission_id
+    </select>
+
+    <!--  通过关键字查询  -->
+    <select id="queryByString" resultType="com.yiran.pojo.Permission" parameterType="string">
+        select *
+        from t_permission
+        where name like #{value}
+    </select>
+
+    <!-- 无条件分页查询 使用PageHelper -->
+    <select id="queryAll" resultType="com.yiran.pojo.Permission">
+        select *
+        from t_permission
+    </select>
+
+    <!--  通过id查询  -->
+    <select id="findById" parameterType="int" resultType="com.yiran.pojo.Permission">
+        select * from t_permission where t_permission.id = #{value}
+    </select>
+
+
+
+    <!--  插入  -->
+    <!--  插入数据到权限表中  -->
+    <insert id="insert" parameterType="com.yiran.pojo.Permission">
+        insert into t_permission values(null, #{name}, #{keyword}, #{description})
+    </insert>
+
+
+
+    <!--  删除  -->
+    <!--  删除权限  -->
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM t_permission WHERE t_permission.id = #{value}
+    </delete>
+
+
+
+    <!--  更新  -->
+    <update id="updateById" parameterType="com.yiran.pojo.Permission">
+        update t_permission p set p.name = #{name} , p.keyword = #{keyword} where p.id = #{id}
+    </update>
+
+
+    <!--  查询所有  -->
+    <select id="findAll" resultType="com.yiran.pojo.Permission">
+        select * from t_permission
+    </select>
+</mapper>

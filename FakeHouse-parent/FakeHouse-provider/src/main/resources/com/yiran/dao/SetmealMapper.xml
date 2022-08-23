@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.yiran.dao.SetmealMapper">
+
+    <!--  分页查询  -->
+    <select id="findPage" resultType="com.yiran.pojo.Setmeal" parameterType="java.lang.String">
+        select * from t_setmeal
+        <if test="value != null and value.length > 0">
+            where code = #{value} or name = #{value} or helpCode = #{value}
+        </if>
+    </select>
+
+    <!--  添加数据  -->
+    <insert id="add" parameterType="com.yiran.pojo.Setmeal">
+        <!--通过mybatis框架提供的selectKey标签获得自增产生的ID值-->
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into t_setmeal(code,name,sex,age,price,img,helpCode,remark,attention)
+        values
+        (#{code},#{name},#{sex},#{age},#{price},#{img},#{helpCode},#{remark},#{attention})
+    </insert>
+
+    <!--  添加外键关系  -->
+    <insert id="connectWithCheckgroup" parameterType="java.util.Map">
+        insert into t_setmeal_checkgroup
+        values
+        (#{setmealId},#{checkgroupId})
+    </insert>
+
+
+    <!--  查询所有  -->
+
+    <select id="findAll" resultType="com.yiran.pojo.Setmeal">
+        select * from t_setmeal
+    </select>
+
+    <!--  通过setmealId查询checkgroupIds  -->
+    <select id="findGroupIds" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+        select checkgroup_id from t_setmeal_checkgroup where setmeal_id = #{value}
+    </select>
+
+    <!--  删除setmeal与checkgroup的关联关系  -->
+    <delete id="disconnectWithCheckGroup" parameterType="java.lang.Integer">
+        delete from t_setmeal_checkgroup where setmeal_id = #{value}
+    </delete>
+
+    <!--  更新数据  -->
+    <update id="updateById" parameterType="com.yiran.pojo.Setmeal">
+        update t_setmeal
+        <set>
+            <if test="code != null">
+                code = #{code},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="helpCode != null">
+                helpCode = #{helpCode},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="attention != null">
+                attention = #{attention},
+            </if>
+            <if test="img != null">
+                img = #{img},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--  根据id删除  -->
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from t_setmeal where id = #{value}
+    </delete>
+
+
+
+
+    <!--  通过id查询setmeal(完整信息)  -->
+    <!--  希望将其关联的checkGroup也查询出来  -->
+    <resultMap type="com.yiran.pojo.Setmeal" id="baseResultMap">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="code" property="code"/>
+        <result column="helpCode" property="helpCode"/>
+        <result column="sex" property="sex"/>
+        <result column="age" property="age"/>
+        <result column="price" property="price"/>
+        <result column="remark" property="remark"/>
+        <result column="attention" property="attention"/>
+        <result column="img" property="img"/>
+    </resultMap>
+
+    <resultMap type="com.yiran.pojo.Setmeal"
+               id="findByIdResultMap"
+               extends="baseResultMap">
+        <!--  对result中的其它关联内容进行封装  -->
+        <!--  select表示对应查询数据的方法  -->
+        <!--  id表示要传入到findCheckGroupById的数据,对应的是当前sql查询出的结果中对应的字段的名字  -->
+        <collection property="checkGroups"
+                    javaType="ArrayList"
+                    ofType="com.yiran.pojo.CheckGroup"
+                    column="id"
+                    select="com.yiran.dao.CheckGroupMapper.findCheckGroupById">
+        </collection>
+    </resultMap>
+
+    <!--  使用的结果返回对象为resultMap -->
+    <select id="findById" parameterType="java.lang.Integer" resultMap="findByIdResultMap">
+      select * from t_setmeal  where id=#{id}
+    </select>
+
+
+    <!--  查询套餐的简单信息 -->
+    <select id="findByIdSim" parameterType="java.lang.Integer" resultType="com.yiran.pojo.Setmeal">
+      select * from t_setmeal  where id=#{id}
+    </select>
+
+</mapper>

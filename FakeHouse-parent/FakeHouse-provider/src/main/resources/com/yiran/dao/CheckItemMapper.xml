@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yiran.dao.CheckItemMapper">
+    <!--插入检查项数据-->
+    <insert id="add" parameterType="com.yiran.pojo.CheckItem">
+        insert into t_checkitem(code,name,sex,age,price,type,remark,attention)
+                      values
+        (#{code},#{name},#{sex},#{age},#{price},#{type},#{remark},#{attention})
+    </insert>
+
+    <!--  查询分页数据  -->
+    <select id="findPage" parameterType="String" resultType="com.yiran.pojo.CheckItem">
+        select * from t_checkitem
+        <if test="value != null and value.length > 0">
+            where code = #{value} or name = #{value}
+        </if>
+    </select>
+
+    <!--  删除检查项  -->
+    <delete id="deleteItem" parameterType="Integer">
+        delete from t_checkitem where id = #{value}
+    </delete>
+
+    <!--   查询被引用次数  -->
+    <select id="findCountFroItem" parameterType="Integer" resultType="Integer">
+        select count(*) from t_checkgroup_checkitem where checkitem_id = #{value}
+    </select>
+
+    <!--  通过id查询  -->
+    <select id="findById" resultType="com.yiran.pojo.CheckItem" parameterType="Integer">
+        select * from t_checkitem where id = #{value}
+    </select>
+
+    <!--  edit 修改  -->
+    <update id="edit" parameterType="com.yiran.pojo.CheckItem">
+        update t_checkitem
+        <set>
+            <if test="code != null">
+                code = #{code},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="attention != null">
+                attention = #{attention},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--  查询所有检查项  -->
+    <select id="findList" resultType="com.yiran.pojo.CheckItem">
+        select * from t_checkitem
+    </select>
+
+
+    <!--  根据checkgroupId查询  -->
+    <!--  根据检查组id查询检查项信息  -->
+    <!--  惊奇的发现就算不在mapper接口中有对应的接口也可以在mapper中进行调用  -->
+    <!--  就是说,在mapper中没有 名字为findCheckItemById的接口函数,只能在mapper中间写即可  -->
+    <!--  还有这个多表连接查询及其封装有必要学习一下  -->
+    <select id="findCheckItemById" resultType="com.yiran.pojo.CheckItem">
+      select * from t_checkitem
+      where id
+      in (select checkitem_id from t_checkgroup_checkitem where checkgroup_id=#{id})
+    </select>
+
+</mapper>
