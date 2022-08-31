@@ -7,97 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="082ee9dd-7221-4530-8188-0be64685dd02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/css/bootstrap-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/css/style-login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/doc/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/images/login_background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/login_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/js/check.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/welcome.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/jdbc.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/auth/SpringSecurityUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/auth/SpringSecurityUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/PermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/PermissionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/resources/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/resources/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/resources/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/resources/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/american-express.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/avatar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/avatar04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/avatar2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/avatar3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/avatar5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/boxed-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/boxed-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/cirrus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/loginLogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/logingBg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/mastercard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/mestro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/minilogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/paypal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/paypal2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/photo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/photo2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/photo3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/photo4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/pwd.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/user.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/user1-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/user2-160x160.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/user3-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/user4-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/user5-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/user6-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/user7-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/user8-128x128.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/img/visa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/address.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/checkgroup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/checkitem.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/ordersetting.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/ordersettinglist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/permission.html" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/permission.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/report_business.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/report_member.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/report_setmeal.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/role.html" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/role.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/setmeal.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pic/113.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/template/health_business3.jasper" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/template/health_business3.jrxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/template/ordersetting_template.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/template/report_template.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/MenuExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/MenuExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/RoleExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/RoleExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/UserExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/UserExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/PermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/PermissionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/spring-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/spring-dao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/spring-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/spring-service.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/FakeHouse-parent/target/" />
     <ignored path="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/target/" />
@@ -115,7 +25,7 @@
     <session id="1574262746">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.5" value="1" />
@@ -158,7 +68,7 @@
           <entry key="gitignore" value="53" />
           <entry key="html" value="10" />
           <entry key="java" value="66" />
-          <entry key="txt" value="61" />
+          <entry key="txt" value="121" />
           <entry key="xml" value="364" />
         </counts>
       </usages-collector>
@@ -166,7 +76,7 @@
         <counts>
           <entry key="HTML" value="10" />
           <entry key="JAVA" value="66" />
-          <entry key="PLAIN_TEXT" value="114" />
+          <entry key="PLAIN_TEXT" value="174" />
           <entry key="XML" value="364" />
         </counts>
       </usages-collector>
@@ -182,8 +92,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/MenuExample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-575">
-              <caret line="43" column="35" lean-forward="true" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+            <state relative-caret-position="305">
+              <caret line="89" column="13" lean-forward="true" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -308,7 +218,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="61" />
     <option name="width" value="1219" />
     <option name="height" value="842" />
@@ -590,7 +500,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1661935913846" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1661936040570" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -800,7 +710,7 @@
       <workItem from="1661341016233" duration="889000" />
       <workItem from="1661391081185" duration="24000" />
       <workItem from="1661915556821" duration="2335000" />
-      <workItem from="1661932588695" duration="3301000" />
+      <workItem from="1661932588695" duration="3463000" />
     </task>
     <task id="LOCAL-00001" summary="初始化数据库;&#10;测试并引用OauthConsole模块, 导入部分代码.">
       <created>1661919009409</created>
@@ -809,14 +719,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661919009409</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="完成用户权限控制模块的迁入并进行测试;&#10;并修正了一些项目迁移时导致的bug.">
+      <created>1661936025572</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1661936025572</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13129000" />
+    <option name="totallyTimeSpent" value="13291000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21268657" />
@@ -829,7 +746,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.30416223" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.23372465" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.23372465" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -895,7 +812,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化数据库;&#10;测试并引用OauthConsole模块, 导入部分代码." />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化数据库;&#10;测试并引用OauthConsole模块, 导入部分代码." />
+    <MESSAGE value="完成用户权限控制模块的迁入并进行测试;&#10;并修正了一些项目迁移时导致的bug." />
+    <option name="LAST_COMMIT_MESSAGE" value="完成用户权限控制模块的迁入并进行测试;&#10;并修正了一些项目迁移时导致的bug." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/MenuDao.java" />
@@ -1207,8 +1125,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/MenuExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-575">
-          <caret line="43" column="35" lean-forward="true" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+        <state relative-caret-position="305">
+          <caret line="89" column="13" lean-forward="true" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
