@@ -5,73 +5,11 @@ package com.yiran.constant;
 public class MessageConstant {
 
 
-    // 检查项 checkitem
-    public static final String DELETE_CHECKITEM_FAIL = "删除检查项失败";
-    public static final String DELETE_CHECKITEM_SUCCESS = "删除检查项成功";
-    public static final String ADD_CHECKITEM_SUCCESS = "新增检查项成功";
-    public static final String ADD_CHECKITEM_FAIL = "新增检查项失败";
-    public static final String EDIT_CHECKITEM_FAIL = "编辑检查项失败";
-    public static final String EDIT_CHECKITEM_SUCCESS = "编辑检查项成功";
-    public static final String QUERY_CHECKITEM_SUCCESS = "查询检查项成功";
-    public static final String QUERY_CHECKITEM_FAIL = "查询检查项失败";
-
-    // 图片 七牛云  qiniu
-    public static final String UPLOAD_SUCCESS = "上传成功";
-    public static final String PIC_UPLOAD_SUCCESS = "图片上传成功";
-    public static final String PIC_UPLOAD_FAIL = "图片上传失败";
-
-    // 检查组  checkgroup
-    public static final String ADD_CHECKGROUP_FAIL = "新增检查组失败";
-    public static final String ADD_CHECKGROUP_SUCCESS = "新增检查组成功";
-    public static final String DELETE_CHECKGROUP_FAIL = "删除检查组失败";
-    public static final String DELETE_CHECKGROUP_SUCCESS = "删除检查组成功";
-    public static final String QUERY_CHECKGROUP_SUCCESS = "查询检查组成功";
-    public static final String QUERY_CHECKGROUP_FAIL = "查询检查组失败";
-    public static final String EDIT_CHECKGROUP_FAIL = "编辑检查组失败";
-    public static final String EDIT_CHECKGROUP_SUCCESS = "编辑检查组成功";
-
-    // 套餐 setmeal
-    public static final String ADD_SETMEAL_FAIL = "新增套餐失败";
-    public static final String ADD_SETMEAL_SUCCESS = "新增套餐成功";
-    public static final String QUERY_SETMEAL_SUCCESS = "查询套餐数据成功";
-    public static final String QUERY_SETMEAL_FAIL = "查询套餐数据失败";
-    public static final String QUERY_SETMEALLIST_SUCCESS = "查询套餐列表数据成功";
-    public static final String QUERY_SETMEALLIST_FAIL = "查询套餐列表数据失败";
-    public static final String GET_SETMEAL_LIST_SUCCESS = "查询套餐列表数据成功";
-    public static final String GET_SETMEAL_LIST_FAIL = "查询套餐列表数据失败";
-
-    // 预约设置 ordersetting
-    public static final String IMPORT_ORDERSETTING_FAIL = "批量导入预约设置数据失败";
-    public static final String IMPORT_ORDERSETTING_SUCCESS = "批量导入预约设置数据成功";
-    public static final String GET_ORDERSETTING_SUCCESS = "获取预约设置数据成功";
-    public static final String GET_ORDERSETTING_FAIL = "获取预约设置数据失败";
-    public static final String ORDERSETTING_SUCCESS = "预约设置成功";
-    public static final String ORDERSETTING_FAIL = "预约设置失败";
-
-    // 会员member
-    public static final String ADD_MEMBER_FAIL = "新增会员失败";
-    public static final String ADD_MEMBER_SUCCESS = "新增会员成功";
-    public static final String DELETE_MEMBER_FAIL = "删除会员失败";
-    public static final String DELETE_MEMBER_SUCCESS = "删除会员成功";
-    public static final String EDIT_MEMBER_FAIL = "编辑会员失败";
-    public static final String EDIT_MEMBER_SUCCESS = "编辑会员成功";
-
     // 验证码
     public static final String TELEPHONE_VALIDATECODE_NOTNULL = "手机号和验证码都不能为空";
     public static final String VALIDATECODE_ERROR = "验证码输入错误";
     public static final String SEND_VALIDATECODE_FAIL = "验证码发送失败";
     public static final String SEND_VALIDATECODE_SUCCESS = "验证码发送成功";
-
-
-
-    // 预约  订单信息
-    public static final String QUERY_ORDER_SUCCESS = "查询预约信息成功";
-    public static final String QUERY_ORDER_FAIL = "查询预约信息失败";
-    public static final String SELECTED_DATE_CANNOT_ORDER = "所选日期不能进行体检预约";
-    public static final String ORDER_FULL = "预约已满";
-    public static final String HAS_ORDERED = "已经完成预约，不能重复预约";
-    public static final String ORDER_SUCCESS = "预约成功";
-
 
 
     // 登录
@@ -108,15 +46,36 @@ public class MessageConstant {
     public static final String EDIT_ROLE_FAIL = "修改角色失败";
     public static final String DELETE_ROLE_SUCCESS = "删除角色成功";
     public static final String DELETE_ROLE_FAIL = "删除角色失败";
+    public static final String FIND_PERMISSION_ID_SUCCESS = "查询角色关联的权限id成功";
+    public static final String FIND_PERMISSION_ID_FAIL = "查询角色关联的权限id失败";
+    public static final String FIND_MENU_ID_SUCCESS = "查询角色关联的菜单id成功";
+    public static final String FIND_MENU_ID_FAIL = "查询角色关联的菜单id失败";
+    public static final String FIND_LINK_ID_SUCCESS = "查询角色关联的权限和菜单id成功";
+    public static final String FIND_LINK_ID_FAIL = "查询角色关联的权限和菜单id失败";
 
     // 权限管理-user
-    public static final String QUERY_USER_SUCCESS  = "查询用户成功";
-    public static final String QUERY_USER_FAIL  = "查询用户失败";
-    public static final String ADD_USER_SUCCESS  = "添加用户成功";
-    public static final String ADD_USER_FAIL  = "添加用户失败";
-    public static final String USERNAME_ERROR  = "用户名重复";
-    public static final String UPDATE_USER_SUCCESS  = "修改用户信息成功";
-    public static final String UPDATE_USER_FAIL  = "修改用户信息失败";
-    public static final String DELETE_USER_SUCCESS  = "删除用户成功";
-    public static final String DELETE_USER_FAIL  = "删除用户失败";
+    public static final String QUERY_USER_SUCCESS = "查询用户成功";
+    public static final String QUERY_USER_FAIL = "查询用户失败";
+    public static final String ADD_USER_SUCCESS = "添加用户成功";
+    public static final String ADD_USER_FAIL = "添加用户失败";
+    public static final String USERNAME_ERROR = "用户名重复";
+    public static final String UPDATE_USER_SUCCESS = "修改用户信息成功";
+    public static final String UPDATE_USER_FAIL = "修改用户信息失败";
+    public static final String DELETE_USER_SUCCESS = "删除用户成功";
+    public static final String DELETE_USER_FAIL = "删除用户失败";
+    public static final String USER_REGISTER_SUCCESS = "用户注册成功";
+    public static final String USER_REGISTER_FAIL = "用户注册失败";
+
+
+    // 菜单管理
+    public static final String QUERY_MENU_SUCCESS = "查询菜单信息成功";
+    public static final String QUERY_MENU_FAIL = "查询菜单信息失败";
+    public static final String ADD_MENU_SUCCESS = "添加菜单成功";
+    public static final String ADD_MENU_FAIL = "添加菜单失败";
+    public static final String UPDATE_MENU_SUCCESS = "修改菜单信息成功";
+    public static final String UPDATE_MENU_FAIL = "修改菜单信息失败";
+    public static final String DELETE_MENU_SUCCESS = "删除菜单成功";
+    public static final String DELETE_MENU_FAIL = "删除菜单失败";
+
+
 }

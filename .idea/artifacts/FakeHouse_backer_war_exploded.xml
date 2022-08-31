@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="FakeHouse-provider:war exploded">
-    <output-path>$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/target/FakeHouse-provider-1.0-SNAPSHOT</output-path>
+  <artifact type="exploded-war" name="FakeHouse-backer:war exploded">
+    <output-path>$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/target/FakeHouse-backer-1.0-SNAPSHOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="FakeHouse-provider" />
+          <element id="module-output" name="FakeHouse-backer" />
         </element>
         <element id="directory" name="lib">
           <element id="archive" name="FakeHouse-interface-1.0-SNAPSHOT.jar">
@@ -103,9 +103,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/target/FakeHouse-provider-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/target/FakeHouse-backer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="FakeHouse-provider/web/Web" />
+      <element id="javaee-facet-resources" facet="FakeHouse-backer/web/Web" />
     </root>
   </artifact>
 </component>

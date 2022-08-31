@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>FakeHouse-backer</artifactId>
+    <packaging>war</packaging>
     <description>后端管理客户端</description>
 
 

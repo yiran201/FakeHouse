@@ -49,7 +49,19 @@
 
     <!--  更新  -->
     <update id="updateById" parameterType="com.yiran.pojo.Permission">
-        update t_permission p set p.name = #{name} , p.keyword = #{keyword} where p.id = #{id}
+        update t_permission p
+        <set >
+            <if test="name != null" >
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="keyword != null" >
+                keyword = #{keyword,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null" >
+                description = #{description,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where p.id = #{id}
     </update>
 
 

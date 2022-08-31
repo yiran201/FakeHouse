@@ -224,12 +224,17 @@
     </select>
 
 
-    <!--  添加数据到中间表  -->
+    <!--  添加数据到中间表  t_role_permission -->
     <insert id="connectwithPermission" parameterType="java.util.Map">
         insert into t_role_permission
         values (#{roleId},#{permissionId})
     </insert>
 
+    <!--  添加数据到中间表 t_role_menu  -->
+    <insert id="connectWithMenu" parameterType="java.util.Map">
+        insert into t_role_menu
+        values (#{roleId},#{menuId})
+    </insert>
 
     <!--  通过角色id查询角色_权限中间表,查询角色关联的权限id集合  -->
     <select id="findPermissionIds" resultType="int" parameterType="int">
@@ -238,12 +243,24 @@
         WHERE rp.role_id = #{value}
     </select>
 
+    <!--  通过角色id查询角色_菜单中间表,查询角色关联的菜单id集合  -->
+    <select id="findMenuIds" resultType="int" parameterType="int">
+        SELECT rm.menu_id
+        FROM t_role_menu rm
+        WHERE rm.role_id = #{value}
+    </select>
+
     <!--  取消角色与权限的关联关系  -->
     <delete id="disconnectWithPermission" parameterType="int">
         delete from t_role_permission where role_id = #{value}
     </delete>
 
-    <!--  查询所有角色,封装为list集合  -->
+    <!--  取消角色与权限的关联关系  -->
+    <delete id="disconnectWithMenu" parameterType="int">
+        delete from t_role_menu where role_id = #{value}
+   </delete>
+
+        <!--  查询所有角色,封装为list集合  -->
     <select id="findList" resultType="com.yiran.pojo.Role">
         select * from t_role
     </select>
