@@ -1,46 +1,61 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <!-- 页面meta -->
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>传智健康</title>
-        <meta name="description" content="传智健康">
-        <meta name="keywords" content="传智健康">
-        <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-        <!-- 引入样式 -->
-        <link rel="stylesheet" href="plugins/elementui/index.css">
-        <link rel="stylesheet" href="css/login.css">
-    </head>
-    <body class="hold-transition skin-purple sidebar-mini">
-        <div id="app">
-            <div class="login-container">
-                <div class="loginBox">
-                  <form method="post" class="login-form" action="/login.do" label-position="left">
-                      <div class="title-container">
-                        <div class="logoInfo clearfix">
-                          <em class="logo"></em>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="svg-container svg-container_login">
-                          <span class="user"></span>
-                        </span>
-                        <input type="text" name="username" placeholder="请输入用户名" />
-                      </div>
-                      <div>
-                        <span class="svg-container">
-                          <span class="username"></span>
-                        </span>
-                        <input type="password" name="password" placeholder="请输入密码"/>
-                      </div>
-                      <input type="submit" style="width:100%;margin-bottom:30px;" value="登录"></input>
-                </form>
-                </div>
-              </div>
-        </div>
-    </body>
-    <!-- 引入组件库 -->
-    <script src="js/vue.js"></script>
-    <script src="plugins/elementui/index.js"></script>
+<html lang="Ch">
+
+<head>
+<title>登录</title>
+<!-- Meta tags -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- //Meta tags -->
+<link rel="stylesheet" href="./css/style-login.css" type="text/css" media="all" /><!-- Style-CSS -->
+<link href="./css/font-awesome.css" rel="stylesheet"><!-- font-awesome-icons -->
+
+    <!--<script src="js/getParameter.js"></script>-->
+    <script src="./js/jquery.min.js"></script>
+	<script type="text/javascript">
+        // 本来需要校验表单的, 但是不会处理 ajax请求后的重定向, 所以直接使用表单发送同步请求
+
+    </script>
+</head>
+<body>
+<section class="w3l-form-36">
+	<div class="form-36-mian section-gap">
+		<div class="wrapper">
+			<div class="form-inner-cont">
+                <div id="errorMsg" style="background-color: #ffc17a"></div>
+				<h3>Login now</h3>
+
+				<form action="/FakeHouse-backer/login.do" method="post" id="loginForm" class="signin-form">
+
+                    <div class="form-input">
+						<span class="fa fa-envelope-o" aria-hidden="true"></span> <input type="text" id="username" name="username"
+							placeholder="Username" required />
+					</div>
+
+					<div class="form-input">
+						<span class="fa fa-key" aria-hidden="true"></span> <input type="password" id="password" name="password" placeholder="Password"
+							required />
+					</div>
+
+
+					<div class="login-remember d-grid">
+                        <input type="submit" class="btn theme-button" value="登录"/>
+					</div>
+				</form>
+			</div>
+
+			<!-- copyright -->
+			<div class="copy-right">
+				<p>Copyright &copy; 2020.Company name All rights reserved.</p>
+				<!--  遇到问题?请加qq  -->
+				<p>Encounter&nbsp;any&nbsp;problems?&nbsp;&nbsp;Contact us.&nbsp;&nbsp;QQ:2646862458</p>
+				<p><a href="mailto:2646862458@qq.com">邮箱联系2646862458@qq.com</a><p>
+			</div>
+
+		</div>
+	</div>
+</section>
+</body>
+
 </html>

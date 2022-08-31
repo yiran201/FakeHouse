@@ -1,6 +1,7 @@
 package com.yiran.controller;
 
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.yiran.constant.MessageConstant;
 import com.yiran.entity.PageResult;
 import com.yiran.entity.QueryPageBean;
@@ -18,7 +19,7 @@ import java.util.List;
 @RequestMapping("/permission")
 public class PermissionController {
 
-    @Autowired
+    @Reference
     private PermissionService permissionService;
 
 

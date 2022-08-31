@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 
-@Service(interfaceClass = MenuService.class)
+@Service(interfaceClass = RoleService.class)
 @Transactional
 public class RoleServiceImpl implements RoleService {
 

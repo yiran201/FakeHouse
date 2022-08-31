@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 页面meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FakeHouse-backer</title>
+    <meta name="description" content="FakeHouse-backer">
+    <meta name="keywords" content="FakeHouse-backer">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../plugins/elementui/index.css">
+    <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="hold-transition">
+<div id="app">
+    <div class="content-header">
+        <h1>权限管理<small>菜单管理</small></h1>
+        <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb">
+            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+            <el-breadcrumb-item>权限管理</el-breadcrumb-item>
+            <el-breadcrumb-item>菜单管理</el-breadcrumb-item>
+        </el-breadcrumb>
+    </div>
+    <div class="app-container">
+        <div class="box">
+            <div class="filter-container">
+                <el-input placeholder="菜单名称" v-model="pagination.queryString" style="width: 200px;" class="filter-item"></el-input>
+                <el-button @click="findQueryPage()" class="dalfBut">查询</el-button>
+                <el-button type="primary" class="butT" @click="handleCreate()">新建菜单</el-button>
+            </div>
+            <!--  列表数据展示  -->
+            <!--  菜单数据说明:  -->
+            <el-table size="small" current-row-key="id" :data="dataList" stripe highlight-current-row>
+
+                <!--<el-table-column type="index" align="center" label="序号"></el-table-column>-->
+                <!--  不要序号了, 因为字段太多了  -->
+                <el-table-column prop="id" label="id" align="center"></el-table-column>
+
+                <el-table-column prop="name" label="菜单名" align="center"></el-table-column>
+
+                <!--  页面链接的html的url, 只能写html的名称即可, 放置在pages文件夹中 例如: user.html -->
+                <el-table-column prop="linkUrl" label="页面url" align="center"></el-table-column>
+
+                <!--  url相对路径, 例:  5  /2-1 -->
+                <el-table-column prop="path" label="路径" align="center"></el-table-column>
+
+                <!--菜单顺序, 数值越小越前, int类型  -->
+                <el-table-column prop="priority" label="菜单顺序" align="center"></el-table-column>
+
+                <!--  图标, 取值可以为:   -->
+                <el-table-column prop="icon" label="图标" align="center"></el-table-column>
+
+                <!--  父标签id  对应上面的菜单  int 类型 -->
+                <el-table-column prop="parentMenuId" label="父菜单id" align="center"></el-table-column>
+
+                <!--  菜单等级 是一级目录还是二级目录, 在这里只能有两个等级, 否则在本项目中不会生效  int类型 -->
+                <el-table-column prop="level" label="目录等级" align="center"></el-table-column>
+
+                <el-table-column prop="description" label="菜单描述" align="center"></el-table-column>
+
+                <el-table-column label="操作" align="center">
+                    <template slot-scope="scope">
+                        <el-button type="primary" size="mini" @click="handleUpdate(scope.row)">编辑</el-button>
+                        <el-button size="mini" type="danger" @click="handleDelete(scope.row)">删除</el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+            <!--  分页插件  -->
+            <div class="pagination-container">
+                <el-pagination
+                        class="pagiantion"
+                        @current-change="handleCurrentChange"
+                        :current-page="pagination.currentPage"
+                        :page-size="pagination.pageSize"
+                        layout="total, prev, pager, next, jumper"
+                        :total="pagination.total">
+                </el-pagination>
+            </div>
+
+
+            <!-- 新增标签弹层 -->
+            <div class="add-form">
+                <el-dialog title="新增菜单" :visible.sync="dialogFormVisible">
+                    <el-form ref="dataAddForm" :model="formData" :rules="rules" label-position="right" label-width="100px">
+                        <el-row>
+                            <el-col :span="12">
+                                <el-form-item label="菜单名" prop="name">
+                                    <el-input v-model="formData.name"/>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="12">
+                                <el-form-item label="页面url" prop="linkUrl">
+                                    <el-input v-model="formData.linkUrl"/>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+
+                        <el-row>
+                            <el-col :span="12">
+                                <el-form-item label="路径" prop="path">
+                                    <el-input v-model="formData.path"/>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="12">
+                                <el-form-item label="菜单顺序" prop="priority">
+                                    <el-input v-model="formData.priority"/>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+
+                        <el-row>
+                            <el-col :span="8">
+                                <el-form-item label="图标" prop="icon">
+                                    <el-input v-model="formData.icon"/>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="8">
+                                <el-form-item label="父菜单id" prop="parentMenuId">
+                                    <el-input v-model="formData.parentMenuId"/>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="8">
+                                <el-form-item label="目录等级" prop="level">
+                                    <el-input v-model="formData.level"/>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+
+                        <el-row>
+                            <el-col :span="24">
+                                <el-form-item label="菜单描述">
+                                    <el-input v-model="formData.description" type="textarea"></el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                    </el-form>
+                    <div slot="footer" class="dialog-footer">
+                        <el-button @click="dialogFormVisible = false">取消</el-button>
+                        <el-button type="primary" @click="handleAdd()">确定</el-button>
+                    </div>
+                </el-dialog>
+            </div>
+
+            <!-- 编辑标签弹层 -->
+            <div class="add-form">
+                <el-dialog title="编辑检查项" :visible.sync="dialogFormVisible4Edit">
+                    <el-form ref="dataEditForm" :model="formData" :rules="rules" label-position="right" label-width="100px">
+                        <el-row>
+                            <el-col :span="12">
+                                <el-form-item label="菜单名" prop="name">
+                                    <el-input v-model="formData.name"/>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="12">
+                                <el-form-item label="页面url" prop="linkUrl">
+                                    <el-input v-model="formData.linkUrl"/>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+
+                        <el-row>
+                            <el-col :span="12">
+                                <el-form-item label="路径" prop="path">
+                                    <el-input v-model="formData.path"/>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="12">
+                                <el-form-item label="菜单顺序" prop="priority">
+                                    <el-input v-model="formData.priority"/>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+
+                        <el-row>
+                            <el-col :span="8">
+                                <el-form-item label="图标" prop="icon">
+                                    <el-input v-model="formData.icon"/>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="8">
+                                <el-form-item label="父菜单id" prop="parentMenuId">
+                                    <el-input v-model="formData.parentMenuId"/>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="8">
+                                <el-form-item label="目录等级" prop="level">
+                                    <el-input v-model="formData.level"/>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+
+                        <el-row>
+                            <el-col :span="24">
+                                <el-form-item label="菜单描述">
+                                    <el-input v-model="formData.description" type="textarea"></el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                    </el-form>
+                    <div slot="footer" class="dialog-footer">
+                        <el-button @click="dialogFormVisible4Edit = false">取消</el-button>
+                        <el-button type="primary" @click="handleEdit()">确定</el-button>
+                    </div>
+                </el-dialog>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+<!-- 引入组件库 -->
+<script src="../js/vue.js"></script>
+<script src="../plugins/elementui/index.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script src="../js/axios-0.18.0.js"></script>
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data:{
+            pagination: {//分页相关模型数据
+                currentPage: 1,//当前页码
+                pageSize:10,//每页显示的记录数
+                total:0,//总记录数
+                queryString:null//查询条件
+            },
+            dataList: [],//当前页要展示的分页列表数据
+            formData: {},//表单数据
+            dialogFormVisible: false,//增加表单是否可见
+            dialogFormVisible4Edit:false,//编辑表单是否可见
+            rules: {//校验规则
+                name: [{ required: true, message: '菜单名称为必填项', trigger: 'blur' }],
+                path: [{ required: true, message: '目录路径为必填项', trigger: 'blur' }],
+                priority: [{ required: true, message: '菜单顺序为必填项', trigger: 'blur' }],
+                level: [{ required: true, message: '目录等级为必填项', trigger: 'blur' }]
+            }
+        },
+        //钩子函数，VUE对象初始化完成后自动执行
+        created() {
+            this.findPage();//VUE对象初始化完成后调用分页查询方法，完成分页查询
+        },
+        methods: {
+            //权限不足提示
+            showMessage(r){
+                if(r == 'Error: Request failed with status code 403'){
+                    //权限不足
+                    this.$message.error('无访问权限');
+                    return;
+                }else{
+                    this.$message.error('未知错误');
+                    return;
+                }
+            },
+            //编辑
+            handleEdit() {
+                //进行表单校验  使用项目的data下的rule进行校验
+                this.$refs['dataEditForm'].validate((valid) => {
+                    if(valid){
+                        //表单校验通过，可以提交数据
+                        axios.put("/FakeHouse-backer/menu/update.do",this.formData).then((res) => {
+                            if(res.data.flag){
+                                //弹出成功提示信息
+                                this.$message({
+                                    type:'success',
+                                    message:res.data.message
+                                });
+                            }else{
+                                //执行失败
+                                this.$message.error(res.data.message);
+                            }
+                        }).catch((res)=>
+                        {
+                            // 修改失败,权限不足
+                            this.showMessage(res);
+
+                        }).finally(() => {
+
+                            //不管成功还是失败，都调用分页查询方法
+                            this.findPage();
+                            //隐藏编辑窗口
+                            this.dialogFormVisible4Edit = false;
+                            // 重置表单数据
+                            this.resetForm();
+                        });
+
+                    }else{
+                        //表单校验不通过
+                        this.$message.error("表单数据校验失败!");
+                        return false;
+                    }
+                });
+            },
+            //添加
+            handleAdd () {
+                //进行表单校验
+                this.$refs['dataAddForm'].validate((valid) => {
+                    if(valid){
+                        //表单校验通过，发生ajax请求，将录入的数据提交到后台进行处理
+                        axios.post("/FakeHouse-backer/menu/add.do",this.formData).then((res) => {
+                            if(res.data.flag){//执行成功
+                                //关闭新增窗口
+                                this.dialogFormVisible = false;
+
+                                //新增成功后，重新调用分页查询方法，查询出最新的数据
+                                this.findPage();
+                                //弹出提示信息
+                                this.$message({
+                                    message:res.data.message,
+                                    type:'success'
+                                });
+                            }else{//执行失败
+                                //弹出提示
+                                this.$message.error(res.data.message);
+                            }
+                        });
+                    }else{
+                        //校验不通过
+                        this.$message.error("数据校验失败，请检查你的输入信息是否正确！");
+                        return false;
+                    }
+                });
+            },
+            //分页查询
+            findPage() {
+                //发送ajax请求，提交分页相关请求参数（页码、每页显示记录数、查询条件）
+                var param = {
+                    currentPage:this.pagination.currentPage,
+                    pageSize:this.pagination.pageSize,
+                    queryString: this.pagination.queryString
+                };
+                axios.post("/FakeHouse-backer/menu/findPage.do",param).then((res)=>{
+                    if(res.data.flag) {
+
+                        //解析Controller响应回的数据，为模型数据赋值
+                        this.pagination.total = res.data.data.total;
+                        this.dataList = res.data.data.rows;
+                    }else
+                    {
+                        // 查询数据失败
+                        this.$message.error(res.data.message);
+                    }
+                }).catch((bad)=> {
+                    // 403处理
+                    this.showMessage(bad);
+                });
+            },
+            // 与findPage的区别是 该方法会将页数设置为1
+            findQueryPage() {
+                //发送ajax请求，提交分页相关请求参数（页码、每页显示记录数、查询条件）
+                var param = {
+                    currentPage:1,
+                    pageSize:this.pagination.pageSize,
+                    queryString: this.pagination.queryString
+                };
+                axios.post("/FakeHouse-backer/menu/findPage.do",param).then((res)=>{
+
+                    if (res.data.flag)
+                    {
+                        //解析Controller响应回的数据，为模型数据赋值
+                        this.pagination.total = res.data.data.total;
+                        this.dataList = res.data.data.rows;
+                        this.pagination.currentPage = 1;
+                    }else
+                    {
+                        // 查询数据失败
+                        this.$message.error(res.data.message)
+                    }
+                }).catch((bad)=> {
+                    // 403错误处理
+                    this.showMessage(bad);
+                });
+            },
+            // 重置表单
+            resetForm() {
+                this.formData = {};//重置数据
+            },
+            // 弹出添加窗口
+            handleCreate() {
+                // 清空上次的数据
+                this.resetForm();
+                //弹出新增窗口
+                this.dialogFormVisible = true;
+            },
+            // 弹出编辑窗口
+            handleUpdate(row) {
+                //回显数据，发送ajax请求根据ID查询当前检查项数据
+                axios.get("/FakeHouse-backer/menu/findById.do?id=" + row.id).then((res) => {
+                    if (res.data.flag) {
+                        //进行回显，基于VUE的数据绑定实现
+                        // res.data获取到返回的json对象的数据
+                        this.formData = res.data.data;
+                        //弹出编辑窗口
+                        this.dialogFormVisible4Edit = true;
+                    } else {
+                        //查询失败，弹出提示
+                        this.$message.error(res.data.message);
+                    }
+                }).catch((res) => {
+                    // 请求失败  发生异常
+                    this.showMessage(res);
+                });
+            },
+            //切换页码
+            handleCurrentChange(currentPage) {
+                //设置最新的页码
+                this.pagination.currentPage = currentPage;
+                //重新调用findPage方法进行分页查询
+                this.findPage();
+            },
+            // 删除
+            handleDelete(row) {
+                //row其实是一个json对象
+                //alert(row.id);
+                // row.id的内容其实是没有显示出来的,但是它是存在的,在查询数据库的时候,就设置到了该对象中,只是没有将数据展示出来而已
+                // 弹出确认框
+                this.$confirm("你确定要删除当前数据吗？","提示",{//确认框
+                    type:'warning'
+                }).then(()=>{
+                    //用户点击确定按钮，发送ajax请求，将检查项ID提交到Controller进行处理
+                    axios.delete("/FakeHouse-backer/menu/delete.do?id=" + row.id).then((res) => {
+                        if(res.data.flag){
+                            //执行成功
+                            //弹出成功提示信息
+                            this.$message({
+                                type:'success',
+                                message:res.data.message
+                            });
+                            //重新进行分页查询
+                            this.findQueryPage();
+                        }else{
+                            //执行失败
+                            this.$message.error(res.data.message);
+                        }
+                    }).catch((bres)=>
+                    {
+                        // 请求不成功,可能由于服务器异常或者客户端异常
+                        // 处理403响应, 调用工具方法进行处理
+                        this.showMessage(bres);
+                    });
+                }).catch(()=>{
+                    this.$message({
+                        type:'info',
+                        message:'操作已取消'
+                    });
+                });
+            }
+        }
+    })
+</script>
+</html>

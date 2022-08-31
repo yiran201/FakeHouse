@@ -4,9 +4,9 @@
         <!-- 页面meta -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>传智健康</title>
-        <meta name="description" content="传智健康">
-        <meta name="keywords" content="传智健康">
+        <title>FakeHouse-backer</title>
+        <meta name="description" content="FakeHouse-backer">
+        <meta name="keywords" content="FakeHouse-backer">
         <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
         <!-- 引入样式 -->
         <link rel="stylesheet" href="../plugins/elementui/index.css">
@@ -141,6 +141,34 @@
                                                 </table>
                                             </div>
                                         </el-tab-pane>
+                                        <el-tab-pane label="菜单信息" name="third">
+                                            <div class="checkScrol">
+                                                <table class="datatable">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>选择</th>
+                                                        <th>菜单名称</th>
+                                                        <th>链接url</th>
+                                                        <th>路径</th>
+                                                        <th>菜单等级</th>
+                                                        <th>菜单说明</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr v-for="c in tableData_menu">
+                                                        <td>
+                                                            <input :id="c.id" v-model="menuIds" type="checkbox" :value="c.id">
+                                                        </td>
+                                                        <td><label :for="c.id">{{c.name}}</label></td>
+                                                        <td><label :for="c.id">{{c.linkUrl}}</label></td>
+                                                        <td><label :for="c.id">{{c.path}}</label></td>
+                                                        <td><label :for="c.id">{{c.level}}</label></td>
+                                                        <td><label :for="c.id">{{c.description}}</label></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </el-tab-pane>
                                     </el-tabs>
                                 </template>
                                 <div slot="footer" class="dialog-footer">
@@ -202,6 +230,34 @@
                                                 </table>
                                             </div>
                                         </el-tab-pane>
+                                        <el-tab-pane label="菜单信息" name="third">
+                                            <div class="checkScrol">
+                                                <table class="datatable">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>选择</th>
+                                                        <th>菜单名称</th>
+                                                        <th>链接url</th>
+                                                        <th>路径</th>
+                                                        <th>菜单等级</th>
+                                                        <th>菜单说明</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr v-for="c in tableData_menu">
+                                                        <td>
+                                                            <input :id="c.id" v-model="menuIds" type="checkbox" :value="c.id">
+                                                        </td>
+                                                        <td><label :for="c.id">{{c.name}}</label></td>
+                                                        <td><label :for="c.id">{{c.linkUrl}}</label></td>
+                                                        <td><label :for="c.id">{{c.path}}</label></td>
+                                                        <td><label :for="c.id">{{c.level}}</label></td>
+                                                        <td><label :for="c.id">{{c.description}}</label></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </el-tab-pane>
                                     </el-tabs>
                                 </template>
                                 <div slot="footer" class="dialog-footer">
@@ -226,10 +282,12 @@
                 total:0,//总记录数
                 queryString:null//查询条件
             },
-            dataList: [],//当前页要展示的分页列表数据
-            formData: {},//表单数据
+            dataList:[],//当前页要展示的分页列表数据
+            formData:{},//表单数据
             tableData:[],//新增和编辑表单中对应的权限列表数据
+            tableData_menu: [], // 新增修改的菜单数据
             permissionIds:[],//新增和编辑表单中权限对应的复选框，基于双向绑定可以进行回显和数据提交
+            menuIds:[], // 新增修改菜单的id数据
             dialogFormVisible: false,//增加表单是否可见
             dialogFormVisible4Edit:false,//编辑表单是否可见
             rules: {//校验规则
@@ -259,7 +317,7 @@
                 this.$refs['dataEditForm'].validate((valid) => {
                     if(valid){
                         //表单校验通过，可以提交数据
-                        axios.put("/role/edit.do?permissionIds="+this.permissionIds,this.formData).then((res) => {
+                        axios.put("/FakeHouse-backer/role/edit.do?permissionIds="+this.permissionIds+"&menuIds="+this.menuIds,this.formData).then((res) => {
                             if(res.data.flag){
                                 //弹出成功提示信息
                                 this.$message({
@@ -298,7 +356,7 @@
                 this.$refs['dataAddForm'].validate((valid) => {
                     if(valid){
                         //表单校验通过，发生ajax请求，将录入的数据提交到后台进行处理
-                        axios.post("/role/add.do?permissionIds="+this.permissionIds,this.formData).then((res) => {
+                        axios.post("/FakeHouse-backer/role/add.do?permissionIds="+this.permissionIds+"&menuIds="+this.menuIds,this.formData).then((res) => {
                             if(res.data.flag){//执行成功
                                 //关闭新增窗口
                                 this.dialogFormVisible = false;
@@ -330,7 +388,7 @@
                     pageSize:this.pagination.pageSize,
                     queryString: this.pagination.queryString
                 };
-                axios.post("/role/findPage.do",param).then((res)=>{
+                axios.post("/FakeHouse-backer/role/findPage.do",param).then((res)=>{
                     if(res.data.flag) {
 
                         //解析Controller响应回的数据，为模型数据赋值
@@ -354,7 +412,7 @@
                     pageSize:this.pagination.pageSize,
                     queryString: this.pagination.queryString
                 };
-                axios.post("/role/findPage.do",param).then((res)=>{
+                axios.post("/FakeHouse-backer/role/findPage.do",param).then((res)=>{
 
                     if (res.data.flag)
                     {
@@ -378,6 +436,7 @@
                 // 默认切换到第一个标签页
                 this.activeName = "first";
                 this.permissionIds = [];
+                this.menuIds = [];
             },
             // 弹出添加窗口
             handleCreate() {
@@ -385,6 +444,7 @@
                 this.resetForm();
                 // 查询数据
                 this.findPermissionList();
+                this.findMenuList();
                 //弹出新增窗口
                 this.dialogFormVisible = true;
             },
@@ -392,29 +452,33 @@
             handleUpdate(row) {
                 this.resetForm();
                 //回显数据，发送ajax请求根据ID查询当前检查项数据
-                axios.get("/role/findById.do?id=" + row.id).then((res) => {
+                axios.get("/FakeHouse-backer/role/findById.do?id=" + row.id).then((res) => {
                     if (res.data.flag) {
                         //进行回显，基于VUE的数据绑定实现
                         // res.data获取到返回的json对象的数据
                         this.formData = res.data.data;
 
-                        // 查询ids的数据
+                        // 查询ids的数据 包括权限和菜单的id
                         this.permissionIds = [];
-                        axios.get("/role/getPermissionIds.do?id="+row.id).then((res)=> {
+                        this.menuIds = [];
+                        axios.get("/FakeHouse-backer/role/getLinkIds.do?id="+row.id).then((res)=> {
                             if (res.data.flag) {
                                 //进行回显，基于VUE的数据绑定实现
-                                this.permissionIds = res.data.data;
-
-                                // 此处显示编辑窗口,不然数据会到得有点晚
-                                //弹出编辑窗口
-                                this.dialogFormVisible4Edit = true;
+                                this.permissionIds = res.data.data.permissionIds;
+                                this.menuIds = res.data.data.menuIds;
                             } else {
                                 //查询失败，弹出提示
                                 this.$message.error(res.data.message);
                             }
                         }); // 不需要进行.catch编写,该反方的权限与findById的权限是一样的,如果外面的请求都失败了,则不会执行里面的语句
 
+
                         this.findPermissionList();
+                        this.findMenuList();
+
+                        // 此处显示编辑窗口,不然数据会到得有点晚
+                        //弹出编辑窗口
+                        this.dialogFormVisible4Edit = true;
 
                     } else {
                         //查询失败，弹出提示
@@ -446,7 +510,7 @@
                     type:'warning'
                 }).then(()=>{
                     //用户点击确定按钮，发送ajax请求，将检查项ID提交到Controller进行处理
-                    axios.delete("/role/delete.do?id=" + row.id).then((res) => {
+                    axios.delete("/FakeHouse-backer/role/delete.do?id=" + row.id).then((res) => {
                         if(res.data.flag){
                             //执行成功
                             //弹出成功提示信息
@@ -475,7 +539,7 @@
             },
             findPermissionList() {
                 // 查询出permission的相关数据,否则无法进行添加
-                axios.get("/permission/findAll.do").then((res)=>
+                axios.get("/FakeHouse-backer/permission/findAll.do").then((res)=>
                 {
                     if (res.data.flag)
                     {
@@ -488,6 +552,18 @@
                 }).catch((bres)=>{
                     // 权限不足,或者是网络问题
                     this.showMessage(bres);
+                });
+            },
+            findMenuList(){
+                // 查询菜单数据的结合
+                axios.get("/FakeHouse-backer/menu/findAll.do").then((res)=>{
+                    if (res.data.flag) {
+                        // 查询数据成功
+                        this.tableData_menu = res.data.data;
+                    }else{
+                        this.$message.error(res.data.message)
+                    }
+
                 });
             }
         }

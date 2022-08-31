@@ -12,7 +12,6 @@ import com.yiran.pojo.Permission;
 import com.yiran.pojo.Role;
 import com.yiran.pojo.User;
 import com.yiran.pojo.UserExample;
-import com.yiran.service.MenuService;
 import com.yiran.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -25,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-@Service(interfaceClass = MenuService.class)
+@Service(interfaceClass = UserService.class)
 @Transactional
 public class UserServiceImpl implements UserService {
 

@@ -1,5 +1,6 @@
 package com.yiran.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.yiran.constant.MessageConstant;
 import com.yiran.entity.PageResult;
 import com.yiran.entity.QueryPageBean;
@@ -19,7 +20,7 @@ import java.util.List;
 public class UserController {
 
 
-    @Autowired
+    @Reference
     private UserService userService;
 
 

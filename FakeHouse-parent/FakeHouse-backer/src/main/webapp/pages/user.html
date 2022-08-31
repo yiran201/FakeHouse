@@ -4,9 +4,9 @@
     <!-- 页面meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>传智健康</title>
-    <meta name="description" content="传智健康">
-    <meta name="keywords" content="传智健康">
+    <title>OauthConsole</title>
+    <meta name="description" content="OauthConsole">
+    <meta name="keywords" content="OauthConsole">
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <!-- 引入样式 -->
     <link rel="stylesheet" href="../plugins/elementui/index.css">
@@ -45,7 +45,7 @@
 <body class="hold-transition">
 <div id="app">
     <div class="content-header">
-        <h1>权限管理<small>用户管理</small></h1>
+        <h1>用户权限管理<small>用户管理</small></h1>
         <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb">
             <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
             <el-breadcrumb-item>权限管理</el-breadcrumb-item>
@@ -66,10 +66,7 @@
 
                 <el-table-column prop="username" label="用户名" align="center"></el-table-column>
 
-                <el-table-column prop="gender" label="性别" align="center"></el-table-column>
-
-
-                <el-table-column prop="birthday" label="出生日期" align="center"></el-table-column>
+                <el-table-column prop="email" label="邮箱" align="center"></el-table-column>
 
                 <el-table-column prop="telephone" label="电话号码" align="center"></el-table-column>
 
@@ -111,21 +108,20 @@
                                                 <el-input v-model="formData.username"/>
                                             </el-form-item>
                                         </el-col>
+                                    </el-row>
 
+                                    <el-row>
                                         <el-col :span="12">
-                                            <el-form-item label="性别" prop="gender">
-                                                <el-select v-model="formData.gender">
-                                                    <el-option label="男" value="男"></el-option>
-                                                    <el-option label="女" value="女"></el-option>
-                                                </el-select>
+                                            <el-form-item label="密码" prop="password">
+                                                <el-input v-model="formData.password"/>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
 
                                     <el-row>
                                         <el-col :span="12">
-                                            <el-form-item label="出生日期" prop="birthday">
-                                                <el-input v-model="formData.birthday"   placeholder="格式要求: 2022-05-02"/>
+                                            <el-form-item label="邮箱" prop="email">
+                                                <el-input v-model="formData.email"/>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
@@ -148,7 +144,7 @@
                                 </el-form>
                             </el-tab-pane>
 
-                            <el-tab-pane label="权限信息" name="second">
+                            <el-tab-pane label="角色信息" name="second">
                                 <div class="checkScrol">
                                     <table class="datatable">
                                         <thead>
@@ -195,20 +191,20 @@
                                                 <el-input v-model="formData.username" :disabled="true"/>
                                             </el-form-item>
                                         </el-col>
+                                    </el-row>
+
+                                    <el-row>
                                         <el-col :span="12">
-                                            <el-form-item label="性别" prop="gender">
-                                                <el-select v-model="formData.gender">
-                                                    <el-option label="男" value="男"></el-option>
-                                                    <el-option label="女" value="女"></el-option>
-                                                </el-select>
+                                            <el-form-item label="密码" prop="password">
+                                                <el-input v-model="formData.password"/>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
 
                                     <el-row>
                                         <el-col :span="12">
-                                            <el-form-item label="出生日期">
-                                                <el-input v-model="formData.birthday"/>
+                                            <el-form-item label="email" prop="email">
+                                                <el-input v-model="formData.email" />
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
@@ -281,12 +277,13 @@
             dataList: [],//当前页要展示的分页列表数据
             formData: {},//表单数据
             tableData:[],//新增和编辑表单中对应的权限列表数据
-            roleId:[],//新增和编辑表单中权限对应的复选框，基于双向绑定可以进行回显和数据提交;此处特殊情况需要校验长度为1
+            roleId:[],//新增和编辑表单中权限对应的复选框，基于双向绑定可以进行回显和数据提交;
             dialogFormVisible: false,//增加表单是否可见
             dialogFormVisible4Edit:false,//编辑表单是否可见
             rules: {//校验规则
                 username: [{ required: true, message: '用户名为必填项', trigger: 'blur' }],
-                gender: [{ required: true, message: '性别为必填项', trigger: 'blur' }],
+                password: [{ required: true, message: '密码为必填项', trigger: 'blur' }],
+                email: [{ required: true, message: '邮箱为必填项', trigger: 'blur' }],
                 telephone: [{ required: true, message: '电话为必填项', trigger: 'blur' }]
             }
         },
@@ -317,14 +314,9 @@
                             this.$message.error("手机号格式错误,请进行检查!");
                             return false;
                         }
-                        if (!this.checkRoleId()) {
-                            this.$message.error("一个用户只能对应一个角色,请重新选择!");
-                            this.resetForm();
-                            return false;
-                        }
 
                         //表单校验通过，可以提交数据
-                        axios.put("/user/edit.do?roleId="+this.roleId,this.formData).then((res) => {
+                        axios.put("/FakeHouse-backer/user/edit.do?roleId="+this.roleId,this.formData).then((res) => {
                             if(res.data.flag){
                                 //弹出成功提示信息
                                 this.$message({
@@ -369,13 +361,9 @@
                             this.$message.error("手机号格式错误,请进行检查!");
                             return false;
                         }
-                        if (!this.checkRoleId()) {
-                            this.$message.error("一个用户只能对应一个角色,请重新选择!");
-                            return false;
-                        }
 
                         //表单校验通过，发生ajax请求，将录入的数据提交到后台进行处理
-                        axios.post("/user/add.do?roleId="+this.roleId,this.formData).then((res) => {
+                        axios.post("/FakeHouse-backer/user/add.do?roleId="+this.roleId,this.formData).then((res) => {
                             if(res.data.flag){//执行成功
                                 //关闭新增窗口
                                 this.dialogFormVisible = false;
@@ -407,7 +395,7 @@
                     pageSize:this.pagination.pageSize,
                     queryString: this.pagination.queryString
                 };
-                axios.post("/user/findPage.do",param).then((res)=>{
+                axios.post("/FakeHouse-backer/user/findPage.do",param).then((res)=>{
                     if(res.data.flag) {
 
                         //解析Controller响应回的数据，为模型数据赋值
@@ -431,7 +419,7 @@
                     pageSize:this.pagination.pageSize,
                     queryString: this.pagination.queryString
                 };
-                axios.post("/user/findPage.do",param).then((res)=>{
+                axios.post("/FakeHouse-backer/user/findPage.do",param).then((res)=>{
 
                     if (res.data.flag)
                     {
@@ -469,7 +457,7 @@
             handleUpdate(row) {
                 this.resetForm();
                 //回显数据，发送ajax请求根据ID查询当前检查项数据
-                axios.get("/user/findById.do?id=" + row.id).then((res) => {
+                axios.get("/FakeHouse-backer/user/findById.do?id=" + row.id).then((res) => {
                     if (res.data.flag) {
                         //进行回显，基于VUE的数据绑定实现
                         // res.data获取到返回的json对象的数据
@@ -477,7 +465,7 @@
 
                         // 查询ids的数据
                         this.roleId = [];
-                        axios.get("/user/getRoleId.do?id="+row.id).then((res)=> {
+                        axios.get("/FakeHouse-backer/user/getRoleId.do?id="+row.id).then((res)=> {
                             if (res.data.flag) {
                                 //进行回显，基于VUE的数据绑定实现
                                 this.roleId = res.data.data;
@@ -521,7 +509,7 @@
                     type:'warning'
                 }).then(()=>{
                     //用户点击确定按钮，发送ajax请求，将检查项ID提交到Controller进行处理
-                    axios.delete("/user/delete.do?id=" + row.id).then((res) => {
+                    axios.delete("/FakeHouse-backer/user/delete.do?id=" + row.id).then((res) => {
                         if(res.data.flag){
                             //执行成功
                             //弹出成功提示信息
@@ -550,7 +538,7 @@
             },
             findRoleList() {
                 // 查询出permission的相关数据,否则无法进行添加
-                axios.get("/role/findAll.do").then((res)=>
+                axios.get("/FakeHouse-backer/role/findAll.do").then((res)=>
                 {
                     if (res.data.flag)
                     {
@@ -564,14 +552,6 @@
                     // 权限不足,或者是网络问题
                     this.showMessage(bres);
                 });
-            },
-            checkRoleId(){
-                // 检查用户对应的角色id集合长度是否1
-                if(this.roleId.length == 1){
-                    return true;
-                }else{
-                    return false;
-                }
             }
         }
     })

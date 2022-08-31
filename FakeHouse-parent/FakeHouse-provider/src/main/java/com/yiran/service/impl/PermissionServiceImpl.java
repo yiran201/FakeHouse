@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service(interfaceClass = MenuService.class)
+@Service(interfaceClass = PermissionService.class)
 @Transactional
 public class PermissionServiceImpl implements PermissionService {
 

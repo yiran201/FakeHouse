@@ -23,11 +23,12 @@
     <security:http security="none" pattern="/*.ico" />
     <security:http security="none" pattern="/pic/**" />
     <security:http security="none" pattern="/img/**" />
+    <security:http security="none" pattern="/doc/**" />
+    <security:http security="none" pattern="/fonts/**" />
+    <security:http security="none" pattern="/images/**" />
     <security:http security="none" pattern="/plugins/**" />
     <security:http security="none" pattern="/template/**" />
-    <security:http security="none" pattern="/video/**" />
     <security:http security="none" pattern="/login.html"/>
-
 
 
     <!--

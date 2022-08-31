@@ -4,9 +4,9 @@
     <!-- 页面meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>传智健康</title>
-    <meta name="description" content="传智健康">
-    <meta name="keywords" content="传智健康">
+    <title>FakeHouse-backer</title>
+    <meta name="description" content="FakeHouse-backer">
+    <meta name="keywords" content="FakeHouse-backer">
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <!-- 引入样式 -->
     <link rel="stylesheet" href="../plugins/elementui/index.css">
@@ -173,7 +173,7 @@
                 this.$refs['dataEditForm'].validate((valid) => {
                     if(valid){
                         //表单校验通过，可以提交数据
-                        axios.put("/permission/edit.do",this.formData).then((res) => {
+                        axios.put("/FakeHouse-backer/permission/edit.do",this.formData).then((res) => {
                             if(res.data.flag){
                                 //弹出成功提示信息
                                 this.$message({
@@ -212,7 +212,7 @@
                 this.$refs['dataAddForm'].validate((valid) => {
                     if(valid){
                         //表单校验通过，发生ajax请求，将录入的数据提交到后台进行处理
-                        axios.post("/permission/add.do",this.formData).then((res) => {
+                        axios.post("/FakeHouse-backer/permission/add.do",this.formData).then((res) => {
                             if(res.data.flag){//执行成功
                                 //关闭新增窗口
                                 this.dialogFormVisible = false;
@@ -244,7 +244,7 @@
                     pageSize:this.pagination.pageSize,
                     queryString: this.pagination.queryString
                 };
-                axios.post("/permission/findPage.do",param).then((res)=>{
+                axios.post("/FakeHouse-backer/permission/findPage.do",param).then((res)=>{
                     if(res.data.flag) {
 
                         //解析Controller响应回的数据，为模型数据赋值
@@ -269,7 +269,7 @@
                     pageSize:this.pagination.pageSize,
                     queryString: this.pagination.queryString
                 };
-                axios.post("/permission/findPage.do",param).then((res)=>{
+                axios.post("/FakeHouse-backer/permission/findPage.do",param).then((res)=>{
 
                     if (res.data.flag)
                     {
@@ -301,7 +301,7 @@
             // 弹出编辑窗口
             handleUpdate(row) {
                 //回显数据，发送ajax请求根据ID查询当前检查项数据
-                axios.get("/permission/findById.do?id=" + row.id).then((res) => {
+                axios.get("/FakeHouse-backer/permission/findById.do?id=" + row.id).then((res) => {
                     if (res.data.flag) {
                         //进行回显，基于VUE的数据绑定实现
                         // res.data获取到返回的json对象的数据
@@ -333,7 +333,7 @@
                     type:'warning'
                 }).then(()=>{
                     //用户点击确定按钮，发送ajax请求，将检查项ID提交到Controller进行处理
-                    axios.delete("/permission/delete.do?id=" + row.id).then((res) => {
+                    axios.delete("/FakeHouse-backer/permission/delete.do?id=" + row.id).then((res) => {
                         if(res.data.flag){
                             //执行成功
                             //弹出成功提示信息

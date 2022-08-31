@@ -1,6 +1,7 @@
 package com.yiran.controller;
 
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.yiran.constant.MessageConstant;
 import com.yiran.entity.PageResult;
 import com.yiran.entity.QueryPageBean;
@@ -23,7 +24,7 @@ import java.util.Map;
 public class MenuController {
 
 
-    @Autowired
+    @Reference
     private MenuService menuService;
 
 

@@ -1,5 +1,6 @@
 package com.yiran.auth;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.yiran.pojo.Permission;
 import com.yiran.pojo.Role;
 import com.yiran.pojo.User;
@@ -20,7 +21,7 @@ import java.util.Set;
 @Component
 public class SpringSecurityUserService implements UserDetailsService {
 
-    @Autowired
+    @Reference
     private UserService userService;
 
 
