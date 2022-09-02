@@ -9,6 +9,7 @@ public class Recode implements Serializable {
 
     private String id;
 
+    // type = 0 1 2, 如果0代表未定义, 1代表查看游戏, 2代表下载记录
     private Integer type;
 
     private String remark;

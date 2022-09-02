@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yiran.dao.GameMapper" >
+
   <resultMap id="BaseResultMap" type="com.yiran.pojo.Game" >
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
@@ -15,32 +16,38 @@
     <result column="detail_id" property="detailId" jdbcType="VARCHAR" />
     <result column="decoder_id" property="decoderId" jdbcType="INTEGER" />
   </resultMap>
+
+
   <sql id="Base_Column_List" >
-    id, name, chsName, uploadTime, capacity, size, originUrl, downloadUrl, active, insertTime, 
+    id, name, chsName, uploadTime, capacity, size, originUrl, downloadUrl, active, insertTime,
     detail_id, decoder_id
   </sql>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from t_game
     where id = #{id,jdbcType=VARCHAR}
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from t_game
     where id = #{id,jdbcType=VARCHAR}
   </delete>
+
   <insert id="insert" parameterType="com.yiran.pojo.Game" >
-    insert into t_game (id, name, chsName, 
-      uploadTime, capacity, size, 
-      originUrl, downloadUrl, active, 
+    insert into t_game (id, name, chsName,
+      uploadTime, capacity, size,
+      originUrl, downloadUrl, active,
       insertTime, detail_id, decoder_id
       )
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{chsName,jdbcType=VARCHAR}, 
-      #{uploadTime,jdbcType=TIMESTAMP}, #{capacity,jdbcType=VARCHAR}, #{size,jdbcType=BIGINT}, 
-      #{originUrl,jdbcType=VARCHAR}, #{downloadUrl,jdbcType=VARCHAR}, #{active,jdbcType=BIT}, 
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{chsName,jdbcType=VARCHAR},
+      #{uploadTime,jdbcType=TIMESTAMP}, #{capacity,jdbcType=VARCHAR}, #{size,jdbcType=BIGINT},
+      #{originUrl,jdbcType=VARCHAR}, #{downloadUrl,jdbcType=VARCHAR}, #{active,jdbcType=BIT},
       #{insertTime,jdbcType=TIMESTAMP}, #{detailId,jdbcType=VARCHAR}, #{decoderId,jdbcType=INTEGER}
       )
   </insert>
+
   <insert id="insertSelective" parameterType="com.yiran.pojo.Game" >
     insert into t_game
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -120,6 +127,7 @@
       </if>
     </trim>
   </insert>
+
   <update id="updateByPrimaryKeySelective" parameterType="com.yiran.pojo.Game" >
     update t_game
     <set >
@@ -159,6 +167,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
   <update id="updateByPrimaryKey" parameterType="com.yiran.pojo.Game" >
     update t_game
     set name = #{name,jdbcType=VARCHAR},
@@ -174,4 +183,17 @@
       decoder_id = #{decoderId,jdbcType=INTEGER}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+    <!--  -->
+    <select id="findAll" resultMap="BaseResultMap">
+        select * from t_game
+    </select>
+
+    <!--  通过游戏名称进行查询  查询结果携带Count数据  -->
+    <select id="findByName" parameterType="string" resultMap="BaseResultMap">
+        select * from t_game where name like #{value} or chsName like #{value}
+     </select>
+
+
+
 </mapper>

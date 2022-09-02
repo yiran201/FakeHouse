@@ -78,4 +78,8 @@ public class MessageConstant {
     public static final String DELETE_MENU_FAIL = "删除菜单失败";
 
 
+    // 游戏管理
+    public static final String QUERY_GAME_SUCCESS = "查询游戏信息成功";
+    public static final String QUERY_GAME_FAIL = "查询游戏信息失败";
+
 }

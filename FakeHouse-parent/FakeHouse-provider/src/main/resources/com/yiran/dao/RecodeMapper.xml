@@ -114,4 +114,16 @@
       game_id = #{gameId,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+
+    <!--  通过游戏id查询游戏的查看数  -->
+    <select id="findWatchCountByGameId" parameterType="string" resultType="int">
+        select count(*) from t_recode where game_id = #{value} and type = 1
+    </select>
+
+    <!--  通过游戏id查询游戏的查看数  -->
+    <select id="findDownloadCountByGameId" parameterType="string" resultType="int">
+        select count(*) from t_recode where game_id = #{value} and type = 2
+    </select>
+
 </mapper>
