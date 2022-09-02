@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yiran.dao.RecodeMapper" >
+  <resultMap id="BaseResultMap" type="com.yiran.pojo.Recode" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="insert_time" property="insertTime" jdbcType="DATE" />
+    <result column="visible" property="visible" jdbcType="BIT" />
+    <result column="member_id" property="memberId" jdbcType="VARCHAR" />
+    <result column="game_id" property="gameId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, type, remark, insert_time, visible, member_id, game_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_recode
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_recode
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.yiran.pojo.Recode" >
+    insert into t_recode (id, type, remark, 
+      insert_time, visible, member_id, 
+      game_id)
+    values (#{id,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{insertTime,jdbcType=DATE}, #{visible,jdbcType=BIT}, #{memberId,jdbcType=VARCHAR}, 
+      #{gameId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yiran.pojo.Recode" >
+    insert into t_recode
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="insertTime != null" >
+        insert_time,
+      </if>
+      <if test="visible != null" >
+        visible,
+      </if>
+      <if test="memberId != null" >
+        member_id,
+      </if>
+      <if test="gameId != null" >
+        game_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="insertTime != null" >
+        #{insertTime,jdbcType=DATE},
+      </if>
+      <if test="visible != null" >
+        #{visible,jdbcType=BIT},
+      </if>
+      <if test="memberId != null" >
+        #{memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="gameId != null" >
+        #{gameId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yiran.pojo.Recode" >
+    update t_recode
+    <set >
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="insertTime != null" >
+        insert_time = #{insertTime,jdbcType=DATE},
+      </if>
+      <if test="visible != null" >
+        visible = #{visible,jdbcType=BIT},
+      </if>
+      <if test="memberId != null" >
+        member_id = #{memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="gameId != null" >
+        game_id = #{gameId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yiran.pojo.Recode" >
+    update t_recode
+    set type = #{type,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      insert_time = #{insertTime,jdbcType=DATE},
+      visible = #{visible,jdbcType=BIT},
+      member_id = #{memberId,jdbcType=VARCHAR},
+      game_id = #{gameId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

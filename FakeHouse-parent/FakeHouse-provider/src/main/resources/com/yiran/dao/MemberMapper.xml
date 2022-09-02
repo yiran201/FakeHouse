@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yiran.dao.MemberMapper" >
+  <resultMap id="BaseResultMap" type="com.yiran.pojo.Member" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="is_customer" property="isCustomer" jdbcType="BIT" />
+    <result column="download_count" property="downloadCount" jdbcType="INTEGER" />
+    <result column="is_vip" property="isVip" jdbcType="BIT" />
+    <result column="register_time" property="registerTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, username, password, phone, email, is_customer, download_count, is_vip, register_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_member
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_member
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.yiran.pojo.Member" >
+    insert into t_member (id, username, password, 
+      phone, email, is_customer, 
+      download_count, is_vip, register_time
+      )
+    values (#{id,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{isCustomer,jdbcType=BIT}, 
+      #{downloadCount,jdbcType=INTEGER}, #{isVip,jdbcType=BIT}, #{registerTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yiran.pojo.Member" >
+    insert into t_member
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="isCustomer != null" >
+        is_customer,
+      </if>
+      <if test="downloadCount != null" >
+        download_count,
+      </if>
+      <if test="isVip != null" >
+        is_vip,
+      </if>
+      <if test="registerTime != null" >
+        register_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="isCustomer != null" >
+        #{isCustomer,jdbcType=BIT},
+      </if>
+      <if test="downloadCount != null" >
+        #{downloadCount,jdbcType=INTEGER},
+      </if>
+      <if test="isVip != null" >
+        #{isVip,jdbcType=BIT},
+      </if>
+      <if test="registerTime != null" >
+        #{registerTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yiran.pojo.Member" >
+    update t_member
+    <set >
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="isCustomer != null" >
+        is_customer = #{isCustomer,jdbcType=BIT},
+      </if>
+      <if test="downloadCount != null" >
+        download_count = #{downloadCount,jdbcType=INTEGER},
+      </if>
+      <if test="isVip != null" >
+        is_vip = #{isVip,jdbcType=BIT},
+      </if>
+      <if test="registerTime != null" >
+        register_time = #{registerTime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yiran.pojo.Member" >
+    update t_member
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      is_customer = #{isCustomer,jdbcType=BIT},
+      download_count = #{downloadCount,jdbcType=INTEGER},
+      is_vip = #{isVip,jdbcType=BIT},
+      register_time = #{registerTime,jdbcType=DATE}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

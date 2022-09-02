@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yiran.dao.DetailGameMapper" >
+  <resultMap id="BaseResultMap" type="com.yiran.pojo.DetailGame" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="introduction" property="introduction" jdbcType="VARCHAR" />
+    <result column="presentTime" property="presentTime" jdbcType="VARCHAR" />
+    <result column="development" property="development" jdbcType="VARCHAR" />
+    <result column="deliver" property="deliver" jdbcType="VARCHAR" />
+    <result column="platform" property="platform" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="VARCHAR" />
+    <result column="backgroundLanguage" property="backgroundLanguage" jdbcType="VARCHAR" />
+    <result column="voiceLanguage" property="voiceLanguage" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, introduction, presentTime, development, deliver, platform, version, backgroundLanguage, 
+    voiceLanguage
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_game_detail
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_game_detail
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.yiran.pojo.DetailGame" >
+    insert into t_game_detail (id, introduction, presentTime, 
+      development, deliver, platform, 
+      version, backgroundLanguage, voiceLanguage
+      )
+    values (#{id,jdbcType=VARCHAR}, #{introduction,jdbcType=VARCHAR}, #{presentTime,jdbcType=VARCHAR}, 
+      #{development,jdbcType=VARCHAR}, #{deliver,jdbcType=VARCHAR}, #{platform,jdbcType=VARCHAR}, 
+      #{version,jdbcType=VARCHAR}, #{backgroundLanguage,jdbcType=VARCHAR}, #{voiceLanguage,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yiran.pojo.DetailGame" >
+    insert into t_game_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="introduction != null" >
+        introduction,
+      </if>
+      <if test="presentTime != null" >
+        presentTime,
+      </if>
+      <if test="development != null" >
+        development,
+      </if>
+      <if test="deliver != null" >
+        deliver,
+      </if>
+      <if test="platform != null" >
+        platform,
+      </if>
+      <if test="version != null" >
+        version,
+      </if>
+      <if test="backgroundLanguage != null" >
+        backgroundLanguage,
+      </if>
+      <if test="voiceLanguage != null" >
+        voiceLanguage,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="introduction != null" >
+        #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="presentTime != null" >
+        #{presentTime,jdbcType=VARCHAR},
+      </if>
+      <if test="development != null" >
+        #{development,jdbcType=VARCHAR},
+      </if>
+      <if test="deliver != null" >
+        #{deliver,jdbcType=VARCHAR},
+      </if>
+      <if test="platform != null" >
+        #{platform,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="backgroundLanguage != null" >
+        #{backgroundLanguage,jdbcType=VARCHAR},
+      </if>
+      <if test="voiceLanguage != null" >
+        #{voiceLanguage,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yiran.pojo.DetailGame" >
+    update t_game_detail
+    <set >
+      <if test="introduction != null" >
+        introduction = #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="presentTime != null" >
+        presentTime = #{presentTime,jdbcType=VARCHAR},
+      </if>
+      <if test="development != null" >
+        development = #{development,jdbcType=VARCHAR},
+      </if>
+      <if test="deliver != null" >
+        deliver = #{deliver,jdbcType=VARCHAR},
+      </if>
+      <if test="platform != null" >
+        platform = #{platform,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        version = #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="backgroundLanguage != null" >
+        backgroundLanguage = #{backgroundLanguage,jdbcType=VARCHAR},
+      </if>
+      <if test="voiceLanguage != null" >
+        voiceLanguage = #{voiceLanguage,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yiran.pojo.DetailGame" >
+    update t_game_detail
+    set introduction = #{introduction,jdbcType=VARCHAR},
+      presentTime = #{presentTime,jdbcType=VARCHAR},
+      development = #{development,jdbcType=VARCHAR},
+      deliver = #{deliver,jdbcType=VARCHAR},
+      platform = #{platform,jdbcType=VARCHAR},
+      version = #{version,jdbcType=VARCHAR},
+      backgroundLanguage = #{backgroundLanguage,jdbcType=VARCHAR},
+      voiceLanguage = #{voiceLanguage,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

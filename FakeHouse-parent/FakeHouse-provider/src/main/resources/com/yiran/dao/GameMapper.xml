@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yiran.dao.GameMapper" >
+  <resultMap id="BaseResultMap" type="com.yiran.pojo.Game" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="chsName" property="chsName" jdbcType="VARCHAR" />
+    <result column="uploadTime" property="uploadTime" jdbcType="TIMESTAMP" />
+    <result column="capacity" property="capacity" jdbcType="VARCHAR" />
+    <result column="size" property="size" jdbcType="BIGINT" />
+    <result column="originUrl" property="originUrl" jdbcType="VARCHAR" />
+    <result column="downloadUrl" property="downloadUrl" jdbcType="VARCHAR" />
+    <result column="active" property="active" jdbcType="BIT" />
+    <result column="insertTime" property="insertTime" jdbcType="TIMESTAMP" />
+    <result column="detail_id" property="detailId" jdbcType="VARCHAR" />
+    <result column="decoder_id" property="decoderId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, chsName, uploadTime, capacity, size, originUrl, downloadUrl, active, insertTime, 
+    detail_id, decoder_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_game
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_game
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.yiran.pojo.Game" >
+    insert into t_game (id, name, chsName, 
+      uploadTime, capacity, size, 
+      originUrl, downloadUrl, active, 
+      insertTime, detail_id, decoder_id
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{chsName,jdbcType=VARCHAR}, 
+      #{uploadTime,jdbcType=TIMESTAMP}, #{capacity,jdbcType=VARCHAR}, #{size,jdbcType=BIGINT}, 
+      #{originUrl,jdbcType=VARCHAR}, #{downloadUrl,jdbcType=VARCHAR}, #{active,jdbcType=BIT}, 
+      #{insertTime,jdbcType=TIMESTAMP}, #{detailId,jdbcType=VARCHAR}, #{decoderId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yiran.pojo.Game" >
+    insert into t_game
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="chsName != null" >
+        chsName,
+      </if>
+      <if test="uploadTime != null" >
+        uploadTime,
+      </if>
+      <if test="capacity != null" >
+        capacity,
+      </if>
+      <if test="size != null" >
+        size,
+      </if>
+      <if test="originUrl != null" >
+        originUrl,
+      </if>
+      <if test="downloadUrl != null" >
+        downloadUrl,
+      </if>
+      <if test="active != null" >
+        active,
+      </if>
+      <if test="insertTime != null" >
+        insertTime,
+      </if>
+      <if test="detailId != null" >
+        detail_id,
+      </if>
+      <if test="decoderId != null" >
+        decoder_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="chsName != null" >
+        #{chsName,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadTime != null" >
+        #{uploadTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="capacity != null" >
+        #{capacity,jdbcType=VARCHAR},
+      </if>
+      <if test="size != null" >
+        #{size,jdbcType=BIGINT},
+      </if>
+      <if test="originUrl != null" >
+        #{originUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadUrl != null" >
+        #{downloadUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="active != null" >
+        #{active,jdbcType=BIT},
+      </if>
+      <if test="insertTime != null" >
+        #{insertTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="detailId != null" >
+        #{detailId,jdbcType=VARCHAR},
+      </if>
+      <if test="decoderId != null" >
+        #{decoderId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yiran.pojo.Game" >
+    update t_game
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="chsName != null" >
+        chsName = #{chsName,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadTime != null" >
+        uploadTime = #{uploadTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="capacity != null" >
+        capacity = #{capacity,jdbcType=VARCHAR},
+      </if>
+      <if test="size != null" >
+        size = #{size,jdbcType=BIGINT},
+      </if>
+      <if test="originUrl != null" >
+        originUrl = #{originUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadUrl != null" >
+        downloadUrl = #{downloadUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="active != null" >
+        active = #{active,jdbcType=BIT},
+      </if>
+      <if test="insertTime != null" >
+        insertTime = #{insertTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="detailId != null" >
+        detail_id = #{detailId,jdbcType=VARCHAR},
+      </if>
+      <if test="decoderId != null" >
+        decoder_id = #{decoderId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yiran.pojo.Game" >
+    update t_game
+    set name = #{name,jdbcType=VARCHAR},
+      chsName = #{chsName,jdbcType=VARCHAR},
+      uploadTime = #{uploadTime,jdbcType=TIMESTAMP},
+      capacity = #{capacity,jdbcType=VARCHAR},
+      size = #{size,jdbcType=BIGINT},
+      originUrl = #{originUrl,jdbcType=VARCHAR},
+      downloadUrl = #{downloadUrl,jdbcType=VARCHAR},
+      active = #{active,jdbcType=BIT},
+      insertTime = #{insertTime,jdbcType=TIMESTAMP},
+      detail_id = #{detailId,jdbcType=VARCHAR},
+      decoder_id = #{decoderId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
