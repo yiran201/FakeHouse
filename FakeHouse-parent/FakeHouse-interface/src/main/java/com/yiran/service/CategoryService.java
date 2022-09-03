@@ -1,21 +1,11 @@
-package com.yiran.dao;
+package com.yiran.service;
 
 import com.yiran.pojo.Category;
 
 import java.util.List;
 
-public interface CategoryMapper {
-    int deleteByPrimaryKey(Integer id);
+public interface CategoryService {
 
-    int insert(Category record);
-
-    int insertSelective(Category record);
-
-    Category selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Category record);
-
-    int updateByPrimaryKey(Category record);
 
     /**
      * 根据游戏id查询分类信息

@@ -68,4 +68,44 @@
       description = #{description,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+    <!--  通过decoder的名称查询decoder的id  -->
+    <select id="findDecoderIdByName" parameterType="string" resultType="Integer">
+        select d.id
+        from t_decoder d
+        where d.name = #{value}
+    </select>
+
+
+    <!--  插入数据并返回主键 -->
+    <insert id="insertAndGetKey" parameterType="com.yiran.pojo.Decoder">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into t_decoder
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="name != null" >
+                name,
+            </if>
+            <if test="description != null" >
+                description,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="name != null" >
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null" >
+                #{description,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
 </mapper>

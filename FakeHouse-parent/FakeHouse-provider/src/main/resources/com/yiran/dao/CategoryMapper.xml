@@ -79,4 +79,19 @@
       imgUrl = #{imgUrl,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+  <!--  根据游戏id查询分类信息  -->
+  <select id="findByGameId" parameterType="string" resultType="com.yiran.pojo.Category">
+    select c.*
+    from t_category c, t_game_category gc
+    where gc.game_id = #{value} and gc.category_id = c.id;
+  </select>
+
+    <!--  查询所有  -->
+    <select id="findAll" resultType="com.yiran.pojo.Category">
+        select * from t_category
+    </select>
+
+
 </mapper>

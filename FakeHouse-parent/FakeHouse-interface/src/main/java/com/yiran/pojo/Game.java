@@ -47,9 +47,6 @@ public class Game implements Serializable {
     // 游戏分类列表
     private List<Category> categoryList;
 
-    // 游戏特色信息, 很有可能为空
-    private List<Character> characterList;
-
     // 下载数, 通过recode表可以进行查看
     private Integer downloadCount;
 
@@ -177,13 +174,6 @@ public class Game implements Serializable {
         this.categoryList = categoryList;
     }
 
-    public List<Character> getCharacterList() {
-        return characterList;
-    }
-
-    public void setCharacterList(List<Character> characterList) {
-        this.characterList = characterList;
-    }
 
     public Integer getDownloadCount() {
         return downloadCount;

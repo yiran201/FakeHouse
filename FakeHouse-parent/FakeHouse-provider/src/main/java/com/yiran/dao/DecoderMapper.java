@@ -14,4 +14,19 @@ public interface DecoderMapper {
     int updateByPrimaryKeySelective(Decoder record);
 
     int updateByPrimaryKey(Decoder record);
+
+
+    /**
+     * 通过名字查询decoder
+     * @param name decode的name
+     * @return decoder
+     */
+    Integer findDecoderIdByName(String name);
+
+    /**
+     * 插入数据并返回主键
+     * @param decoder decoder信息
+     * @return 主键id
+     */
+    void insertAndGetKey(Decoder decoder);
 }

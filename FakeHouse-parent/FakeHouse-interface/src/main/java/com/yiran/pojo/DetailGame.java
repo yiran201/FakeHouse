@@ -1,6 +1,7 @@
 package com.yiran.pojo;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class DetailGame implements Serializable {
 
@@ -28,6 +29,9 @@ public class DetailGame implements Serializable {
 
     // 语音语言
     private String voiceLanguage;
+
+    // 游戏特色信息, 很有可能为空
+    private List<Character> characterList;
 
 
     public String getId() {
@@ -100,5 +104,13 @@ public class DetailGame implements Serializable {
 
     public void setVoiceLanguage(String voiceLanguage) {
         this.voiceLanguage = voiceLanguage;
+    }
+
+    public List<Character> getCharacterList() {
+        return characterList;
+    }
+
+    public void setCharacterList(List<Character> characterList) {
+        this.characterList = characterList;
     }
 }
