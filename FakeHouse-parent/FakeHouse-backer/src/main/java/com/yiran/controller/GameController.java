@@ -122,11 +122,10 @@ public class GameController {
         if (game != null){
             String capacity = game.getCapacity();
             String name = game.getName();
-            String chsName = game.getChsName();
             String originUrl = game.getOriginUrl();
             Long size = game.getSize();
             String downloadUrl = game.getDownloadUrl();
-            if (!StringUtils.isEmpty(capacity) && !StringUtils.isEmpty(name) && !StringUtils.isEmpty(chsName)
+            if (!StringUtils.isEmpty(capacity) && !StringUtils.isEmpty(name)
                     &&!StringUtils.isEmpty(originUrl) && !StringUtils.isEmpty(downloadUrl) && size != null){
                 return true;
             }

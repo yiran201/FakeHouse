@@ -6,6 +6,7 @@ import com.yiran.pojo.Decoder;
 import com.yiran.service.DecoderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 
 @Service(interfaceClass = DecoderService.class)
@@ -24,7 +25,7 @@ public class DecoderServicImpl implements DecoderService {
     @Override
     public Integer add(Decoder decoder) {
 
-        if (decoder != null){
+        if (decoder != null && !StringUtils.isEmpty(decoder.getName())){
             decoder.setId(null);
             // 插入逻辑
             // 先判断 是否存在对应数据

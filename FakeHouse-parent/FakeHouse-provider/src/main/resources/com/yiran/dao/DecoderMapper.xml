@@ -72,9 +72,9 @@
 
     <!--  通过decoder的名称查询decoder的id  -->
     <select id="findDecoderIdByName" parameterType="string" resultType="Integer">
-        select d.id
-        from t_decoder d
-        where d.name = #{value}
+        select t_decoder.id
+        from t_decoder
+        where name = #{value}
     </select>
 
 
