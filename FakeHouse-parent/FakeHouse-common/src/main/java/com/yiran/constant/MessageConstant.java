@@ -88,13 +88,13 @@ public class MessageConstant {
 
 
 
-
-
     // 分类数据管理
     public static final String QUERY_CATEGORY_BY_GAMEID_SUCCESS = "查询游戏分类信息成功";
     public static final String QUERY_CATEGORY_BY_GAMEID_FAIL = "查询游戏分类信息失败";
 
-    public static final String QUERY_CATEGORY_SUCCESS = "查询分类信息失败";
+    public static final String QUERY_CATEGORY_SUCCESS = "查询分类信息成功";
     public static final String QUERY_CATEGORY_FAIL = "查询分类信息失败";
+    public static final String QUERY_CATEGORY_ID_SUCCESS = "查询分类id失败";
+    public static final String QUERY_CATEGORY_ID_FAIL = "查询分类id失败";
 
 }

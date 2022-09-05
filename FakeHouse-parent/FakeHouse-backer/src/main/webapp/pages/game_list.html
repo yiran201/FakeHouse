@@ -155,7 +155,7 @@
 
                                     <el-row>
                                         <el-col :span="24">
-                                            <el-form-item label="下载链接" prop="downloadUrl">
+                                            <el-form-item label="下载链接">
                                                 <el-input v-model="gameFormData.downloadUrl"/>
                                             </el-form-item>
                                         </el-col>
@@ -294,58 +294,141 @@
                 <el-dialog title="编辑角色" :visible.sync="dialogFormVisible4Edit">
                     <template>
                         <el-tabs v-model="activeName" type="card">
-                            <el-tab-pane label="基本信息" name="first">
-                                <el-form ref="dataEditForm" :model="gameFormData" :rules="rules" label-position="right" label-width="100px">
+                            <el-tab-pane label="游戏基本信息" name="first">
+
+                                <el-form ref="gameAddForm" :model="gameFormData" :rules="rules" label-position="right" label-width="100px">
                                     <el-row>
-                                        <el-col :span="12">
-                                            <el-form-item label="用户名">
-                                                <el-input v-model="gameFormData.username" :disabled="true"/>
+                                        <el-col :span="24">
+                                            <el-form-item label="游戏名称" prop="name">
+                                                <el-input v-model="gameFormData.name" :disabled="true"/>
+                                            </el-form-item>
+                                        </el-col>
+                                    </el-row>
+                                    <el-row>
+                                        <el-col :span="24">
+                                            <el-form-item label="游戏中文名称">
+                                                <el-input v-model="gameFormData.chsName"/>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
 
                                     <el-row>
                                         <el-col :span="12">
-                                            <el-form-item label="密码" prop="password">
-                                                <el-input v-model="gameFormData.password"/>
+                                            <el-form-item label="游戏容量" prop="capacity">
+                                                <el-input v-model="gameFormData.capacity"/>
                                             </el-form-item>
                                         </el-col>
-                                    </el-row>
-
-                                    <el-row>
                                         <el-col :span="12">
-                                            <el-form-item label="email" prop="email">
-                                                <el-input v-model="gameFormData.email" />
-                                            </el-form-item>
-                                        </el-col>
-                                    </el-row>
-
-                                    <el-row>
-                                        <el-col :span="12">
-                                            <el-form-item label="电话号码" prop="telephone">
-                                                <el-input v-model="gameFormData.telephone"/>
+                                            <el-form-item label="容量数值" prop="size">
+                                                <el-input v-model="gameFormData.size"/>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
 
                                     <el-row>
                                         <el-col :span="24">
-                                            <el-form-item label="备注">
-                                                <el-input v-model="gameFormData.remark" type="textarea"></el-input>
+                                            <el-form-item label="原下载链接" prop="originUrl">
+                                                <el-input v-model="gameFormData.originUrl" :disabled="true"/>
+                                            </el-form-item>
+                                        </el-col>
+                                    </el-row>
+
+                                    <el-row>
+                                        <el-col :span="24">
+                                            <el-form-item label="下载链接">
+                                                <el-input v-model="gameFormData.downloadUrl"/>
+                                            </el-form-item>
+                                        </el-col>
+                                    </el-row>
+
+                                    <el-row>
+                                        <el-col :span="8">
+                                            <el-form-item label="是否有效">
+                                                <el-input v-model="gameFormData.active"/>
+                                            </el-form-item>
+                                        </el-col>
+                                        <el-col :span="10">
+                                            <el-form-item label="破解者">
+                                                <!--  封装时需要将decoderName封装到gameFormData中  -->
+                                                <el-input v-model="gameFormData.decoderName"/>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
                                 </el-form>
                             </el-tab-pane>
-                            <el-tab-pane label="角色信息" name="second">
+
+                            <el-tab-pane label="游戏详情信息" name="second">
+
+                                <el-form ref="gameAddForm" :model="gameDetailFormData" :rules="rules" label-position="right" label-width="100px">
+                                    <el-row>
+                                        <el-col :span="12">
+                                            <el-form-item label="游戏发行时间">
+                                                <el-input v-model="gameDetailFormData.presentTime"/>
+                                            </el-form-item>
+                                        </el-col>
+                                    </el-row>
+
+                                    <el-row>
+                                        <el-col :span="12">
+                                            <el-form-item label="开发商">
+                                                <el-input v-model="gameDetailFormData.development"/>
+                                            </el-form-item>
+                                        </el-col>
+                                        <el-col :span="12">
+                                            <el-form-item label="发行商">
+                                                <el-input v-model="gameDetailFormData.deliver"/>
+                                            </el-form-item>
+                                        </el-col>
+                                    </el-row>
+
+                                    <el-row>
+                                        <el-col :span="12">
+                                            <el-form-item label="平台">
+                                                <el-input v-model="gameDetailFormData.platform"/>
+                                            </el-form-item>
+                                        </el-col>
+                                        <el-col :span="12">
+                                            <el-form-item label="版本">
+                                                <el-input v-model="gameDetailFormData.version"/>
+                                            </el-form-item>
+                                        </el-col>
+                                    </el-row>
+
+                                    <el-row>
+                                        <el-col :span="18">
+                                            <el-form-item label="文字语言">
+                                                <el-input v-model="gameDetailFormData.backgroundLanguage"/>
+                                            </el-form-item>
+                                        </el-col>
+                                    </el-row>
+
+                                    <el-row>
+                                        <el-col :span="18">
+                                            <el-form-item label="语音语言">
+                                                <el-input v-model="gameDetailFormData.voiceLanguage"/>
+                                            </el-form-item>
+                                        </el-col>
+                                    </el-row>
+
+                                    <el-row>
+                                        <el-col :span="24">
+                                            <el-form-item label="游戏介绍">
+                                                <el-input v-model="gameDetailFormData.introduction" type="textarea"></el-input>
+                                            </el-form-item>
+                                        </el-col>
+                                    </el-row>
+                                </el-form>
+                            </el-tab-pane>
+
+                            <el-tab-pane label="游戏分类" name="third">
                                 <div class="checkScrol">
                                     <table class="datatable">
                                         <thead>
                                         <tr>
                                             <th>选择</th>
-                                            <th>角色名称</th>
-                                            <th>角色关键字</th>
-                                            <th>角色描述</th>
+                                            <th>分类名称</th>
+                                            <th>分类描述</th>
+                                            <th>分类的图片url</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -354,13 +437,29 @@
                                                 <input :id="c.id" v-model="categoryId" type="checkbox" :value="c.id">
                                             </td>
                                             <td><label :for="c.id">{{c.name}}</label></td>
-                                            <td><label :for="c.id">{{c.keyword}}</label></td>
                                             <td><label :for="c.id">{{c.description}}</label></td>
+                                            <td><label :for="c.id">{{c.imgUrl}}</label></td>
                                         </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </el-tab-pane>
+
+                            <!--  对于游戏特色的修改功能比较麻烦, 先不进行实现, 之后版本实现  -->
+                            <!--<el-tab-pane label="游戏特色" name="forth">-->
+                            <!--<el-form-item>-->
+                            <!--<el-button @click="addChara">新增特色</el-button>-->
+                            <!--</el-form-item>-->
+                            <!--<el-form-item-->
+                            <!--v-for="(character, index) in characterList"-->
+                            <!--:label="'特色' + index"-->
+                            <!--:key="character.id"-->
+                            <!--:rules="{required: true, message: '游戏特色不能为空', trigger: 'blur'}">-->
+                            <!--<el-input v-model="character.chara"></el-input>-->
+                            <!--<el-button @click.prevent="removeChara(character)">删除</el-button>-->
+                            <!--</el-form-item>-->
+                            <!--</el-tab-pane>-->
+
                         </el-tabs>
                     </template>
                     <div slot="footer" class="dialog-footer">
@@ -397,7 +496,6 @@
                 name: [{ required: true, message: '名字为必填项', trigger: 'blur' }],
                 capacity: [{ required: true, message: '游戏大小为必填项', trigger: 'blur' }],
                 size: [{ required: true, message: '游戏数值必填项', trigger: 'blur' }],
-                downloadUrl: [{ required: true, message: '下载链接为必填项', trigger: 'blur' }],
                 originUrl: [{ required: true, message: '下载链接为必填项', trigger: 'blur' }]
             }
         },
@@ -571,15 +669,16 @@
             handleUpdate(row) {
                 this.resetForm();
                 //回显数据，发送ajax请求根据ID查询当前检查项数据
-                axios.get("/FakeHouse-backer/user/findById.do?id=" + row.id).then((res) => {
+                axios.get("/FakeHouse-backer/game/findById.do?id=" + row.id).then((res) => {
                     if (res.data.flag) {
                         //进行回显，基于VUE的数据绑定实现
                         // res.data获取到返回的json对象的数据
-                        this.gameFormData = res.data.data;
+                        this.gameFormData = res.data.data.game;
+                        this.gameDetailFormData =  res.data.data.detailGame;
 
                         // 查询ids的数据
                         this.categoryId = [];
-                        axios.get("/FakeHouse-backer/user/getRoleId.do?id="+row.id).then((res)=> {
+                        axios.get("/FakeHouse-backer/game/findCategoryId.do?id="+row.id).then((res)=> {
                             if (res.data.flag) {
                                 //进行回显，基于VUE的数据绑定实现
                                 this.categoryId = res.data.data;

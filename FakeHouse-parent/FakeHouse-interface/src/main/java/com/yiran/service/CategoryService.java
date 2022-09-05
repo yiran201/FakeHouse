@@ -28,4 +28,12 @@ public interface CategoryService {
      * @param map 数据
      */
     void connectWithGame(Map<String, Object> map);
+
+
+    /**
+     * 通过游戏id查询分类id
+     * @param gameId 游戏id
+     * @return
+     */
+    List<Integer> findIdByGameId(String gameId);
 }

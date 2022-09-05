@@ -2,6 +2,7 @@ package com.yiran.service.impl;
 
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.yiran.dao.GameMapper;
@@ -17,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
-import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -139,6 +139,68 @@ public class GameServiceImpl implements GameService{
     }
 
     /**
+     * 通过id查询游戏数据和游戏详情数据
+     * @param id 游戏id
+     * @return
+     */
+    @Override
+    public Map<String, Object> findById(String id) {
+
+        // 查询游戏数据
+        Game game = gameMapper.selectByPrimaryKey(id);
+        // 处理敏感数据
+        game.setInsertTime(null);
+        // 填充查看数和下载数数据
+//        findCount(game);
+
+        // 查询游戏decoder
+        Decoder decoder = null;
+        Integer decoderId = game.getDecoderId();
+        if (decoderId != null){
+            decoder = decoderService.findById(decoderId);
+        }
+
+        // 查询游戏详情数据
+        DetailGame detailGame = null;
+        String detailId = game.getDetailId();
+        if (!StringUtils.isEmpty(detailId)){
+            detailGame = detailGameService.findById(detailId);
+        }
+
+        // 封装数据后返回
+        Map<String, Object> map = new HashMap<>(2);
+
+        Map<String, Object> game_map = JSON.parseObject(JSON.toJSON(game).toString(), Map.class);
+        if (decoder != null){
+            game_map.put("decoderName", decoder.getName());
+        }else{
+            game_map.put("decoderName", "");
+        }
+        map.put("game", game_map);
+
+        if (detailGame != null){
+            map.put("detailGame", JSON.parseObject(JSON.toJSON(detailGame).toString(), Map.class));
+        }else{
+            // 空对象  相当于JSON中的 {}
+            map.put("detailGame", new Object());
+        }
+
+        return map;
+
+    }
+
+    /**
+     * 通过游戏id查询分类id
+     * @param id 游戏id
+     * @return
+     */
+    @Override
+    public List<Integer> findCategoryIdByGameId(String id) {
+
+        return categoryService.findIdByGameId(id);
+    }
+
+    /**
      * 给游戏填充count数据
      * 该反方法废除, 因为不好用, 对资源消耗大
      * 调用了其他微服务两次, 直接使用复杂的sql进行一次查询比较快, 但是sql会比较复杂
@@ -149,6 +211,9 @@ public class GameServiceImpl implements GameService{
         // 该逻辑的查询效率差, 但是没有办法, 不存在能够一次查询出两个字段的sql语句
         // 没有简单的sql语句能够实现, 但是复杂的可以
         for (Game game : result) {
+            // 处理敏感数据
+//            game.setInsertTime(null);
+
             // 查询观看数
             int watchCount = recodeService.findWatchCountByGameId(game.getId());
             game.setWatchCount(watchCount);
@@ -158,4 +223,16 @@ public class GameServiceImpl implements GameService{
         }
     }
 
+    /**
+     * 查询查看数据
+     * @param game 游戏数据
+     */
+    private void findCount(Game game){
+        // 查询观看数
+        int watchCount = recodeService.findWatchCountByGameId(game.getId());
+        game.setWatchCount(watchCount);
+        // 查询下载数
+        int downloadCount = recodeService.findDownloadCountByGameId(game.getId());
+        game.setDownloadCount(downloadCount);
+    }
 }

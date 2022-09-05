@@ -53,7 +53,51 @@ public class GameController {
 
 
     /**
+     * 通过id查询游戏数据和游戏详情数据
+     * @param id 游戏id
+     * @return
+     */
+    @GetMapping("/findById")
+    @PreAuthorize("hasAuthority('GAME_SELECT')")
+    public Result findById(String id){
+
+        try {
+            if (!StringUtils.isEmpty(id)){
+                Map<String, Object> data = gameService.findById(id);
+                return new Result(true, MessageConstant.QUERY_GAME_SUCCESS, data);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new Result(false, MessageConstant.QUERY_GAME_FAIL);
+    }
+
+    /**
+     * 查询分类id
+     * @param id: 游戏id
+     * @return
+     */
+    @GetMapping("/findCategoryId")
+    @PreAuthorize("hasAuthority('GAME_SELECT')")
+    public Result findCategoryId(String id){
+
+        try {
+            if (id != null){
+                List<Integer> categoryId = gameService.findCategoryIdByGameId(id);
+                return new Result(true, MessageConstant.QUERY_CATEGORY_ID_SUCCESS, categoryId);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return new Result(false, MessageConstant.QUERY_CATEGORY_ID_FAIL);
+    }
+
+
+
+    /**
      * 查询游戏集合
+     * 是否需要添加分页和查询条件
      * @return
      */
     @GetMapping("/findCategoryList")
@@ -124,9 +168,8 @@ public class GameController {
             String name = game.getName();
             String originUrl = game.getOriginUrl();
             Long size = game.getSize();
-            String downloadUrl = game.getDownloadUrl();
             if (!StringUtils.isEmpty(capacity) && !StringUtils.isEmpty(name)
-                    &&!StringUtils.isEmpty(originUrl) && !StringUtils.isEmpty(downloadUrl) && size != null){
+                    &&!StringUtils.isEmpty(originUrl) && size != null){
                 return true;
             }
         }

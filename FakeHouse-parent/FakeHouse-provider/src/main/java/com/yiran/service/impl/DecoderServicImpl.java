@@ -40,4 +40,16 @@ public class DecoderServicImpl implements DecoderService {
         }
         return null;
     }
+
+
+    /**
+     * 通过id查询decoder
+     * @param decoderId decoder的id
+     * @return
+     */
+    @Override
+    public Decoder findById(Integer decoderId) {
+
+        return decoderMapper.selectByPrimaryKey(decoderId);
+    }
 }

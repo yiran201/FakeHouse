@@ -53,4 +53,16 @@ public class CategoryServiceImpl implements CategoryService {
 
 
     }
+
+    /**
+     * 通过游戏id查询分类id
+     * @param gameId 游戏id
+     * @return
+     */
+    @Override
+    public List<Integer> findIdByGameId(String gameId) {
+
+        return categoryMapper.findIdByGameId(gameId);
+
+    }
 }

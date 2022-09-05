@@ -25,4 +25,17 @@ public class DetailGameServiceImpl implements DetailGameService {
 
         detailGameMapper.insertSelective(detailGame);
     }
+
+
+    /**
+     * 通过id查询游戏详情信息
+     * @param detailId 游戏详情id
+     * @return
+     */
+    @Override
+    public DetailGame findById(String detailId) {
+
+        return detailGameMapper.selectByPrimaryKey(detailId);
+
+    }
 }

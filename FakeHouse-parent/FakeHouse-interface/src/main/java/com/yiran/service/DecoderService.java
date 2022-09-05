@@ -10,4 +10,12 @@ public interface DecoderService {
      * @param decoder decoder信息
      */
     Integer add(Decoder decoder);
+
+
+    /**
+     * 通过id查询decoder信息
+     * @param decoderId decoder的id
+     * @return
+     */
+    Decoder findById(Integer decoderId);
 }

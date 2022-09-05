@@ -7,6 +7,7 @@ import com.yiran.pojo.DetailGame;
 import com.yiran.pojo.Game;
 
 import java.util.List;
+import java.util.Map;
 
 public interface GameService {
 
@@ -34,4 +35,20 @@ public interface GameService {
      * @param decoderName 游戏破解者名称
      */
     void add(Game game, DetailGame detailGame, Integer[] categoryId, String decoderName);
+
+
+    /**
+     * 通过id查询游戏数据和游戏详情数据
+     * @param id 游戏id
+     * @return
+     */
+    Map<String, Object> findById(String id);
+
+
+    /**
+     * 通过游戏id查询分类id
+     * @param id 游戏id
+     * @return
+     */
+    List<Integer> findCategoryIdByGameId(String id);
 }
