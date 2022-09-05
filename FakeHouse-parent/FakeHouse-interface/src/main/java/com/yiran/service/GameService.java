@@ -51,4 +51,14 @@ public interface GameService {
      * @return
      */
     List<Integer> findCategoryIdByGameId(String id);
+
+
+    /**
+     * 修改游戏数据
+     * @param game 游戏信息
+     * @param detailGame 游戏详情信息
+     * @param categoryId 游戏分类id
+     * @param decoderName 游戏破解者名称
+     */
+    void update(Game game, DetailGame detailGame, Integer[] categoryId, String decoderName) throws Exception;
 }

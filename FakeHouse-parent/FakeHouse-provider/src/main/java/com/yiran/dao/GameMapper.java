@@ -3,6 +3,8 @@ package com.yiran.dao;
 import com.github.pagehelper.Page;
 import com.yiran.pojo.Game;
 
+import java.util.Map;
+
 public interface GameMapper {
     int deleteByPrimaryKey(String id);
 
@@ -29,4 +31,26 @@ public interface GameMapper {
      * @return
      */
     Page<Game> findByName(String queryString);
+
+
+    /**
+     * 添加游戏与分类的关联关系
+     * @param map 游戏id和分类id
+     */
+    void connectWithCategory(Map<String, Object> map);
+
+
+    /**
+     * 去除游戏与分类的关联关系
+     * @param id 游戏id
+     */
+    void disconnectWithCategory(String id);
+
+
+    /**
+     * 自定义方法进行游戏数据的修改, 为防止关键数据的修改, 需要进行处理
+     * 对于其他字段数据, 如果为空不修改, 对于 decoderId字段数据, 如果为空, 需要进行修改
+     * @param game 游戏数据
+     */
+    void updateGameByPrimaryKey(Game game);
 }

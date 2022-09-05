@@ -6,6 +6,7 @@ import com.yiran.pojo.DetailGame;
 import com.yiran.service.DetailGameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 
 @Service(interfaceClass = DetailGameService.class)
@@ -36,6 +37,20 @@ public class DetailGameServiceImpl implements DetailGameService {
     public DetailGame findById(String detailId) {
 
         return detailGameMapper.selectByPrimaryKey(detailId);
+
+    }
+
+    /**
+     * 通过id删除游戏详情数据
+     * @param detailGame 游戏详情
+     */
+    @Override
+    public void updateById(DetailGame detailGame) {
+
+
+        if (detailGame != null && !StringUtils.isEmpty(detailGame.getId())){
+            detailGameMapper.updateByPrimaryKeySelective(detailGame);
+        }
 
     }
 }

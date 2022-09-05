@@ -18,4 +18,11 @@ public interface DetailGameService {
      * @return
      */
     DetailGame findById(String detailId);
+
+
+    /**
+     * 通过id删除游戏详情数据
+     * @param detailGame 游戏详情
+     */
+    void updateById(DetailGame detailGame);
 }

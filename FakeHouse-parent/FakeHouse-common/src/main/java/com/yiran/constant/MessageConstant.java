@@ -83,7 +83,8 @@ public class MessageConstant {
     public static final String QUERY_GAME_FAIL = "查询游戏信息失败";
     public static final String ADD_GAME_SUCCESS = "添加游戏成功";
     public static final String ADD_GAME_FAIL = "添加游戏失败";
-
+    public static final String UPDATE_GAME_SUCCESS = "更新游戏成功";
+    public static final String UPDATE_GAME_FAIL = "更新游戏失败";
 
 
 

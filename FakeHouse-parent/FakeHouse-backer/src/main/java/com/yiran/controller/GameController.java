@@ -125,21 +125,20 @@ public class GameController {
      */
     @PostMapping("/add")
     @PreAuthorize("hasAuthority('GAME_ADD')")
-    public Result add(@RequestBody Map<String, Object> gameData, @RequestParam(required = false) Integer[] categoryId,
-                      HttpServletRequest request){
+    public Result add(@RequestBody Map<String, Object> gameData, @RequestParam(required = false) Integer[] categoryId){
 
-        // 请求参数列表中 最好只用一个 @RequestBody
-        // 使用map进行接收后 使用JSON进行转换
-//        System.out.println(gameData);
-        Map<String, Object> game_map = (Map<String, Object>) gameData.get("game");
-        Map<String, Object> detailGame_map = (Map<String, Object>) gameData.get("detailGame");
-
-
-        String decoderName = (String) game_map.get("decoderName");
-        Game game = JSON.parseObject(JSON.toJSON(game_map).toString(), Game.class);
-        DetailGame detailGame = JSON.parseObject(JSON.toJSON(detailGame_map).toString(), DetailGame.class);
 
         try {
+            // 请求参数列表中 最好只用一个 @RequestBody
+            // 使用map进行接收后 使用JSON进行转换
+//        System.out.println(gameData);
+            Map<String, Object> game_map = (Map<String, Object>) gameData.get("game");
+            Map<String, Object> detailGame_map = (Map<String, Object>) gameData.get("detailGame");
+
+            String decoderName = (String) game_map.get("decoderName");
+            Game game = JSON.parseObject(JSON.toJSON(game_map).toString(), Game.class);
+            DetailGame detailGame = JSON.parseObject(JSON.toJSON(detailGame_map).toString(), DetailGame.class);
+
             if (checkGame(game) && checkDetailGame(detailGame)){
                 gameService.add(game, detailGame, categoryId, decoderName);
                 return new Result(true, MessageConstant.ADD_GAME_SUCCESS);
@@ -149,6 +148,43 @@ public class GameController {
         }
         return new Result(false, MessageConstant.ADD_GAME_FAIL);
     }
+
+
+    /**
+     * 添加游戏数据
+     * @param gameData 游戏信息
+     * @param categoryId 游戏分类id
+     * @return 状态
+     */
+    @PutMapping("/update")
+    @PreAuthorize("hasAuthority('GAME_UPDATE')")
+    public Result update(@RequestBody Map<String, Object> gameData, @RequestParam(required = false) Integer[] categoryId) {
+
+        try {
+            Map<String, Object> game_map = (Map<String, Object>) gameData.get("game");
+            Map<String, Object> detailGame_map = (Map<String, Object>) gameData.get("detailGame");
+
+
+            String decoderName = null;
+            if (game_map.containsKey("decoderName")){
+                decoderName = (String) game_map.get("decoderName");
+            }
+            Game game = JSON.parseObject(JSON.toJSON(game_map).toString(), Game.class);
+            DetailGame detailGame = JSON.parseObject(JSON.toJSON(detailGame_map).toString(), DetailGame.class);
+
+            if (checkGame(game) && checkDetailGame(detailGame)){
+                gameService.update(game, detailGame, categoryId, decoderName);
+                return new Result(true, MessageConstant.UPDATE_GAME_SUCCESS);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new Result(false, MessageConstant.UPDATE_GAME_FAIL);
+
+
+    }
+
+
 
     // 检验游戏详情详情信息是否完整
     private static boolean checkDetailGame(DetailGame detailGame) {

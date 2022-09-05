@@ -164,7 +164,7 @@
                                     <el-row>
                                         <el-col :span="8">
                                             <el-form-item label="是否有效">
-                                                <el-input v-model="gameFormData.active"/>
+                                                <el-input type="boolean" v-model="gameFormData.active"/>
                                             </el-form-item>
                                         </el-col>
                                         <el-col :span="10">
@@ -296,7 +296,7 @@
                         <el-tabs v-model="activeName" type="card">
                             <el-tab-pane label="游戏基本信息" name="first">
 
-                                <el-form ref="gameAddForm" :model="gameFormData" :rules="rules" label-position="right" label-width="100px">
+                                <el-form ref="dataEditForm" :model="gameFormData" :rules="rules" label-position="right" label-width="100px">
                                     <el-row>
                                         <el-col :span="24">
                                             <el-form-item label="游戏名称" prop="name">
@@ -344,7 +344,7 @@
                                     <el-row>
                                         <el-col :span="8">
                                             <el-form-item label="是否有效">
-                                                <el-input v-model="gameFormData.active"/>
+                                                <el-input  v-model="gameFormData.active"/>
                                             </el-form-item>
                                         </el-col>
                                         <el-col :span="10">
@@ -397,7 +397,7 @@
                                     <el-row>
                                         <el-col :span="18">
                                             <el-form-item label="文字语言">
-                                                <el-input v-model="gameDetailFormData.backgroundLanguage"/>
+                                                <el-input  v-model="gameDetailFormData.backgroundLanguage"/>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
@@ -493,10 +493,10 @@
             dialogFormVisible: false,//增加表单是否可见
             dialogFormVisible4Edit:false,//编辑表单是否可见
             rules: {//校验规则
-                name: [{ required: true, message: '名字为必填项', trigger: 'blur' }],
-                capacity: [{ required: true, message: '游戏大小为必填项', trigger: 'blur' }],
-                size: [{ required: true, message: '游戏数值必填项', trigger: 'blur' }],
-                originUrl: [{ required: true, message: '下载链接为必填项', trigger: 'blur' }]
+                name: [{required: true, message: '名字为必填项', trigger: 'blur'}],
+                capacity: [{required: true, message: '游戏大小为必填项', trigger: 'blur'}],
+                size: [{required: true, message: '游戏数值必填项', trigger: 'blur'}],
+                originUrl: [{required: true, message: '下载链接为必填项', trigger: 'blur'}]
             }
         },
         //钩子函数，VUE对象初始化完成后自动执行
@@ -520,15 +520,11 @@
                 //进行表单校验  使用项目的data下的rule进行校验
                 this.$refs['dataEditForm'].validate((valid) => {
                     if(valid){
-                        // 需要对手机号码进行校验
-                        if (!checkTelephone(this.gameFormData.telephone)) {
-                            //弹出提示
-                            this.$message.error("手机号格式错误,请进行检查!");
-                            return false;
-                        }
+                        // 封装数据
+                        var data = {"game": this.gameFormData, "detailGame": this.gameDetailFormData};
 
                         //表单校验通过，可以提交数据
-                        axios.put("/FakeHouse-backer/user/edit.do?categoryId="+this.categoryId,this.gameFormData).then((res) => {
+                        axios.put("/FakeHouse-backer/game/update.do?categoryId="+this.categoryId,data).then((res) => {
                             if(res.data.flag){
                                 //弹出成功提示信息
                                 this.$message({
@@ -764,6 +760,6 @@
                 });
             }
         }
-    })
+    });
 </script>
 </html>

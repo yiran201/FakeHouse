@@ -194,6 +194,58 @@
         select * from t_game where name like #{value} or chsName like #{value}
      </select>
 
+  <!--  添加游戏与分类的关联关系  -->
+  <insert id="connectWithCategory" parameterType="java.util.Map">
+    insert into t_game_category(game_id, category_id) values(#{gameId}, #{categoryId})
+  </insert>
 
+    <!--  去除游戏与分类的关联关系  -->
+    <delete id="disconnectWithCategory" parameterType="string">
+        delete from t_game_category where game_id = #{value}
+    </delete>
 
+    <!--  自定义方法进行游戏数据的修改, 为防止关键数据的修改, 需要进行处理
+          对于其他字段数据, 如果为空不修改, 对于 decoderId字段数据, 如果为空, 需要进行修改
+          // 对于decoder字段需要特殊照顾
+    -->
+    <update id="updateGameByPrimaryKey" parameterType="com.yiran.pojo.Game">
+        update t_game
+        <set >
+            <if test="name != null" >
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="chsName != null" >
+                chsName = #{chsName,jdbcType=VARCHAR},
+            </if>
+            <if test="uploadTime != null" >
+                uploadTime = #{uploadTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="capacity != null" >
+                capacity = #{capacity,jdbcType=VARCHAR},
+            </if>
+            <if test="size != null" >
+                size = #{size,jdbcType=BIGINT},
+            </if>
+            <if test="originUrl != null" >
+                originUrl = #{originUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="downloadUrl != null" >
+                downloadUrl = #{downloadUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="active != null" >
+                active = #{active,jdbcType=BIT},
+            </if>
+            <if test="insertTime != null" >
+                insertTime = #{insertTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="detailId != null" >
+                detail_id = #{detailId,jdbcType=VARCHAR},
+            </if>
+            <if test="true" >
+                decoder_id = #{decoderId,jdbcType=VARCHAR},
+            </if>
+        </set>
+
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
 </mapper>

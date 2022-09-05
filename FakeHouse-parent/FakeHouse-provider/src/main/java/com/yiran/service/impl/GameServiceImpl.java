@@ -133,8 +133,8 @@ public class GameServiceImpl implements GameService{
         map.put("gameId", gameId);
         for (Integer category : categoryId) {
             map.put("categoryId", category);
-            categoryService.connectWithGame(map);
-        }
+            gameMapper.connectWithCategory(map);
+    }
 
     }
 
@@ -176,6 +176,7 @@ public class GameServiceImpl implements GameService{
         }else{
             game_map.put("decoderName", "");
         }
+        game_map.put("active", game_map.get("active").toString());
         map.put("game", game_map);
 
         if (detailGame != null){
@@ -198,6 +199,55 @@ public class GameServiceImpl implements GameService{
     public List<Integer> findCategoryIdByGameId(String id) {
 
         return categoryService.findIdByGameId(id);
+    }
+
+
+    /**
+     * 修改游戏数据
+     * @param game 游戏信息
+     * @param detailGame 游戏详情信息
+     * @param categoryId 游戏分类id
+     * @param decoderName 游戏破解者名称
+     */
+    @Override
+    public void update(Game game, DetailGame detailGame, Integer[] categoryId, String decoderName) throws Exception {
+
+        if (StringUtils.isEmpty(game.getId())){
+            throw new Exception("游戏信息不完整!");
+        }
+
+        // 修改decoder数据 获取到返回的decoder的id
+        Integer decoderId = null;
+        if (!StringUtils.isEmpty(decoderName)){
+            Decoder decoder = new Decoder();
+            decoder.setName(decoderName);
+            decoderId = decoderService.add(decoder);
+        }
+
+
+        // 修改游戏详情数据
+        if (detailGame != null && !StringUtils.isEmpty(detailGame.getId())){
+            detailGameService.updateById(detailGame);
+        }
+
+        // 修改游戏数据
+        game.setInsertTime(null);
+        game.setDetailId(null);
+        game.setDecoderId(decoderId);
+        // bug: 无法修改decoderId为空, 因为一旦为空, 就不会进行更新, 从而导致修改失败
+        if (!StringUtils.isEmpty(game.getId())){
+            gameMapper.updateGameByPrimaryKey(game);
+        }
+
+        // 修改游戏与分类的关系
+        gameMapper.disconnectWithCategory(game.getId());
+        Map<String, Object> map = new HashMap<>(2);
+        map.put("gameId", game.getId());
+        for (Integer cid : categoryId) {
+            map.put("categoryId", cid);
+            gameMapper.connectWithCategory(map);
+        }
+
     }
 
     /**
