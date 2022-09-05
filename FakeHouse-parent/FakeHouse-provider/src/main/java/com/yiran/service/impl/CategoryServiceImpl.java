@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 
 @Service(interfaceClass = CategoryService.class)
@@ -38,5 +39,18 @@ public class CategoryServiceImpl implements CategoryService {
     public List<Category> findAll() {
 
         return categoryMapper.findAll();
+    }
+
+
+    /**
+     * 关联游戏-分类关系
+     * @param map 数据
+     */
+    @Override
+    public void connectWithGame(Map<String, Object> map) {
+
+        categoryMapper.connectWithGame(map);
+
+
     }
 }

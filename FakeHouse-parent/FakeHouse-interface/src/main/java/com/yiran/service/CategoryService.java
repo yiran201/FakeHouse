@@ -3,6 +3,7 @@ package com.yiran.service;
 import com.yiran.pojo.Category;
 
 import java.util.List;
+import java.util.Map;
 
 public interface CategoryService {
 
@@ -21,4 +22,10 @@ public interface CategoryService {
      */
     List<Category> findAll();
 
+
+    /**
+     * 关联游戏-分类关系
+     * @param map 数据
+     */
+    void connectWithGame(Map<String, Object> map);
 }

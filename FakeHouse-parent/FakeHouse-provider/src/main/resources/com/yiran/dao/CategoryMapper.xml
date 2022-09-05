@@ -94,4 +94,9 @@
     </select>
 
 
+    <!--  插入数据到 t_game_category 表中, 建立游戏-分类的关联关系  -->
+  <insert id="connectWithGame" parameterType="java.util.Map">
+      insert into t_game_category(game_id, category_id) values(#{gameId}, #{categoryId})
+  </insert>
+
 </mapper>

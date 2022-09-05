@@ -23,4 +23,10 @@
     <!--批量扫描，发布服务-->
     <dubbo:annotation package="com.yiran.service"/>
 
+    <!--  配置idWorker id生成器 -->
+    <bean id="idworker" class="com.yiran.utils.IdWorker" scope="singleton">
+        <constructor-arg name="datacenterId" value="1"/>
+        <constructor-arg name="workerId" value="1"/>
+    </bean>
+
 </beans>

@@ -209,7 +209,7 @@
                                         </el-col>
                                         <el-col :span="12">
                                             <el-form-item label="版本">
-                                                <el-input v-model="gameFormData.version"/>
+                                                <el-input v-model="gameDetailFormData.version"/>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
@@ -470,7 +470,10 @@
 
                     if(valid){
                         // 封装表单数据, 将两个map的数据合并起来
-                        var gameData = {...this.gameFormData, ...this.gameDetailFormData};
+                        var gameData = {
+                            "game": this.gameFormData,
+                            "detailGame": this.gameDetailFormData
+                        };
                         
                         //表单校验通过，发生ajax请求，将录入的数据提交到后台进行处理
                         axios.post("/FakeHouse-backer/game/add.do?categoryId="+this.categoryId, gameData).then((res) => {

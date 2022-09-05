@@ -11,16 +11,17 @@ import com.yiran.pojo.Category;
 import com.yiran.pojo.Decoder;
 import com.yiran.pojo.DetailGame;
 import com.yiran.pojo.Game;
-import com.yiran.service.CategoryService;
-import com.yiran.service.DecoderService;
-import com.yiran.service.GameService;
-import com.yiran.service.RecodeService;
+import com.yiran.service.*;
+import com.yiran.utils.IdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import javax.xml.bind.annotation.XmlType;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service(interfaceClass = GameService.class)
 @Transactional
@@ -39,7 +40,13 @@ public class GameServiceImpl implements GameService{
 
 
     @Autowired
+    private DetailGameService detailGameService;
+
+    @Autowired
     private DecoderService decoderService;
+
+    @Autowired
+    private IdWorker idWorker;
 
     /**
      * 查询游戏数据, 携带游戏查看数和下载数
@@ -95,25 +102,39 @@ public class GameServiceImpl implements GameService{
     public void add(Game game, DetailGame detailGame, Integer[] categoryId, String decoderName) {
 
         // 首先应该添加破解者的信息
+        // 如果破解者存在则直接返回id即可
         Integer decoderId = null;
         if (!StringUtils.isEmpty(decoderName)){
             Decoder decoder = new Decoder();
             decoder.setName(decoderName);
             decoderId = decoderService.add(decoder);
         }
-        if (decoderId != null){
-            game.setDecoderId(decoderId);
-        }
 
         // 之后添加游戏详情信息
+        // idWorker生成id  要转换为 string类型, 并设置到detailGame中
+        String detailGameId = Long.toString(idWorker.nextId());
+        if (!StringUtils.isEmpty(detailGameId)){
+            detailGame.setId(detailGameId);
+            detailGameService.add(detailGame);
+        }
 
+        // 之后添加游戏信息, 需要用到前面两者的信息
+        String gameId = Long.toString(idWorker.nextId());
+        game.setId(gameId);
+        game.setDecoderId(decoderId);
+        game.setDetailId(detailGameId);
+        game.setUploadTime(new Date());
+        if (!StringUtils.isEmpty(gameId)){
+            gameMapper.insertSelective(game);
+        }
 
-
-        // 最后添加游戏信息, 需要用到前面两者的信息
-
-
-
-
+        // 添加游戏分类信息
+        Map<String, Object> map = new HashMap<>(2);
+        map.put("gameId", gameId);
+        for (Integer category : categoryId) {
+            map.put("categoryId", category);
+            categoryService.connectWithGame(map);
+        }
 
     }
 

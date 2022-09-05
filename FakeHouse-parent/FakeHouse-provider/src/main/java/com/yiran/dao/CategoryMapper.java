@@ -3,6 +3,7 @@ package com.yiran.dao;
 import com.yiran.pojo.Category;
 
 import java.util.List;
+import java.util.Map;
 
 public interface CategoryMapper {
     int deleteByPrimaryKey(Integer id);
@@ -31,4 +32,10 @@ public interface CategoryMapper {
      */
     List<Category> findAll();
 
+
+    /**
+     * 插入数据到 t_game_category 表中, 建立游戏-分类的关联关系
+     * @param map 数据
+     */
+    void connectWithGame(Map<String, Object> map);
 }

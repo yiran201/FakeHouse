@@ -2,6 +2,7 @@ package com.yiran.controller;
 
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.fastjson.JSON;
 import com.yiran.constant.MessageConstant;
 import com.yiran.entity.PageResult;
 import com.yiran.entity.QueryPageBean;
@@ -14,7 +15,9 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/game")
@@ -72,15 +75,25 @@ public class GameController {
 
     /**
      * 添加游戏数据
-     * @param game 游戏信息
-     * @param detailGame 游戏详情信息
+     * @param gameData 游戏信息
      * @param categoryId 游戏分类id
-     * @param decoderName 游戏破解者名称
      * @return 状态
      */
     @PostMapping("/add")
     @PreAuthorize("hasAuthority('GAME_ADD')")
-    public Result add(@RequestBody Game game, @RequestBody DetailGame detailGame, Integer[] categoryId, String decoderName){
+    public Result add(@RequestBody Map<String, Object> gameData, @RequestParam(required = false) Integer[] categoryId,
+                      HttpServletRequest request){
+
+        // 请求参数列表中 最好只用一个 @RequestBody
+        // 使用map进行接收后 使用JSON进行转换
+//        System.out.println(gameData);
+        Map<String, Object> game_map = (Map<String, Object>) gameData.get("game");
+        Map<String, Object> detailGame_map = (Map<String, Object>) gameData.get("detailGame");
+
+
+        String decoderName = (String) game_map.get("decoderName");
+        Game game = JSON.parseObject(JSON.toJSON(game_map).toString(), Game.class);
+        DetailGame detailGame = JSON.parseObject(JSON.toJSON(detailGame_map).toString(), DetailGame.class);
 
         try {
             if (checkGame(game) && checkDetailGame(detailGame)){
@@ -114,7 +127,7 @@ public class GameController {
             Long size = game.getSize();
             String downloadUrl = game.getDownloadUrl();
             if (!StringUtils.isEmpty(capacity) && !StringUtils.isEmpty(name) && !StringUtils.isEmpty(chsName)
-                    &&StringUtils.isEmpty(originUrl) && StringUtils.isEmpty(downloadUrl) && size != null){
+                    &&!StringUtils.isEmpty(originUrl) && !StringUtils.isEmpty(downloadUrl) && size != null){
                 return true;
             }
         }
