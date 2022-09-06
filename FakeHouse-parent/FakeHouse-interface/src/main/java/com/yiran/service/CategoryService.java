@@ -1,5 +1,7 @@
 package com.yiran.service;
 
+import com.yiran.entity.PageResult;
+import com.yiran.entity.QueryPageBean;
 import com.yiran.pojo.Category;
 
 import java.util.List;
@@ -36,4 +38,42 @@ public interface CategoryService {
      * @return
      */
     List<Integer> findIdByGameId(String gameId);
+
+
+
+    /**
+     * 查询分页数据
+     * @param queryPageBean 查询条件封装
+     * @return
+     */
+    PageResult findPage(QueryPageBean queryPageBean);
+
+
+    /**
+     * 添加分类数据
+     * @param category 分类数据
+     */
+    void add(Category category);
+
+
+    /**
+     * 通过id进行查询
+     * @param id 分类id
+     * @return
+     */
+    Category findById(Integer id);
+
+
+    /**
+     * 修改分类数据
+     * @param category 分类信息
+     */
+    void update(Category category);
+
+
+    /**
+     * 通过id删除
+     * @param id 分类id
+     */
+    void deleteById(Integer id);
 }

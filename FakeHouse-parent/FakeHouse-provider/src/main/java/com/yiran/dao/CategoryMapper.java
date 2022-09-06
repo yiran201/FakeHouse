@@ -1,5 +1,6 @@
 package com.yiran.dao;
 
+import com.github.pagehelper.Page;
 import com.yiran.pojo.Category;
 
 import java.util.List;
@@ -46,4 +47,26 @@ public interface CategoryMapper {
      * @return
      */
     List<Integer> findIdByGameId(String gameId);
+
+
+    /**
+     * 通过名字进行模糊查询 通过PageHelper进行分页
+     * @param queryString 查询字符串
+     * @return
+     */
+    Page<Category> findPageByName(String queryString);
+
+
+    /**
+     * 查询所有, 通过PageHelper进行分页
+     * @return
+     */
+    Page<Category> findPage();
+
+
+    /**
+     * 删除中间表数据
+     * @param id 分类id
+     */
+    void disconnectWithGame(Integer id);
 }

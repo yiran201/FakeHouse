@@ -107,4 +107,22 @@
       insert into t_game_category(game_id, category_id) values(#{gameId}, #{categoryId})
   </insert>
 
+
+    <!--  删除中间表数据  -->
+    <delete id="disconnectWithGame" parameterType="int">
+        delete from t_game_category where category_id = #{value}
+    </delete>
+
+    <!--  通过名字进行查询 通过PageHelper进行分页 -->
+    <select id="findPageByName" parameterType="string" resultType="com.yiran.pojo.Category">
+        select * from t_category where name like #{value}
+    </select>
+
+    <!--  查询所有, 通过PageHelper进行分页  -->
+    <select id="findPage" resultType="com.yiran.pojo.Category">
+        select * from t_category
+    </select>
+
+
+
 </mapper>
