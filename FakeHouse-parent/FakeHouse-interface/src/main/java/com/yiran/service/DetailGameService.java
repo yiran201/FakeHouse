@@ -25,4 +25,11 @@ public interface DetailGameService {
      * @param detailGame 游戏详情
      */
     void updateById(DetailGame detailGame);
+
+
+    /**
+     * 删除游戏详情数据, 要求将游戏关联的特色数据也彻底删除  两者为依存关系
+     * @param detailId 游戏详情的id
+     */
+    void deleteById(String detailId);
 }

@@ -2,6 +2,8 @@ package com.yiran.dao;
 
 import com.yiran.pojo.Character;
 
+import java.util.List;
+
 public interface CharacterMapper {
     int deleteByPrimaryKey(String id);
 
@@ -14,4 +16,11 @@ public interface CharacterMapper {
     int updateByPrimaryKeySelective(Character record);
 
     int updateByPrimaryKey(Character record);
+
+
+    /**
+     * 通过id删除
+     * @param charaIds id集合
+     */
+    void deleteByList(List<String> charaIds);
 }

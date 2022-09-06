@@ -68,4 +68,18 @@
       score = #{score,jdbcType=INTEGER}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+
+
+    <!--  通过id删除  -->
+    <delete id="deleteByList" parameterType="list">
+        delete from t_character
+        <where>
+            <foreach collection="array" open="id in(" close=")" item="id" separator=",">
+                #{value}
+            </foreach>
+        </where>
+    </delete>
+
+
 </mapper>

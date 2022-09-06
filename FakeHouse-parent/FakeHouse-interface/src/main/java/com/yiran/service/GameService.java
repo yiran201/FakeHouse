@@ -61,4 +61,11 @@ public interface GameService {
      * @param decoderName 游戏破解者名称
      */
     void update(Game game, DetailGame detailGame, Integer[] categoryId, String decoderName) throws Exception;
+
+
+    /**
+     * 根据游戏id删除游戏
+     * @param id 游戏id
+     */
+    void deleteById(String id);
 }

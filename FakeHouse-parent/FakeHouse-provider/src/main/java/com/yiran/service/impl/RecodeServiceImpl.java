@@ -5,6 +5,7 @@ import com.yiran.dao.RecodeMapper;
 import com.yiran.service.RecodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 
 @Service(interfaceClass = RecodeService.class)
@@ -35,5 +36,20 @@ public class RecodeServiceImpl implements RecodeService {
     @Override
     public int findDownloadCountByGameId(String game_id) {
         return recodeMapper.findDownloadCountByGameId(game_id);
+    }
+
+
+    /**
+     * 通过游戏id删除记录数据
+     * @param id 游戏id
+     */
+    @Override
+    public void deleteByGameId(String id) {
+
+        if (!StringUtils.isEmpty(id)){
+            recodeMapper.deleteByGameId(id);
+        }
+
+
     }
 }

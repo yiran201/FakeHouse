@@ -184,6 +184,21 @@ public class GameController {
 
     }
 
+    @DeleteMapping("/delete")
+    @PreAuthorize("hasAuthority('GAME_DELETE')")
+    public Result deleteById(String id){
+
+        try {
+            if (!StringUtils.isEmpty(id)){
+                gameService.deleteById(id);
+                return new Result(true, MessageConstant.DELETE_GAME_SUCCESS);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new Result(false, MessageConstant.DELETE_GAME_FAIL);
+    }
+
 
 
     // 检验游戏详情详情信息是否完整

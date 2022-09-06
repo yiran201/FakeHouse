@@ -48,6 +48,8 @@ public class GameServiceImpl implements GameService{
     @Autowired
     private IdWorker idWorker;
 
+
+
     /**
      * 查询游戏数据, 携带游戏查看数和下载数
      * @param queryPageBean 分页条件
@@ -115,6 +117,9 @@ public class GameServiceImpl implements GameService{
         String detailGameId = Long.toString(idWorker.nextId());
         if (!StringUtils.isEmpty(detailGameId)){
             detailGame.setId(detailGameId);
+            // 游戏详情表中存在着游戏的详情数据
+            // 此处没有进行添加, 对于该页面, 不应该存在能够修改页面详情数据的方式
+            // 之后通过别的服务进行实现  游戏详情页面
             detailGameService.add(detailGame);
         }
 
@@ -164,6 +169,9 @@ public class GameServiceImpl implements GameService{
         DetailGame detailGame = null;
         String detailId = game.getDetailId();
         if (!StringUtils.isEmpty(detailId)){
+            // 游戏详情表中存在着游戏的详情数据
+            // 此处没有进行查询, 对于该页面, 不应该存在能够修改页面详情数据的方式
+            // 之后通过别的服务进行实现  游戏详情页面
             detailGame = detailGameService.findById(detailId);
         }
 
@@ -226,13 +234,27 @@ public class GameServiceImpl implements GameService{
 
 
         // 修改游戏详情数据
-        if (detailGame != null && !StringUtils.isEmpty(detailGame.getId())){
-            detailGameService.updateById(detailGame);
+        // 存在一种特例情况, detailId为空, 因为插入数据是没有关联上detail的信息
+        // 于是要进行处理  获取到前端的数据中不会包含id, 所以要进行设置
+        String detailId = null;
+        if (detailGame != null){
+            if (!StringUtils.isEmpty(detailGame.getId())){
+                detailGameService.updateById(detailGame);
+            }else{
+                // 游戏详情表中存在着游戏的详情数据
+                // 此处没有进行修改, 对于该页面, 不应该存在能够修改页面详情数据的方式
+                // 之后通过别的服务进行实现  游戏详情页面
+                detailId = Long.toString(idWorker.nextId());
+                detailGame.setId(detailId);
+                detailGameService.add(detailGame);
+            }
         }
 
         // 修改游戏数据
         game.setInsertTime(null);
-        game.setDetailId(null);
+        // 存在detailId为空的情况, 就是detailGame的信息能够正常更新的情况 此时不会进行更新
+        // 如果detailId不为空, 说明当时游戏数据插入时没有带上游戏详情数据
+        game.setDetailId(detailId);
         game.setDecoderId(decoderId);
         // bug: 无法修改decoderId为空, 因为一旦为空, 就不会进行更新, 从而导致修改失败
         if (!StringUtils.isEmpty(game.getId())){
@@ -247,6 +269,35 @@ public class GameServiceImpl implements GameService{
             map.put("categoryId", cid);
             gameMapper.connectWithCategory(map);
         }
+
+    }
+
+
+    /**
+     * 通过游戏id删除游戏
+     * @param id 游戏id
+     */
+    @Override
+    public void deleteById(String id) {
+
+        // 查询出游戏数据
+        Game game = gameMapper.selectByPrimaryKey(id);
+
+        // 删除游戏分类表关系
+        gameMapper.disconnectWithCategory(id);
+
+        // 将游戏的删除, 并将用户记录表中的记录删除
+        gameMapper.deleteByPrimaryKey(id);
+
+        // 要先将用户-游戏表的数据删除
+        recodeService.deleteByGameId(id);
+
+        // 删除游戏详情数据
+        if (game.getDetailId() != null){
+            // 删除游戏详情数据, 要求要将游戏特色数据也删除, 否则会约束导致删除失败
+            detailGameService.deleteById(game.getDetailId());
+        }
+
 
     }
 

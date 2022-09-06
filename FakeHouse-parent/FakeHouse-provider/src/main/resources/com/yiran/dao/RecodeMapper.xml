@@ -126,4 +126,9 @@
         select count(*) from t_recode where game_id = #{value} and type = 2
     </select>
 
+    <!--  通过游戏id删除记录数据  -->
+    <delete id="deleteByGameId" parameterType="string">
+        delete from t_recode where game_id = #{value}
+    </delete>
+
 </mapper>

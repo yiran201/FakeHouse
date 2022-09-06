@@ -85,7 +85,8 @@ public class MessageConstant {
     public static final String ADD_GAME_FAIL = "添加游戏失败";
     public static final String UPDATE_GAME_SUCCESS = "更新游戏成功";
     public static final String UPDATE_GAME_FAIL = "更新游戏失败";
-
+    public static final String DELETE_GAME_SUCCESS = "删除游戏成功";
+    public static final String DELETE_GAME_FAIL = "删除游戏失败";
 
 
 

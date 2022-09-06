@@ -139,4 +139,17 @@
       voiceLanguage = #{voiceLanguage,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+
+    <!--  通过游戏详情id查询游戏特色id集合  -->
+    <select id="findCharaIds" parameterType="string" resultType="string">
+        select tgc.* from t_game_character tgc where game_detail_id = #{value}
+    </select>
+
+    <!--  删除与游戏特色表的关联关系  -->
+    <delete id="disconnectWithChara" parameterType="string">
+        delete from  t_game_character tgc where game_detail_id = #{value}
+    </delete>
+
+
 </mapper>

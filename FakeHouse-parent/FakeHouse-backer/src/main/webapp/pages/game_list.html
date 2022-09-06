@@ -718,7 +718,7 @@
                     type:'warning'
                 }).then(()=>{
                     //用户点击确定按钮，发送ajax请求，将检查项ID提交到Controller进行处理
-                    axios.delete("/FakeHouse-backer/user/delete.do?id=" + row.id).then((res) => {
+                    axios.delete("/FakeHouse-backer/game/delete.do?id=" + row.id).then((res) => {
                         if(res.data.flag){
                             //执行成功
                             //弹出成功提示信息

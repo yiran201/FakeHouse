@@ -17,4 +17,10 @@ public interface RecodeService {
      */
     int findDownloadCountByGameId(String game_id);
 
+
+    /**
+     * 通过游戏id删除记录数据
+     * @param id 游戏id
+     */
+    void deleteByGameId(String id);
 }
