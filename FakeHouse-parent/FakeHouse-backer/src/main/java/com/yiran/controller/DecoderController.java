@@ -31,11 +31,14 @@ public class DecoderController {
      */
     @PostMapping("/findPage")
     @PreAuthorize("hasAuthority('DECODER_SELECT')")
-    public Result findPage(@RequestBody QueryPageBean queryPageBean){
+    public Result findPage(@RequestBody QueryPageBean queryPageBean, Integer column){
 
         try {
+            if (column == null){
+                column = 1;
+            }
             if (QueryPageBean.checkQueryPageBean(queryPageBean)){
-                PageResult result = decoderService.findPage(queryPageBean);
+                PageResult result = decoderService.findPage(queryPageBean, column);
                 if (result != null){
                     return new Result(true, MessageConstant.QUERY_DECODER_SUCCESS, result);
                 }

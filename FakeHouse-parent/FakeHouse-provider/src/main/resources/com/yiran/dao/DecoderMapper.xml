@@ -119,4 +119,8 @@
         select * from t_decoder
     </select>
 
+    <!--  通过游戏id分页查询  -->
+    <select id="findPageByGameId" resultType="com.yiran.pojo.Decoder" parameterType="string">
+        select t_decoder.* from t_decoder, t_game where t_game.id = #{value} and t_game.decoder_id = t_decoder.id
+    </select>
 </mapper>

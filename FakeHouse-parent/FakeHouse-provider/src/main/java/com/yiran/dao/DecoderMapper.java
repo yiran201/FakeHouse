@@ -49,4 +49,10 @@ public interface DecoderMapper {
     Page<Decoder> findPage();
 
 
+    /**
+     * 通过游戏id进行查询
+     * @param queryString gameId
+     * @return
+     */
+    Page<Decoder> findPageByGameId(String queryString);
 }

@@ -25,9 +25,10 @@ public interface DecoderService {
     /**
      * 分页查询decoder数据
      * @param queryPageBean 分页和查询条件
+     * @param column
      * @return
      */
-    PageResult findPage(QueryPageBean queryPageBean);
+    PageResult findPage(QueryPageBean queryPageBean, Integer column);
 
 
     /**

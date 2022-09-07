@@ -58,6 +58,13 @@
                 <el-input placeholder="decoder名称" v-model="pagination.queryString" style="width: 200px;" class="filter-item"></el-input>
                 <el-button @click="findQueryPage()" class="dalfBut">查询</el-button>
                 <el-button type="primary" class="butT" @click="handleCreate()">新建decoder</el-button>
+                <span style="font-size: 10px">&nbsp;&nbsp;查询字段&nbsp;</span>
+                <template>
+                    <el-radio-group v-model="pagination.column">
+                        <el-radio :label="1">decoder名称</el-radio>
+                        <el-radio :label="2">游戏id</el-radio>
+                    </el-radio-group>
+                </template>
             </div>
             <!--  列表数据展示  -->
             <el-table size="small" current-row-key="id" :data="dataList" stripe highlight-current-row>
@@ -172,7 +179,8 @@
                 currentPage: 1,//当前页码
                 pageSize:15,//每页显示的记录数
                 total:0,//总记录数
-                queryString:null//查询条件
+                queryString:null,//查询条件
+                column: 1
             },
             dataList: [],//当前页要展示的分页列表数据
             formData: {},//表单数据
@@ -278,7 +286,7 @@
                     pageSize:this.pagination.pageSize,
                     queryString: this.pagination.queryString
                 };
-                axios.post("/FakeHouse-backer/decoder/findPage.do",param).then((res)=>{
+                axios.post("/FakeHouse-backer/decoder/findPage.do?column="+this.pagination.column,param).then((res)=>{
                     if(res.data.flag) {
 
                         //解析Controller响应回的数据，为模型数据赋值
@@ -302,7 +310,7 @@
                     pageSize:this.pagination.pageSize,
                     queryString: this.pagination.queryString
                 };
-                axios.post("/FakeHouse-backer/decoder/findPage.do",param).then((res)=>{
+                axios.post("/FakeHouse-backer/decoder/findPage.do?column="+this.pagination.column,param).then((res)=>{
 
                     if (res.data.flag)
                     {

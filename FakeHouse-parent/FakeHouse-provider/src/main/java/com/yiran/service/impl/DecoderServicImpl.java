@@ -65,10 +65,11 @@ public class DecoderServicImpl implements DecoderService {
     /**
      * 分页查询decoder
      * @param queryPageBean 分页和查询条件
+     * @param column
      * @return
      */
     @Override
-    public PageResult findPage(QueryPageBean queryPageBean) {
+    public PageResult findPage(QueryPageBean queryPageBean, Integer column) {
 
         PageHelper.startPage(queryPageBean.getCurrentPage(), queryPageBean.getPageSize());
 
@@ -76,7 +77,20 @@ public class DecoderServicImpl implements DecoderService {
         Page<Decoder> result = null;
         if (!StringUtils.isEmpty(queryString)){
             // 查询条件不为空
-            result = decoderMapper.findPageByName("%"+queryString+"%");
+            switch(column){
+                // 通过name进行查询
+                case 1:
+                    result = decoderMapper.findPageByName("%"+queryString+"%");
+                    break;
+                // 通过游戏id进行查询
+                case 2:
+                    result = decoderMapper.findPageByGameId(queryString);
+                    break;
+                default:
+                    result = decoderMapper.findPageByName("%"+queryString+"%");
+                    break;
+            }
+
         }else{
             result = decoderMapper.findPage();
         }

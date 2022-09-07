@@ -2,24 +2,18 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="FakeHouse-backer:war exploded" />
+      <artifact name="FakeHouse-provider:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="082ee9dd-7221-4530-8188-0be64685dd02" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/CategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/DecoderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/DecoderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/category.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/decoder.html" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/decoder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/constant/MessageConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/constant/MessageConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/CategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/DecoderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/DecoderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/CategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/CategoryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/DecoderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/DecoderMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/DecoderServicImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/DecoderServicImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/CategoryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/DecoderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/DecoderMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/FakeHouse-parent/target/" />
     <ignored path="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/target/" />
@@ -55,14 +49,14 @@
           <entry key="css" value="2" />
           <entry key="gitignore" value="3" />
           <entry key="html" value="49" />
-          <entry key="java" value="214" />
+          <entry key="java" value="217" />
           <entry key="jpg" value="9" />
           <entry key="js" value="3" />
           <entry key="png" value="7" />
           <entry key="properties" value="14" />
           <entry key="svg" value="1" />
           <entry key="woff" value="1" />
-          <entry key="xml" value="78" />
+          <entry key="xml" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -71,32 +65,32 @@
           <entry key="CSS" value="2" />
           <entry key="HTML" value="49" />
           <entry key="Image" value="16" />
-          <entry key="JAVA" value="214" />
+          <entry key="JAVA" value="217" />
           <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Properties" value="14" />
           <entry key="SVG" value="1" />
-          <entry key="XML" value="78" />
+          <entry key="XML" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="53" />
-          <entry key="html" value="2411" />
-          <entry key="java" value="17683" />
+          <entry key="html" value="2435" />
+          <entry key="java" value="17903" />
           <entry key="properties" value="8" />
-          <entry key="txt" value="702" />
-          <entry key="xml" value="3098" />
+          <entry key="txt" value="786" />
+          <entry key="xml" value="3212" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="2411" />
-          <entry key="JAVA" value="17683" />
-          <entry key="PLAIN_TEXT" value="755" />
+          <entry key="HTML" value="2435" />
+          <entry key="JAVA" value="17903" />
+          <entry key="PLAIN_TEXT" value="839" />
           <entry key="Properties" value="8" />
           <entry key="SQL" value="42" />
-          <entry key="XML" value="3056" />
+          <entry key="XML" value="3170" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -111,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/category.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="299" column="21" lean-forward="true" selection-start-line="299" selection-start-column="21" selection-end-line="299" selection-end-column="21" />
+            <state relative-caret-position="220">
+              <caret line="199" column="25" lean-forward="true" selection-start-line="199" selection-start-column="16" selection-end-line="199" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#2429#2435#0" expanded="true" />
@@ -124,20 +118,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/decoder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="172" column="38" lean-forward="true" selection-start-line="172" selection-start-column="38" selection-end-line="172" selection-end-column="38" />
+            <state relative-caret-position="-542">
+              <caret line="315" column="21" lean-forward="true" selection-start-line="315" selection-start-column="21" selection-end-line="315" selection-end-column="21" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#2446#2452#0" expanded="true" />
+                <element signature="e#2452#2458#0" expanded="true" />
+                <element signature="e#2462#2468#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/CategoryController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/DecoderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="77" column="35" lean-forward="true" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
+            <state relative-caret-position="359">
+              <caret line="40" column="81" selection-start-line="40" selection-start-column="81" selection-end-line="40" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,37 +146,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/CategoryServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/DecoderServicImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="93" column="74" lean-forward="true" selection-start-line="93" selection-start-column="74" selection-end-line="93" selection-end-column="74" />
+            <state relative-caret-position="410">
+              <caret line="86" column="56" lean-forward="true" selection-start-line="86" selection-start-column="56" selection-end-line="86" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/constant/MessageConstant.java">
+        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/DecoderMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="101" column="61" selection-start-line="101" selection-start-column="61" selection-end-line="101" selection-end-column="61" />
+            <state relative-caret-position="520">
+              <caret line="57" column="1" lean-forward="true" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/CategoryMapper.java">
+        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/DecoderMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="82" column="21" lean-forward="true" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/CategoryMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
-              <caret line="133" column="13" lean-forward="true" selection-start-line="133" selection-start-column="13" selection-end-line="133" selection-end-column="13" />
+            <state relative-caret-position="366">
+              <caret line="123" column="65" selection-start-line="123" selection-start-column="65" selection-end-line="123" selection-end-column="65" />
               <folding>
                 <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
                 <element signature="n#sql#0;n#mapper#0;n#!!top" />
@@ -186,7 +177,18 @@
                 <element signature="n#insert#1;n#mapper#0;n#!!top" />
                 <element signature="n#update#0;n#mapper#0;n#!!top" />
                 <element signature="n#update#1;n#mapper#0;n#!!top" />
+                <element signature="n#select#1;n#mapper#0;n#!!top" />
+                <element signature="n#insert#2;n#mapper#0;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/constant/MessageConstant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="12">
+              <caret line="101" column="61" selection-start-line="101" selection-start-column="61" selection-end-line="101" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -194,7 +196,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
+            <state relative-caret-position="164">
               <caret line="359" column="69" lean-forward="true" selection-start-line="359" selection-start-column="69" selection-end-line="359" selection-end-column="69" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
@@ -291,23 +293,23 @@
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/DetailGameMapper.xml" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/RecodeMapper.xml" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/CategoryService.java" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/DecoderMapper.xml" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/DecoderMapper.java" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/GameService.java" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/GameServiceImpl.java" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/GameMapper.java" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/GameMapper.xml" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/DecoderService.java" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/constant/MessageConstant.java" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/DecoderServicImpl.java" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/DecoderController.java" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/decoder.html" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/CategoryMapper.java" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/CategoryMapper.xml" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/CategoryServiceImpl.java" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/category.html" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/CategoryController.java" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/DecoderController.java" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/DecoderServicImpl.java" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/DecoderMapper.java" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/DecoderMapper.xml" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/decoder.html" />
       </list>
     </option>
   </component>
@@ -668,7 +670,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1662543993559" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1662545173870" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="G:/java_idea/UI_Learn" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -706,7 +708,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.FakeHouse-backer">
+  <component name="RunManager" selected="Tomcat Server.FakeHouse-provider">
     <configuration name="IdWorker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.yiran.utils.IdWorker" />
       <module name="FakeHouse-common" />
@@ -913,7 +915,7 @@
       <workItem from="1662378746048" duration="10346000" />
       <workItem from="1662443234498" duration="5791000" />
       <workItem from="1662449443977" duration="4729000" />
-      <workItem from="1662519073920" duration="11132000" />
+      <workItem from="1662519073920" duration="12406000" />
     </task>
     <task id="LOCAL-00001" summary="初始化数据库;&#10;测试并引用OauthConsole模块, 导入部分代码.">
       <created>1661919009409</created>
@@ -999,11 +1001,18 @@
       <option name="project" value="LOCAL" />
       <updated>1662537388973</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="修正分类和添加时可能出现的name重复的bug;&#10;完成通过游戏id查询分类列表的功能.">
+      <created>1662544151065</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1662544151065</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81916000" />
+    <option name="totallyTimeSpent" value="83190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -1019,7 +1028,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.33831376" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.26680896" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.37566704" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1128,7 +1137,8 @@
     <MESSAGE value="完成/游戏列表/游戏删除功能;并进行了测试, 现阶段测试都通过了, 之后还要进行一次大的测试;修正了之前没有考虑到游戏特色数据关联关系的逻辑问题." />
     <MESSAGE value="暂时保存:进度--decoder的增删查逻辑, 剩下改逻辑." />
     <MESSAGE value="完成decoder的修改逻辑并测试成功." />
-    <option name="LAST_COMMIT_MESSAGE" value="完成decoder的修改逻辑并测试成功." />
+    <MESSAGE value="修正分类和添加时可能出现的name重复的bug;&#10;完成通过游戏id查询分类列表的功能." />
+    <option name="LAST_COMMIT_MESSAGE" value="修正分类和添加时可能出现的name重复的bug;&#10;完成通过游戏id查询分类列表的功能." />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.0.5.RELEASE/spring-tx-5.0.5.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.class">
@@ -1437,68 +1447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/DecoderMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/DecoderMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
-          <folding>
-            <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
-            <element signature="n#sql#0;n#mapper#0;n#!!top" />
-            <element signature="n#select#0;n#mapper#0;n#!!top" />
-            <element signature="n#delete#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#update#1;n#mapper#0;n#!!top" />
-            <element signature="n#select#1;n#mapper#0;n#!!top" />
-            <element signature="n#insert#2;n#mapper#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/DecoderServicImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1068">
-          <caret line="150" column="20" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/DecoderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="138" column="17" lean-forward="true" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="359" column="69" lean-forward="true" selection-start-line="359" selection-start-column="69" selection-end-line="359" selection-end-column="69" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#el-input#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-table#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#el-tab-pane#0;n#el-tabs#0;n#template#0;n#el-dialog#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#el-tab-pane#1;n#el-tabs#0;n#template#0;n#el-dialog#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#el-form#0;n#el-tab-pane#1;n#el-tabs#0;n#template#0;n#el-dialog#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#el-tab-pane#2;n#el-tabs#0;n#template#0;n#el-dialog#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#el-tab-pane#1;n#el-tabs#0;n#template#0;n#el-dialog#0;n#div#3;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/CategoryMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="604">
@@ -1523,13 +1471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/constant/MessageConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="101" column="61" selection-start-line="101" selection-start-column="61" selection-end-line="101" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/CategoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -1537,17 +1478,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/decoder.html">
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/CategoryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="172" column="38" lean-forward="true" selection-start-line="172" selection-start-column="38" selection-end-line="172" selection-end-column="38" />
+        <state relative-caret-position="890">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/category.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="299" column="21" lean-forward="true" selection-start-line="299" selection-start-column="21" selection-end-line="299" selection-end-column="21" />
+        <state relative-caret-position="220">
+          <caret line="199" column="25" lean-forward="true" selection-start-line="199" selection-start-column="16" selection-end-line="199" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#2429#2435#0" expanded="true" />
@@ -1558,12 +1502,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/CategoryController.java">
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/DecoderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="77" column="35" lean-forward="true" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
+        <state relative-caret-position="359">
+          <caret line="40" column="81" selection-start-line="40" selection-start-column="81" selection-end-line="40" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/DecoderServicImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="86" column="56" lean-forward="true" selection-start-line="86" selection-start-column="56" selection-end-line="86" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/DecoderMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="57" column="1" lean-forward="true" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="359" column="69" lean-forward="true" selection-start-line="359" selection-start-column="69" selection-end-line="359" selection-end-column="69" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#el-input#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-table#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#el-tab-pane#0;n#el-tabs#0;n#template#0;n#el-dialog#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#el-tab-pane#1;n#el-tabs#0;n#template#0;n#el-dialog#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#el-form#0;n#el-tab-pane#1;n#el-tabs#0;n#template#0;n#el-dialog#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#el-tab-pane#2;n#el-tabs#0;n#template#0;n#el-dialog#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#el-tab-pane#1;n#el-tabs#0;n#template#0;n#el-dialog#0;n#div#3;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/constant/MessageConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="101" column="61" selection-start-line="101" selection-start-column="61" selection-end-line="101" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/DecoderMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="123" column="65" selection-start-line="123" selection-start-column="65" selection-end-line="123" selection-end-column="65" />
+          <folding>
+            <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
+            <element signature="n#sql#0;n#mapper#0;n#!!top" />
+            <element signature="n#select#0;n#mapper#0;n#!!top" />
+            <element signature="n#delete#0;n#mapper#0;n#!!top" />
+            <element signature="n#insert#0;n#mapper#0;n#!!top" />
+            <element signature="n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#update#1;n#mapper#0;n#!!top" />
+            <element signature="n#select#1;n#mapper#0;n#!!top" />
+            <element signature="n#insert#2;n#mapper#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/decoder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-542">
+          <caret line="315" column="21" lean-forward="true" selection-start-line="315" selection-start-column="21" selection-end-line="315" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2446#2452#0" expanded="true" />
+            <element signature="e#2452#2458#0" expanded="true" />
+            <element signature="e#2462#2468#0" expanded="true" />
           </folding>
         </state>
       </provider>
