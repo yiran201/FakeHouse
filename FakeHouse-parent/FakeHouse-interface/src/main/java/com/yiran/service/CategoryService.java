@@ -44,16 +44,17 @@ public interface CategoryService {
     /**
      * 查询分页数据
      * @param queryPageBean 查询条件封装
+     * @param column
      * @return
      */
-    PageResult findPage(QueryPageBean queryPageBean);
+    PageResult findPage(QueryPageBean queryPageBean, Integer column);
 
 
     /**
      * 添加分类数据
      * @param category 分类数据
      */
-    void add(Category category);
+    boolean add(Category category);
 
 
     /**
@@ -68,7 +69,7 @@ public interface CategoryService {
      * 修改分类数据
      * @param category 分类信息
      */
-    void update(Category category);
+    boolean update(Category category);
 
 
     /**

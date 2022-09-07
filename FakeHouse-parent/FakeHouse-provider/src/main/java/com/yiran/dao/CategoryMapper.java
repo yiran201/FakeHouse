@@ -69,4 +69,20 @@ public interface CategoryMapper {
      * @param id 分类id
      */
     void disconnectWithGame(Integer id);
+
+
+    /**
+     * 通过名称查询
+     * @param name 分类名称
+     * @return
+     */
+    Category findByName(String name);
+
+
+    /**
+     * 通过游戏id分页查询分类数据
+     * @param s 游戏id
+     * @return
+     */
+    Page<Category> findPageByGameId(String s);
 }

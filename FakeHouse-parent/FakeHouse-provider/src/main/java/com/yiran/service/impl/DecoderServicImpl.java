@@ -13,8 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
-import java.util.List;
-
 
 @Service(interfaceClass = DecoderService.class)
 @Transactional
@@ -106,6 +104,8 @@ public class DecoderServicImpl implements DecoderService {
         if (id != null){
             return false;
         }else{
+            // 自增
+            decoder.setId(null);
             decoderMapper.insert(decoder);
         }
         return true;
@@ -140,7 +140,14 @@ public class DecoderServicImpl implements DecoderService {
      * @param decoder 数据和decoder的id
      */
     @Override
-    public void updateById(Decoder decoder) {
+    public boolean updateById(Decoder decoder) {
+
+        // 检查名称是否重复
+        Integer id = decoderMapper.findDecoderIdByName(decoder.getName());
+        if (id != null){
+            return false;
+        }
         decoderMapper.updateByPrimaryKey(decoder);
+        return true;
     }
 }

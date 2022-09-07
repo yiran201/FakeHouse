@@ -33,8 +33,12 @@ public class CategoryController {
         // 校验分析信息
         try {
             if (checkCategory(category)){
-                categoryService.add(category);
-                return new Result(true, MessageConstant.ADD_CATEGORY_SUCCESS);
+                boolean flag = categoryService.add(category);
+                if (flag){
+                    return new Result(true, MessageConstant.ADD_CATEGORY_SUCCESS);
+                }else{
+                    return new Result(false, MessageConstant.CATEGORY_NAME_EXISTS);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,11 +73,15 @@ public class CategoryController {
      */
     @PostMapping("/findPage")
     @PreAuthorize("hasAuthority('CATEGORY_SELECT')")
-    public Result findPage(@RequestBody QueryPageBean queryPageBean){
+    public Result findPage(@RequestBody QueryPageBean queryPageBean, Integer column){
 
+//        System.out.println(column);
         try {
+            if (column == null){
+                column = 1;
+            }
             if (QueryPageBean.checkQueryPageBean(queryPageBean)){
-                PageResult result = categoryService.findPage(queryPageBean);
+                PageResult result = categoryService.findPage(queryPageBean, column);
                 return new Result(true, MessageConstant.QUERY_CATEGORY_SUCCESS, result);
             }
         } catch (Exception e) {
@@ -114,8 +122,12 @@ public class CategoryController {
 
         try {
             if (checkCategory(category) && category.getId() != null){
-                categoryService.update(category);
-                return new Result(true, MessageConstant.UPDATE_CATEGORY_SUCCESS);
+                boolean flag = categoryService.update(category);
+                if (flag) {
+                    return new Result(true, MessageConstant.UPDATE_CATEGORY_SUCCESS);
+                }else{
+                    return new Result(false, MessageConstant.CATEGORY_NAME_EXISTS);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

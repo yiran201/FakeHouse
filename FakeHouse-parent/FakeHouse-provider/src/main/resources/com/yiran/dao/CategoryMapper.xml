@@ -123,6 +123,14 @@
         select * from t_category
     </select>
 
+  <!--  通过名称查询  -->
+  <select id="findByName" parameterType="string" resultType="com.yiran.pojo.Category">
+    select * from t_category where name = #{value}
+  </select>
 
+    <!--  通过游戏id查询分类数据  -->
+    <select id="findPageByGameId" parameterType="string" resultType="com.yiran.pojo.Category">
+        select * from t_category tc, t_game_category tgc where tgc.game_id= #{value} and tc.id = tgc.category_id
+    </select>
 
 </mapper>

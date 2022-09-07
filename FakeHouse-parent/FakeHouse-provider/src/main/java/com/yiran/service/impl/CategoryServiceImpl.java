@@ -74,10 +74,11 @@ public class CategoryServiceImpl implements CategoryService {
     /**
      * 查询分页数据
      * @param queryPageBean 查询条件封装
+     * @param column
      * @return
      */
     @Override
-    public PageResult findPage(QueryPageBean queryPageBean) {
+    public PageResult findPage(QueryPageBean queryPageBean, Integer column) {
 
         PageHelper.startPage(queryPageBean.getCurrentPage(), queryPageBean.getPageSize());
 
@@ -85,7 +86,17 @@ public class CategoryServiceImpl implements CategoryService {
         String queryString = queryPageBean.getQueryString();
 
         if (!StringUtils.isEmpty(queryString)){
-            result = categoryMapper.findPageByName("%"+queryString+"%");
+            switch (column){
+                case 1:
+                    result = categoryMapper.findPageByName("%"+queryString+"%");
+                    break;
+                case 2:
+                    result = categoryMapper.findPageByGameId(queryString);
+                    break;
+                default:
+                    result = categoryMapper.findPageByName("%"+queryString+"%");
+                    break;
+            }
         }else{
             result = categoryMapper.findPage();
         }
@@ -101,10 +112,18 @@ public class CategoryServiceImpl implements CategoryService {
      * @param category 分类数据
      */
     @Override
-    public void add(Category category) {
+    public boolean add(Category category) {
         // id采用数据库自增的方式添加, 所以设置为null
+        // 添加逻辑, 应该保证数据库中不存在这相同名称的数据, 才允许添加, 否则添加失败
+        Category result = categoryMapper.findByName(category.getName());
+        if (result != null){
+            return false;
+        }
+
         category.setId(null);
         categoryMapper.insert(category);
+
+        return true;
     }
 
 
@@ -125,10 +144,17 @@ public class CategoryServiceImpl implements CategoryService {
      * @param category 分类信息
      */
     @Override
-    public void update(Category category) {
+    public boolean update(Category category) {
+
+        Category result = categoryMapper.findByName(category.getName());
+
+        if (result != null){
+            return false;
+        }
 
         categoryMapper.updateByPrimaryKey(category);
 
+        return true;
     }
 
     /**

@@ -50,5 +50,5 @@ public interface DecoderService {
      * 通过id更新decoder
      * @param decoder 数据和decoder的id
      */
-    void updateById(Decoder decoder);
+    boolean updateById(Decoder decoder);
 }

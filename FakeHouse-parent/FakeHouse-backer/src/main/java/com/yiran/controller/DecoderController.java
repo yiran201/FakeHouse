@@ -131,8 +131,12 @@ public class DecoderController {
 
         try {
             if (checkDecoder(decoder) && decoder.getId() != null){
-                decoderService.updateById(decoder);
-                return new Result(true, MessageConstant.UPDATE_DECODER_SUCCESS);
+                boolean flag = decoderService.updateById(decoder);
+                if (flag){
+                    return new Result(true, MessageConstant.UPDATE_DECODER_SUCCESS);
+                }else{
+                    return new Result(false, MessageConstant.DECODER_EXISTS);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

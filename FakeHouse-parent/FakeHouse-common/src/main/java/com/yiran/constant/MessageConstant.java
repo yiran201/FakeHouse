@@ -99,6 +99,8 @@ public class MessageConstant {
     public static final String UPDATE_CATEGORY_FAIL = "修改分类信息失败";
     public static final String ADD_CATEGORY_SUCCESS = "添加分类信息成功";
     public static final String ADD_CATEGORY_FAIL = "添加分类信息失败";
+    public static final String CATEGORY_NAME_EXISTS = "分类名称重复";
+
     public static final String DELETE_CATEGORY_SUCCESS = "删除分类信息成功";
     public static final String DELETE_CATEGORY_FAIL = "删除分类信息失败";
     public static final String QUERY_CATEGORY_ID_SUCCESS = "查询分类id失败";
