@@ -104,4 +104,18 @@ public class MessageConstant {
     public static final String QUERY_CATEGORY_ID_SUCCESS = "查询分类id失败";
     public static final String QUERY_CATEGORY_ID_FAIL = "查询分类id失败";
 
+
+    // decoder管理
+    public static final String QUERY_DECODER_SUCCESS = "查询decoder失败";
+    public static final String QUERY_DECODER_FAIL = "查询decoder失败";
+    public static final String UPDATE_DECODER_SUCCESS = "修改decoder失败";
+    public static final String UPDATE_DECODER_FAIL = "修改decoder失败";
+    public static final String ADD_DECODER_SUCCESS = "添加decoder失败";
+    public static final String ADD_DECODER_FAIL = "添加decoder失败";
+    public static final String DECODER_EXISTS = "decoder已存在";
+
+
+    public static final String DELETE_DECODER_SUCCESS = "删除decoder失败";
+    public static final String DELETE_DECODER_FAIL = "删除decoder失败";
+    public static final String DECODER_CONNECTED = "decoder被关联";
 }

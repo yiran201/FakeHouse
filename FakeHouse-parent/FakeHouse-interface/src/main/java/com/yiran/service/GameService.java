@@ -68,4 +68,20 @@ public interface GameService {
      * @param id 游戏id
      */
     void deleteById(String id);
+
+
+    /**
+     * 通过decoder的id查询游戏的id
+     * @param id decoder 的 id
+     * @return
+     */
+    List<String> findGameIdsByDecoderId(Integer id);
+
+
+    /**
+     * 通过decoder的id查询游戏的id数目
+     * @param id decoder 的 id
+     * @return
+     */
+    Integer findCountByDecoderId(Integer id);
 }

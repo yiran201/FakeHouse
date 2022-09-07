@@ -301,6 +301,30 @@ public class GameServiceImpl implements GameService{
 
     }
 
+
+    /**
+     * 通过decoder的id查询游戏id
+     * @param id decoder 的 id
+     * @return
+     */
+    @Override
+    public List<String> findGameIdsByDecoderId(Integer id) {
+
+        return gameMapper.findIdsByDecoderId(id);
+
+    }
+
+
+    /**
+     * 通过decoder的id查询游戏的id数目
+     * @param id decoder 的 id
+     * @return
+     */
+    @Override
+    public Integer findCountByDecoderId(Integer id) {
+        return gameMapper.findCountByDecoderId(id);
+    }
+
     /**
      * 给游戏填充count数据
      * 该反方法废除, 因为不好用, 对资源消耗大

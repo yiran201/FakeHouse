@@ -3,6 +3,7 @@ package com.yiran.dao;
 import com.github.pagehelper.Page;
 import com.yiran.pojo.Game;
 
+import java.util.List;
 import java.util.Map;
 
 public interface GameMapper {
@@ -53,4 +54,20 @@ public interface GameMapper {
      * @param game 游戏数据
      */
     void updateGameByPrimaryKey(Game game);
+
+
+    /**
+     * 通过decoder的id查询游戏id
+     * @param id decoder 的 id
+     * @return
+     */
+    List<String> findIdsByDecoderId(Integer id);
+
+
+    /**
+     * 通过decoder的id查询游戏的id数目
+     * @param id decoder 的 id
+     * @return
+     */
+    Integer findCountByDecoderId(Integer id);
 }

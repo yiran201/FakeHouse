@@ -248,4 +248,15 @@
 
         where id = #{id,jdbcType=VARCHAR}
     </update>
+
+
+  <!--  通过decoder的id查询游戏id  -->
+  <select id="findIdsByDecoderId" parameterType="int" resultType="string">
+    select id from t_game where decoder_id = #{value}
+  </select>
+
+
+    <select id="findCountByDecoderId" resultType="int" parameterType="int">
+        select count(id) from t_game where decoder_id = #{value}
+    </select>
 </mapper>

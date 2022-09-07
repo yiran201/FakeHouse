@@ -108,4 +108,15 @@
         </trim>
     </insert>
 
+
+    <!--  通过名称进行分页查询  -->
+    <select id="findPageByName" parameterType="string" resultType="com.yiran.pojo.Decoder">
+        select * from t_decoder where name like #{value}
+    </select>
+
+    <!--  分页查询  -->
+    <select id="findPage" resultType="com.yiran.pojo.Decoder">
+        select * from t_decoder
+    </select>
+
 </mapper>

@@ -1,6 +1,9 @@
 package com.yiran.dao;
 
+import com.github.pagehelper.Page;
 import com.yiran.pojo.Decoder;
+
+import java.util.List;
 
 public interface DecoderMapper {
     int deleteByPrimaryKey(Integer id);
@@ -29,4 +32,21 @@ public interface DecoderMapper {
      * @return 主键id
      */
     void insertAndGetKey(Decoder decoder);
+
+
+    /**
+     * 通过名称进行分页查询
+     * @param s 查询条件
+     * @return
+     */
+    Page<Decoder> findPageByName(String s);
+
+
+    /**
+     * 进行分页查询
+     * @return
+     */
+    Page<Decoder> findPage();
+
+
 }
