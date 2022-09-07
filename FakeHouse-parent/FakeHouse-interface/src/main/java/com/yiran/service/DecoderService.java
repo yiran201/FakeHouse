@@ -44,4 +44,11 @@ public interface DecoderService {
      * @return
      */
     boolean deleteById(Integer id);
+
+
+    /**
+     * 通过id更新decoder
+     * @param decoder 数据和decoder的id
+     */
+    void updateById(Decoder decoder);
 }

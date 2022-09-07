@@ -120,6 +120,26 @@ public class DecoderController {
         return new Result(false, MessageConstant.DELETE_DECODER_FAIL);
     }
 
+    /**
+     * 修改decoder数据, 通过id
+     * @param decoder decoder信息
+     * @return
+     */
+    @PutMapping("/update")
+    @PreAuthorize("hasAuthority('DECODER_UPDATE')")
+    public Result update(@RequestBody Decoder decoder){
+
+        try {
+            if (checkDecoder(decoder) && decoder.getId() != null){
+                decoderService.updateById(decoder);
+                return new Result(true, MessageConstant.UPDATE_DECODER_SUCCESS);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new Result(false, MessageConstant.UPDATE_DECODER_FAIL);
+    }
+
 
     private boolean checkDecoder(Decoder decoder) {
 

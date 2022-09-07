@@ -132,4 +132,15 @@ public class DecoderServicImpl implements DecoderService {
         }
         return true;
     }
+
+
+
+    /**
+     * 通过id更新decoder
+     * @param decoder 数据和decoder的id
+     */
+    @Override
+    public void updateById(Decoder decoder) {
+        decoderMapper.updateByPrimaryKey(decoder);
+    }
 }
