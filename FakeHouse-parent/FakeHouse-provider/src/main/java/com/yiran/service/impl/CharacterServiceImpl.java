@@ -9,7 +9,6 @@ import com.yiran.entity.QueryPageBean;
 import com.yiran.pojo.Character;
 import com.yiran.service.CharacterService;
 import com.yiran.utils.IdWorker;
-import org.apache.zookeeper.data.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -40,7 +39,6 @@ public class CharacterServiceImpl implements CharacterService {
 
     }
 
-    // todo: 进行测试, 注意要在数据库中进行sql执行后, 在运行项目进行测试
 
     @Override
     public PageResult findPage(QueryPageBean queryPageBean, Integer column) {
@@ -54,13 +52,13 @@ public class CharacterServiceImpl implements CharacterService {
             // 查询条件不为空
             switch (column) {
                 case 1:
-                    result = characterMapper.findPageByDetailGameId(queryString);
-                    break;
-                case 2:
                     result =characterMapper.findPageByGameId(queryString);
                     break;
+                case 2:
+                    result = characterMapper.findPageByDetailGameId(queryString);
+                    break;
                 default:
-                    result =characterMapper.findPageByDetailGameId(queryString);
+                    result =characterMapper.findPageByGameId(queryString);
             }
         }else{
             result =characterMapper.findPage();
@@ -112,7 +110,6 @@ public class CharacterServiceImpl implements CharacterService {
     @Override
     public void deleteByDetailGameId(String detailId) {
 
-        // todo: 需要对其先进行业务逻辑的测试, 不能进行进行测试
         characterMapper.deleteByDetailGameId(detailId);
     }
 }

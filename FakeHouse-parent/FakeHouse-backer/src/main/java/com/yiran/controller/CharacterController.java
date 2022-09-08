@@ -1,24 +1,23 @@
 package com.yiran.controller;
 
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.yiran.constant.MessageConstant;
 import com.yiran.entity.PageResult;
 import com.yiran.entity.QueryPageBean;
 import com.yiran.entity.Result;
 import com.yiran.pojo.Character;
 import com.yiran.service.CharacterService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
-@RestController()
+@RestController
 @RequestMapping("/character")
 public class CharacterController {
 
 
-
-    @Autowired
+    @Reference
     private CharacterService characterService;
 
 
@@ -77,7 +76,7 @@ public class CharacterController {
     }
 
 
-    @PostMapping("/findById")
+    @GetMapping("/findById")
     @PreAuthorize("hasAuthority('CHARACTER_SELECT')")
     public Result findById(String id){
 
@@ -111,7 +110,6 @@ public class CharacterController {
 
 
     private static boolean checkCharacter(Character character) {
-
 
         if (character != null){
             String chara = character.getChara();
