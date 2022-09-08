@@ -69,7 +69,24 @@
     where id = #{id,jdbcType=VARCHAR}
   </update>
 
+    <!--  直接进行分页查询  -->
+    <select id="findPage" resultType="com.yiran.pojo.Character">
+        select * from t_character
+    </select>
 
+    <!--  通过游戏id进行分页查询  -->
+    <select id="findPageByGameId" parameterType="string" resultType="com.yiran.pojo.Character">
+        select tc.*
+        from t_character tc, t_game tg, t_game_character tgc
+        where tg.id = #{value} and tg.detail_id = tgc.game_detail_id and tgc.character_id = tc.id
+    </select>
+
+    <!--  通过游戏详情id进行查询  -->
+    <select id="findPageByDetailGameId" parameterType="string" resultType="com.yiran.pojo.Character">
+         select tc.*
+        from t_character tc,t_game_character tgc
+        where tgc.game_detail_id = #{value} and tgc.character_id = tc.id
+    </select>
 
     <!--  通过id删除  -->
     <delete id="deleteByList" parameterType="list">
@@ -81,5 +98,14 @@
         </where>
     </delete>
 
+  <!--  删除与 detailGame的 关联关系  -->
+  <delete id="disconnectWithDetailGame" parameterType="string">
+    delete from t_game_character tgc where character_id = #{value}
+  </delete>
+
+  <!--  通过detailGame的id删除其关联的所有 character数据  -->
+  <delete id="deleteByDetailGameId" parameterType="string">
+    delete from t_character tc where id in (select t_game_character.id from t_game_character where id = #{value})
+  </delete>
 
 </mapper>

@@ -45,11 +45,11 @@
 <body class="hold-transition">
 <div id="app">
     <div class="content-header">
-        <h1>游戏管理<small>游戏分类管理</small></h1>
+        <h1>游戏管理<small>游戏特色管理</small></h1>
         <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb">
             <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
             <el-breadcrumb-item>游戏管理</el-breadcrumb-item>
-            <el-breadcrumb-item>游戏分类管理</el-breadcrumb-item>
+            <el-breadcrumb-item>游戏特色管理</el-breadcrumb-item>
         </el-breadcrumb>
     </div>
     <div class="app-container">
@@ -57,12 +57,12 @@
             <div class="filter-container">
                 <el-input placeholder="分类名称" v-model="pagination.queryString" style="width: 200px;" class="filter-item"></el-input>
                 <el-button @click="findQueryPage()" class="dalfBut">查询</el-button>
-                <el-button type="primary" class="butT" @click="handleCreate()">新建分类</el-button>
+                <el-button type="primary" class="butT" @click="handleCreate()">新建</el-button>
                 <span style="font-size: 10px">&nbsp;&nbsp;查询字段&nbsp;</span>
                 <template>
                     <el-radio-group v-model="pagination.column">
-                        <el-radio :label="1">分类名称</el-radio>
-                        <el-radio :label="2">游戏id</el-radio>
+                        <el-radio :label="1">游戏id</el-radio>
+                        <el-radio :label="2">游戏详情id</el-radio>
                     </el-radio-group>
                 </template>
             </div>
@@ -73,15 +73,15 @@
 
                 <el-table-column prop="id" label="id" align="center"></el-table-column>
 
-                <el-table-column prop="name" label="分类名称" align="center"></el-table-column>
+                <el-table-column prop="chara" label="特色详情" align="center"></el-table-column>
 
-                <el-table-column prop="imgUrl" label="图片url" align="center"></el-table-column>
+                <!--  用于排序  -->
+                <el-table-column prop="score" label="分数" align="center"></el-table-column>
 
-                <el-table-column prop="description" label="分类描述" align="center"></el-table-column>
 
                 <el-table-column label="操作" align="center">
                     <template slot-scope="scope">
-                        <el-button type="primary" size="mini" @click="handleUpdate(scope.row)">修改分类信息</el-button>
+                        <el-button type="primary" size="mini" @click="handleUpdate(scope.row)">修改</el-button>
                         <el-button size="mini" type="danger" @click="handleDelete(scope.row)">删除</el-button>
                     </template>
                 </el-table-column>
@@ -101,32 +101,25 @@
 
             <!-- 新增标签弹层 -->
             <div class="add-form">
-                <el-dialog title="新增分类" :visible.sync="dialogFormVisible">
+                <el-dialog title="新增" :visible.sync="dialogFormVisible">
                     <template>
                         <el-tabs v-model="activeName" type="card">
                             <el-tab-pane label="基本信息" name="first">
 
                                 <el-form ref="dataAddForm" :model="formData" :rules="rules" label-position="right" label-width="100px">
-                                    <el-row>
-                                        <el-col :span="12">
-                                            <el-form-item label="分类名"  prop="name">
-                                                <el-input v-model="formData.name"/>
-                                            </el-form-item>
-                                        </el-col>
-                                    </el-row>
-
-                                    <el-row>
-                                        <el-col :span="18">
-                                            <el-form-item label="图片url">
-                                                <el-input v-model="formData.imgUrl"/>
-                                            </el-form-item>
-                                        </el-col>
-                                    </el-row>
 
                                     <el-row>
                                         <el-col :span="24">
-                                            <el-form-item label="分类描述">
-                                                <el-input v-model="formData.description" type="textarea"></el-input>
+                                            <el-form-item label="特色详情" prop="chara">
+                                                <el-input v-model="formData.chara" type="textarea"/>
+                                            </el-form-item>
+                                        </el-col>
+                                    </el-row>
+
+                                    <el-row>
+                                        <el-col :span="8">
+                                            <el-form-item label="score" prop="score">
+                                                <el-input v-model="formData.score"></el-input>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
@@ -147,31 +140,33 @@
                     <template>
                         <el-tabs v-model="activeName" type="card">
                             <el-tab-pane label="基本信息" name="first">
-
                                 <el-form ref="dataEditForm" :model="formData" :rules="rules" label-position="right" label-width="100px">
+
                                     <el-row>
                                         <el-col :span="12">
-                                            <el-form-item label="分类名" prop="name">
-                                                <el-input v-model="formData.name"/>
+                                            <el-form-item label="id">
+                                                <el-input v-model="formData.id" :disabled="true"/>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
 
                                     <el-row>
                                         <el-col :span="18">
-                                            <el-form-item label="图片url">
-                                                <el-input v-model="formData.imgUrl"/>
+                                            <el-form-item label="特色详情" prop="chara">
+                                                <el-input v-model="formData.chara" type="textarea"/>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
 
                                     <el-row>
                                         <el-col :span="24">
-                                            <el-form-item label="分类描述">
-                                                <el-input v-model="formData.description" type="textarea"></el-input>
+                                            <el-form-item label="score" prop="score">
+                                                <el-input v-model="formData.score"></el-input>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
+
+
                                 </el-form>
                             </el-tab-pane>
                         </el-tabs>
@@ -194,7 +189,7 @@
             activeName:'first',//添加/编辑窗口Tab标签名称
             pagination: {//分页相关模型数据
                 currentPage: 1,//当前页码
-                pageSize:15,//每页显示的记录数
+                pageSize:5,//每页显示的记录数
                 total:0,//总记录数
                 queryString:null,//查询条件
                 column: 1
@@ -230,7 +225,7 @@
                     if(valid){
 
                         //表单校验通过，可以提交数据
-                        axios.put("/FakeHouse-backer/category/update.do",this.formData).then((res) => {
+                        axios.put("/FakeHouse-backer/character/update.do",this.formData).then((res) => {
                             if(res.data.flag){
                                 //弹出成功提示信息
                                 this.$message({
@@ -265,9 +260,35 @@
             },
             //添加
             handleAdd () {
-                // 业务逻辑, 不允许进行添加操作
-                this.$message.error("特色信息不允许在此处进行添加!");
-                return false;
+                //进行表单校验
+                this.$refs['dataAddForm'].validate((valid) => {
+
+                    if(valid){
+
+                        //表单校验通过，发生ajax请求，将录入的数据提交到后台进行处理
+                        axios.post("/FakeHouse-backer/character/add.do",this.formData).then((res) => {
+                            if(res.data.flag){//执行成功
+                                //关闭新增窗口
+                                this.dialogFormVisible = false;
+
+                                //新增成功后，重新调用分页查询方法，查询出最新的数据
+                                this.findPage();
+                                //弹出提示信息
+                                this.$message({
+                                    message:res.data.message,
+                                    type:'success'
+                                });
+                            }else{//执行失败
+                                //弹出提示
+                                this.$message.error(res.data.message);
+                            }
+                        });
+                    }else{
+                        //校验不通过
+                        this.$message.error("数据校验失败，请检查你的输入信息是否正确！");
+                        return false;
+                    }
+                });
             },
             //分页查询
             findPage() {
@@ -277,7 +298,7 @@
                     pageSize:this.pagination.pageSize,
                     queryString: this.pagination.queryString,
                 };
-                axios.post("/FakeHouse-backer/category/findPage.do?column="+this.pagination.column,param).then((res)=>{
+                axios.post("/FakeHouse-backer/character/findPage.do?column="+this.pagination.column,param).then((res)=>{
                     if(res.data.flag) {
 
                         //解析Controller响应回的数据，为模型数据赋值
@@ -301,7 +322,7 @@
                     pageSize:this.pagination.pageSize,
                     queryString: this.pagination.queryString
                 };
-                axios.post("/FakeHouse-backer/category/findPage.do?column="+this.pagination.column,param).then((res)=>{
+                axios.post("/FakeHouse-backer/character/findPage.do?column="+this.pagination.column,param).then((res)=>{
 
                     if (res.data.flag)
                     {
@@ -336,7 +357,7 @@
             handleUpdate(row) {
                 this.resetForm();
                 //回显数据，发送ajax请求根据ID查询当前检查项数据
-                axios.get("/FakeHouse-backer/category/findById.do?id=" + row.id).then((res) => {
+                axios.get("/FakeHouse-backer/character/findById.do?id=" + row.id).then((res) => {
                     if (res.data.flag) {
                         //进行回显，基于VUE的数据绑定实现
                         // res.data获取到返回的json对象的数据
@@ -374,7 +395,7 @@
                     type:'warning'
                 }).then(()=>{
                     //用户点击确定按钮，发送ajax请求，将检查项ID提交到Controller进行处理
-                    axios.delete("/FakeHouse-backer/category/delete.do?id=" + row.id).then((res) => {
+                    axios.delete("/FakeHouse-backer/character/delete.do?id=" + row.id).then((res) => {
                         if(res.data.flag){
                             //执行成功
                             //弹出成功提示信息

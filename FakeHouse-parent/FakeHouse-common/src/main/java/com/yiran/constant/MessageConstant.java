@@ -115,9 +115,19 @@ public class MessageConstant {
     public static final String ADD_DECODER_SUCCESS = "添加decoder成功";
     public static final String ADD_DECODER_FAIL = "添加decoder失败";
     public static final String DECODER_EXISTS = "decoder已存在";
-
-
     public static final String DELETE_DECODER_SUCCESS = "删除decoder成功";
     public static final String DELETE_DECODER_FAIL = "删除decoder失败";
     public static final String DECODER_CONNECTED = "decoder被关联";
+
+
+    // 游戏特色数据管理
+    public static final String QUERY_CHARACTER_SUCCESS = "查询游戏特色数据成功";
+    public static final String QUERY_CHARACTER_FAIL = "查询游戏特色数据失败";
+    public static final String UPDATE_CHARACTER_SUCCESS = "修改游戏特色数据成功";
+    public static final String UPDATE_CHARACTER_FAIL = "修改游戏特色数据失败";
+    public static final String ADD_CHARACTER_SUCCESS = "添加游戏特色数据成功";
+    public static final String ADD_CHARACTER_FAIL = "添加游戏特色数据失败";
+    public static final String DELETE_CHARACTER_SUCCESS = "删除游戏特色数据成功";
+    public static final String DELETE_CHARACTER_FAIL = "删除游戏特色数据失败";
+
 }

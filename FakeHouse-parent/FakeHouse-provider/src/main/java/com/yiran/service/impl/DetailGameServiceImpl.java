@@ -69,17 +69,23 @@ public class DetailGameServiceImpl implements DetailGameService {
     public void deleteById(String detailId) {
 
         if (!StringUtils.isEmpty(detailId)){
-            // 查询出游戏的详情数据
-            List<String> charaIds = detailGameMapper.findCharaIds(detailId);
 
-            // 通过游戏详情id将游戏的特色数据删除
-            // 此处游戏详情表与游戏特色表是一对多的关系, 所以不用担心出现游戏特色数据被其他游戏详情数据关联的情况出现
-            if (charaIds != null && charaIds.size() > 0){
-                // 删除关联关系
-                detailGameMapper.disconnectWithChara(detailId);
-                // 删除游戏特色数据 此处事宜使用循环一条一条数据删除, 所以使用列表数据进行删除比较合适
-                characterService.deleteByList(charaIds);
-            }
+            // 当时愚蠢了没有想到, 可以一起删除
+            // 通过detailGame的id删除其关联的所有 character数据
+            characterService.deleteByDetailGameId(detailId);
+
+//            // 查询出游戏的详情数据
+//            List<String> charaIds = detailGameMapper.findCharaIds(detailId);
+//
+//            // 通过游戏详情id将游戏的特色数据删除
+//            // 此处游戏详情表与游戏特色表是一对多的关系, 所以不用担心出现游戏特色数据被其他游戏详情数据关联的情况出现
+//            if (charaIds != null && charaIds.size() > 0){
+//                // 删除关联关系
+//                detailGameMapper.disconnectWithChara(detailId);
+//                // 删除游戏特色数据 此处事宜使用循环一条一条数据删除, 所以使用列表数据进行删除比较合适
+//                characterService.deleteByList(charaIds);
+//            }
+
             // 删除游戏详情数据
             detailGameMapper.deleteByPrimaryKey(detailId);
         }
