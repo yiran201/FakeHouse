@@ -259,4 +259,11 @@
     <select id="findCountByDecoderId" resultType="int" parameterType="int">
         select count(id) from t_game where decoder_id = #{value}
     </select>
+
+  <!--  查询游戏id  -->
+  <select id="findIdByDetailId" parameterType="string" resultType="string">
+      select t_game.id
+      from t_game
+      where detail_id = #{value}
+  </select>
 </mapper>

@@ -112,4 +112,18 @@ public class CharacterServiceImpl implements CharacterService {
 
         characterMapper.deleteByDetailGameId(detailId);
     }
+
+
+
+    /**
+     * 通过detailId进行查询
+     * @param detailId 游戏详情id
+     * @return
+     */
+    @Override
+    public List<Character> findByDetailId(String detailId) {
+
+        return characterMapper.findByDetailGameId(detailId);
+
+    }
 }

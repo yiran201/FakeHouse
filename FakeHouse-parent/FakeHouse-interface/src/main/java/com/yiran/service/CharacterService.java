@@ -58,4 +58,14 @@ public interface CharacterService {
      * @param detailId  detailGame的id
      */
     void deleteByDetailGameId(String detailId);
+
+
+    /**
+     * 通过detailId进行查询
+     * @param detailId 游戏详情id
+     * @return
+     */
+    List<Character> findByDetailId(String detailId);
+
+
 }

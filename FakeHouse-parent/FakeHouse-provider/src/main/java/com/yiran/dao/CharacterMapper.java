@@ -61,4 +61,12 @@ public interface CharacterMapper {
      * @return
      */
     Page<Character> findPageByDetailGameId(String queryString);
+
+
+    /**
+     * 通过detailId进行查询
+     * @param detailId 游戏详情id
+     * @return
+     */
+    List<Character> findByDetailGameId(String detailId);
 }

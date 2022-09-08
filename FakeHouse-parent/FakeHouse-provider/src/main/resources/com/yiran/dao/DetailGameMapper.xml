@@ -152,4 +152,22 @@
     </delete>
 
 
+    <!--  分页查询  -->
+    <select id="findPage" resultType="com.yiran.pojo.DetailGame">
+        select * from t_game_detail
+    </select>
+
+
+    <!--  通过游戏详情id进行查询  -->
+    <select id="findPageById" parameterType="string" resultType="com.yiran.pojo.DetailGame">
+        select * from t_game_detail where id = #{value}
+    </select>
+
+
+    <!--  通过游戏id进行查询  -->
+    <select id="findPageByGameId" parameterType="string" resultType="com.yiran.pojo.DetailGame">
+        select tgd.*
+        from t_game_detail tgd, t_game tg
+        where tg.id = #{value} and tg.detail_id = tgd.id
+    </select>
 </mapper>

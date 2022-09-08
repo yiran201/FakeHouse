@@ -79,6 +79,7 @@
         select tc.*
         from t_character tc, t_game tg, t_game_character tgc
         where tg.id = #{value} and tg.detail_id = tgc.game_detail_id and tgc.character_id = tc.id
+        order by score
     </select>
 
     <!--  通过游戏详情id进行查询  -->
@@ -86,6 +87,7 @@
         select tc.*
         from t_character tc,t_game_character tgc
         where tgc.game_detail_id = #{value} and tgc.character_id = tc.id
+        order by score
     </select>
 
     <!--  通过id删除  -->
@@ -109,5 +111,14 @@
     where id in
     (select t_game_character.character_id from t_game_character where t_game_character.game_detail_id = #{value});
   </delete>
+
+
+  <!--  通过detailId进行查询  -->
+  <select id="findByDetailGameId" parameterType="string" resultType="com.yiran.pojo.Character">
+        select tc.*
+        from t_character tc,t_game_character tgc
+        where tgc.game_detail_id = #{value} and tgc.character_id = tc.id
+        order by score
+  </select>
 
 </mapper>

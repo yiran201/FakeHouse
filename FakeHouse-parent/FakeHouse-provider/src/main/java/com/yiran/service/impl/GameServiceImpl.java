@@ -325,6 +325,18 @@ public class GameServiceImpl implements GameService{
         return gameMapper.findCountByDecoderId(id);
     }
 
+
+    /**
+     * 查询游戏id
+     * @param detailId 游戏详情id
+     * @return
+     */
+    @Override
+    public String findIdByDetailId(String detailId) {
+
+        return gameMapper.findIdByDetailId(detailId);
+    }
+
     /**
      * 给游戏填充count数据
      * 该反方法废除, 因为不好用, 对资源消耗大

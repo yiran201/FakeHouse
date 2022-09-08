@@ -130,4 +130,16 @@ public class MessageConstant {
     public static final String DELETE_CHARACTER_SUCCESS = "删除游戏特色数据成功";
     public static final String DELETE_CHARACTER_FAIL = "删除游戏特色数据失败";
 
+
+    // 游戏详情数据
+    public static final String QUERY_DETAILGAME_SUCCESS = "查询游戏详情数据成功";
+    public static final String QUERY_DETAILGAME_FAIL = "查询游戏详情数据失败";
+    public static final String UPDATE_DETAILGAME_SUCCESS = "修改游戏详情数据成功";
+    public static final String UPDATE_DETAILGAME_FAIL = "修改游戏详情数据失败";
+    public static final String ADD_DETAILGAME_SUCCESS = "添加游戏详情数据成功";
+    public static final String ADD_DETAILGAME_FAIL = "添加游戏详情数据失败";
+    public static final String DELETE_DETAILGAME_SUCCESS = "删除游戏详情数据成功";
+    public static final String DELETE_DETAILGAME_FAIL = "删除游戏详情数据失败";
+    public static final String DETAILGAME_CONNECTED = "游戏详情被关联";
+
 }

@@ -84,4 +84,12 @@ public interface GameService {
      * @return
      */
     Integer findCountByDecoderId(Integer id);
+
+
+    /**
+     * 通过detailId查询id
+     * @param detailId 游戏详情id
+     * @return
+     */
+    String findIdByDetailId(String detailId);
 }

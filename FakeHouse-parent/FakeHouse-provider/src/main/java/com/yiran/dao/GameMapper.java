@@ -70,4 +70,13 @@ public interface GameMapper {
      * @return
      */
     Integer findCountByDecoderId(Integer id);
+
+
+
+    /**
+     * 查询游戏id
+     * @param detailId 游戏详情id
+     * @return
+     */
+    String findIdByDetailId(String detailId);
 }
