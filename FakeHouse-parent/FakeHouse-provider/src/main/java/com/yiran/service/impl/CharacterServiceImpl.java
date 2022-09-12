@@ -7,13 +7,17 @@ import com.yiran.dao.CharacterMapper;
 import com.yiran.entity.PageResult;
 import com.yiran.entity.QueryPageBean;
 import com.yiran.pojo.Character;
+import com.yiran.pojo.DetailGame;
 import com.yiran.service.CharacterService;
+import com.yiran.service.DetailGameService;
 import com.yiran.utils.IdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Service(interfaceClass = CharacterService.class)
@@ -23,6 +27,9 @@ public class CharacterServiceImpl implements CharacterService {
 
     @Autowired
     private CharacterMapper characterMapper;
+
+    @Autowired
+    private DetailGameService detailGameService;
 
 
     @Autowired
@@ -72,11 +79,26 @@ public class CharacterServiceImpl implements CharacterService {
     }
 
     @Override
-    public void add(Character character) {
+    public boolean add(Character character, String detailId) {
 
-        character.setId(Long.toString(idWorker.nextId()));
+        // 添加关联关系
+        // 查询detailId的对象, 判断是否为空
+        DetailGame detailGame = detailGameService.findById(detailId);
+        if (detailGame == null){
+            return false;
+        }
+        // 添加游戏详情数据
+        String characterId = Long.toString(idWorker.nextId());
+        character.setId(characterId);
         characterMapper.insert(character);
 
+        // 添加关联关系
+        Map<String, String> map = new HashMap<>(2);
+        map.put("detailId", detailId);
+        map.put("characterId", characterId);
+        characterMapper.connectWithDetailGame(map);
+
+        return true;
     }
 
     @Override

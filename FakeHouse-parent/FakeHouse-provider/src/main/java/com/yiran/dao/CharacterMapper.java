@@ -4,6 +4,7 @@ import com.github.pagehelper.Page;
 import com.yiran.pojo.Character;
 
 import java.util.List;
+import java.util.Map;
 
 public interface CharacterMapper {
     int deleteByPrimaryKey(String id);
@@ -69,4 +70,10 @@ public interface CharacterMapper {
      * @return
      */
     List<Character> findByDetailGameId(String detailId);
+
+    /**
+     * 添加关联关系  与 detailGame
+     * @param map 数据
+     */
+    void connectWithDetailGame(Map<String, String> map);
 }

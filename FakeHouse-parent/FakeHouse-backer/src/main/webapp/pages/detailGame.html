@@ -284,7 +284,6 @@
                                     <table class="datatable">
                                         <thead>
                                         <tr>
-                                            <th>选择</th>
                                             <th>特色id</th>
                                             <th>特色详情</th>
                                             <th>分数</th>
@@ -293,9 +292,6 @@
                                         <tbody>
                                         <!--  要求只能选择一个,在后端进行控制  -->
                                         <tr v-for="c in tableData">
-                                            <td>
-                                                <input :id="c.id" v-model="characterId" type="checkbox" :value="c.id">
-                                            </td>
                                             <td><label :for="c.id">{{c.id}}</label></td>
                                             <td><label :for="c.id">{{c.chara}}</label></td>
                                             <td><label :for="c.id">{{c.score}}</label></td>
@@ -332,7 +328,6 @@
             dataList: [],//当前页要展示的分页列表数据
             formData: {},//表单数据
             tableData:[],//新增和编辑表单中对应的权限列表数据
-            characterId:[],//新增和编辑表单中权限对应的复选框，基于双向绑定可以进行回显和数据提交;
             dialogFormVisible: false,//增加表单是否可见
             dialogFormVisible4Edit:false,//编辑表单是否可见
             rules: {//校验规则
@@ -362,7 +357,7 @@
                     if(valid){
                         //表单校验通过，可以提交数据
                         // 暂时无法实现游戏特色数据的修改, 并且该功能并不是很重要, 所以就, 不进行实现了.
-                        axios.put("/FakeHouse-backer/detailGame/update.do?characterId="+this.characterId,this.formData).then((res) => {
+                        axios.put("/FakeHouse-backer/detailGame/update.do",this.formData).then((res) => {
                             if(res.data.flag){
                                 //弹出成功提示信息
                                 this.$message({

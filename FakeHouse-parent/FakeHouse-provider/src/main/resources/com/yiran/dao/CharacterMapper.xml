@@ -79,7 +79,7 @@
         select tc.*
         from t_character tc, t_game tg, t_game_character tgc
         where tg.id = #{value} and tg.detail_id = tgc.game_detail_id and tgc.character_id = tc.id
-        order by score
+        order by score asc
     </select>
 
     <!--  通过游戏详情id进行查询  -->
@@ -87,7 +87,7 @@
         select tc.*
         from t_character tc,t_game_character tgc
         where tgc.game_detail_id = #{value} and tgc.character_id = tc.id
-        order by score
+        order by score asc
     </select>
 
     <!--  通过id删除  -->
@@ -105,6 +105,11 @@
     delete from t_game_character tgc where character_id = #{value}
   </delete>
 
+  <!--  添加关联关系  -->
+  <insert id="connectWithDetailGame" parameterType="java.util.Map">
+    insert into t_game_character values(#{detailId}, #{characterId})
+  </insert>
+
   <!--  通过detailGame的id删除其关联的所有 character数据  -->
   <delete id="deleteByDetailGameId" parameterType="string">
     delete from t_character tc
@@ -118,7 +123,7 @@
         select tc.*
         from t_character tc,t_game_character tgc
         where tgc.game_detail_id = #{value} and tgc.character_id = tc.id
-        order by score
+        order by score asc
   </select>
 
 </mapper>

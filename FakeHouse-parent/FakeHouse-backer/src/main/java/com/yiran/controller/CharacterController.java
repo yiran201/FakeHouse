@@ -42,16 +42,22 @@ public class CharacterController {
 
 
     // 不允许进行特色的添加, 因为业务逻辑, 不允许其在此处添加
-//    @PostMapping("/add")
-//    @PreAuthorize("hasAuthority('CHARACTER_ADD')")
-    public Result findPage(@RequestBody Character character){
+    // 但是由于业务需求, 只能在此处进行添加, 并一同关联游戏详情id
+    @PostMapping("/add")
+    @PreAuthorize("hasAuthority('CHARACTER_ADD')")
+    public Result findPage(@RequestBody Character character, String detailId){
 
         try {
-            if (checkCharacter(character)){
+            if (checkCharacter(character) && !StringUtils.isEmpty(detailId)){
                 // 不用担心会出现重复的情况, 就算重复了也没有关系
                 // 所以添加是不需要校验
-                characterService.add(character);
-                return new Result(true, MessageConstant.ADD_CHARACTER_SUCCESS);
+                boolean flag = characterService.add(character, detailId);
+                if (flag){
+                    return new Result(true, MessageConstant.ADD_CHARACTER_SUCCESS);
+                }else{
+                    return new Result(false, MessageConstant.DETAILID_NOT_EXIST);
+                }
+
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -92,7 +98,7 @@ public class CharacterController {
     }
 
 
-    @DeleteMapping("/deleteById")
+    @DeleteMapping("/delete")
     @PreAuthorize("hasAuthority('CHARACTER_DELETE')")
     public Result delete(String id){
 

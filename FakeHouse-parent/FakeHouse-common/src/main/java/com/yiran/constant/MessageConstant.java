@@ -129,6 +129,8 @@ public class MessageConstant {
     public static final String ADD_CHARACTER_FAIL = "添加游戏特色数据失败";
     public static final String DELETE_CHARACTER_SUCCESS = "删除游戏特色数据成功";
     public static final String DELETE_CHARACTER_FAIL = "删除游戏特色数据失败";
+    public static final String DETAILID_NOT_EXIST = "游戏详情id不存在";
+
 
 
     // 游戏详情数据

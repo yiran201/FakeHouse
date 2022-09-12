@@ -88,6 +88,8 @@ public class DetailGameServiceImpl implements DetailGameService {
 
             // 当时愚蠢了没有想到, 可以一起删除
             // 通过detailGame的id删除其关联的所有 character数据
+            // 需要先删除关联关系
+            detailGameMapper.disconnectWithChara(detailId);
             characterService.deleteByDetailGameId(detailId);
 
 //            // 查询出游戏的详情数据

@@ -27,8 +27,9 @@ public interface CharacterService {
     /**
      * 添加数据
      * @param character 游戏特色数据
+     * @param detailId
      */
-    void add(Character character);
+    boolean add(Character character, String detailId);
 
 
     /**
