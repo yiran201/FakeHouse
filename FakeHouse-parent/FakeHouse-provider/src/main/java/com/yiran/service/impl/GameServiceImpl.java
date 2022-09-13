@@ -104,6 +104,7 @@ public class GameServiceImpl implements GameService{
         Integer pageSize = queryPageBean.getPageSize();
         String queryColumn = queryPageBean.getQueryColumn();
         String queryString = queryPageBean.getQueryString();
+        Boolean active = queryPageBean.getActive();
         StringBuilder sql = new StringBuilder();
 
         // 首先判断分类查询是否为空
@@ -169,6 +170,10 @@ public class GameServiceImpl implements GameService{
                 sqlParam.add(categoryName);
             }
         }
+        if (active){
+            sql.append("and active = false ");
+        }
+
         // 数目查询条件
         String countSql = new String(sql).replace("tg.*", "count(tg.id)");
         // 使用线程安全的方法进行复制

@@ -29,6 +29,9 @@ public class GameQueryPageBean implements Serializable{
     // 排序方式 升序还是降序
     private String orderType;
 
+    // 是否有效
+    private Boolean active;
+
     // queryColumn的允许取值
     public static final String[] queryColumnList = {"name", "td.name", "development", "deliver",
             "platform", "backgroundLanguage", "voiceLanguage"};
@@ -96,6 +99,15 @@ public class GameQueryPageBean implements Serializable{
         this.orderType = orderType;
     }
 
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
     public static boolean checkGameQueryPageBean(GameQueryPageBean queryPageBean) {
         // 没有进行分页数据的封装的话,默认不允许其操作
         if (queryPageBean != null)
@@ -111,6 +123,13 @@ public class GameQueryPageBean implements Serializable{
             String categoryName = queryPageBean.getCategoryName();
             queryPageBean.setQueryString(produceSrr(queryString));
             queryPageBean.setCategoryName(produceSrr(categoryName));
+
+            // 默认不查询无效数据
+            Boolean active = queryPageBean.getActive();
+            if (active == null){
+                queryPageBean.setActive(false);
+            }
+
 
             if (currentPage == null || currentPage <= 0) {
                 queryPageBean.setCurrentPage(1);

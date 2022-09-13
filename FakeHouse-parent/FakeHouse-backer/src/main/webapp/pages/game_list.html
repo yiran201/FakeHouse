@@ -90,7 +90,7 @@
 
 
                 <!--  添加两个单选框, 控制排序方式  -->
-                <span style="font-size: 10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;排序方式&nbsp;</span>
+                <span style="font-size: 10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;排序方式&nbsp;</span>
                 <template>
                     <el-select v-model="pagination.orderType" placeholder="请选择">
                         <el-option
@@ -100,6 +100,13 @@
                                 :value="item.value">
                         </el-option>
                     </el-select>
+                </template>
+
+                <!--  对于这个active, 需要进行解释; 如果active为false, 则查询结果与一般情况时一样的
+                      但是如果active为false, 则只会查询active为false的数据  -->
+                <template>
+                    <!-- `checked` 为 true 或 false -->
+                    <el-checkbox v-model="pagination.active">是否有效</el-checkbox>
                 </template>
 
             </div>
@@ -549,6 +556,7 @@
                 queryColumn: "name",  // 查询字段
                 orderColumn: "insertTime", // 排序字段
                 orderType: "desc", // 排序方式 升序还是降序
+                active: false  // 是否通过该字段进行查询, 当active为true时, 实现通过 active = false 进行搜索
             },
             gameList: [],//当前页要展示的分页列表数据
             gameFormData: {},// 游戏的表单数据
@@ -712,7 +720,8 @@
                     categoryName: this.pagination.categoryName, // 分类名称, 需要给定准确的分类名称
                     queryColumn: this.pagination.queryColumn,  // 查询字段
                     orderColumn: this.pagination.orderColumn, // 排序字段
-                    orderType: this.pagination.orderType // 排序方式 升序还是降序
+                    orderType: this.pagination.orderType, // 排序方式 升序还是降序
+                    active: this.pagination.active   // 是否通过 active = false 进行查询
                 };
                 axios.post("/FakeHouse-backer/game/findPageForManage.do",param).then((res)=>{
                     if(res.data.flag) {
@@ -740,8 +749,8 @@
                     categoryName: this.pagination.categoryName, // 分类名称, 需要给定准确的分类名称
                     queryColumn: this.pagination.queryColumn,  // 查询字段
                     orderColumn: this.pagination.orderColumn, // 排序字段
-                    orderType: this.pagination.orderType // 排序方式 升序还是降序
-
+                    orderType: this.pagination.orderType, // 排序方式 升序还是降序
+                    active: this.pagination.active   // 是否通过 active = false 进行查询
                 };
                 axios.post("/FakeHouse-backer/game/findPageForManage.do",param).then((res)=>{
 

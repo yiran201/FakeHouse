@@ -7,59 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="082ee9dd-7221-4530-8188-0be64685dd02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/resources/Game_find_Page" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/jdbcTemplate/GameSelectDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/jdbcTemplate/impl/GameSelectDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/FakeHouse_backer_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/FakeHouse_backer_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/FakeHouse_presenter_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/FakeHouse_presenter_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/FakeHouse_provider_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/FakeHouse_provider_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__bouncycastle_bcmail_jdk14_138.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__bouncycastle_bcprov_jdk14_138.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_core_3_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_dysmsapi_1_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_lowagie_itext_2_1_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_qiniu_happy_dns_java_0_1_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_qiniu_qiniu_java_sdk_7_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_14_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_17_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_digester_commons_digester_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_jasperreports_jasperreports_6_8_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcmail_jdk14_1_38.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk14_1_38.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bctsp_jdk14_1_38.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_castor_castor_core_1_4_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_castor_castor_xml_1_4_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jdt_core_compiler_ecj_4_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jfree_jcommon_1_0_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jfree_jfreechart_1_0_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20170516.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/FakeHouse-backer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/FakeHouse-backer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/FakeHouse-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/FakeHouse-common.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/entity/GameQueryPageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/entity/GameQueryPageBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/entity/QueryPageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/entity/QueryPageBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/utils/POIUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/utils/QiniuUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/utils/SMSUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/FakeHouse-interface.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/FakeHouse-interface.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/FakeHouse-presenter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/FakeHouse-presenter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/FakeHouse-provider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/FakeHouse-provider.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/GameMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/GameMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/GameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/GameServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/GameMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/GameMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/spring-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/spring-dao.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/FakeHouse-parent/target/" />
     <ignored path="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/target/" />
@@ -77,7 +27,7 @@
     <session id="1574262746">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="29" />
+          <entry key="project.closed" value="30" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.10" value="2" />
@@ -96,8 +46,8 @@
           <entry key="class" value="9" />
           <entry key="css" value="2" />
           <entry key="gitignore" value="3" />
-          <entry key="html" value="68" />
-          <entry key="java" value="282" />
+          <entry key="html" value="69" />
+          <entry key="java" value="284" />
           <entry key="jpg" value="9" />
           <entry key="js" value="3" />
           <entry key="png" value="7" />
@@ -111,9 +61,9 @@
         <counts>
           <entry key="CLASS" value="9" />
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="68" />
+          <entry key="HTML" value="69" />
           <entry key="Image" value="16" />
-          <entry key="JAVA" value="282" />
+          <entry key="JAVA" value="284" />
           <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="Properties" value="14" />
@@ -124,18 +74,18 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="53" />
-          <entry key="html" value="4071" />
-          <entry key="java" value="28076" />
+          <entry key="html" value="4369" />
+          <entry key="java" value="28235" />
           <entry key="properties" value="8" />
-          <entry key="txt" value="1002" />
+          <entry key="txt" value="1094" />
           <entry key="xml" value="5300" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="4071" />
-          <entry key="JAVA" value="28076" />
-          <entry key="PLAIN_TEXT" value="1055" />
+          <entry key="HTML" value="4369" />
+          <entry key="JAVA" value="28235" />
+          <entry key="PLAIN_TEXT" value="1147" />
           <entry key="Properties" value="8" />
           <entry key="SQL" value="156" />
           <entry key="XML" value="5144" />
@@ -281,8 +231,8 @@
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/spring-dao.xml" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/jdbcTemplate/impl/GameSelectDaoImpl.java" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/entity/GameQueryPageBean.java" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/GameServiceImpl.java" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html" />
       </list>
     </option>
   </component>
@@ -633,7 +583,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1663058724265" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1663072235149" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="G:/java_idea/UI_Learn" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -887,7 +837,7 @@
       <workItem from="1662962579164" duration="4861000" />
       <workItem from="1662982381553" duration="10675000" />
       <workItem from="1663040387695" duration="3644000" />
-      <workItem from="1663051165514" duration="7835000" />
+      <workItem from="1663051165514" duration="10587000" />
     </task>
     <task id="LOCAL-00001" summary="初始化数据库;&#10;测试并引用OauthConsole模块, 导入部分代码.">
       <created>1661919009409</created>
@@ -1015,16 +965,23 @@
       <option name="project" value="LOCAL" />
       <updated>1662945371594</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="完成游戏查询的复杂查询功能;&#10;修正了mybatis查询导致的复杂问题, 使用JdbcTemplate进行处理, 实现复杂的查询.">
+      <created>1663059184519</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1663059184519</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132023000" />
+    <option name="totallyTimeSpent" value="134775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4985507" visible="true" weight="0.2510661" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4985507" visible="true" weight="0.2510661" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1034,7 +991,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.33831376" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.43543223" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.2529349" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1149,7 +1106,8 @@
     <MESSAGE value="完成character的测试." />
     <MESSAGE value="完成GameDetail的管理, 但是存在缺陷;&#10;修正了一些小bug." />
     <MESSAGE value="完成character的添加逻辑;&#10;并修正了在删除游戏时, 进行关联删除时出现的bug." />
-    <option name="LAST_COMMIT_MESSAGE" value="完成character的添加逻辑;&#10;并修正了在删除游戏时, 进行关联删除时出现的bug." />
+    <MESSAGE value="完成游戏查询的复杂查询功能;&#10;修正了mybatis查询导致的复杂问题, 使用JdbcTemplate进行处理, 实现复杂的查询." />
+    <option name="LAST_COMMIT_MESSAGE" value="完成游戏查询的复杂查询功能;&#10;修正了mybatis查询导致的复杂问题, 使用JdbcTemplate进行处理, 实现复杂的查询." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/DecoderMapper.xml">
@@ -1493,13 +1451,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/entity/GameQueryPageBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/jdbcTemplate/GameSelectDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1524,13 +1475,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-786">
+          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/entity/GameQueryPageBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="127" column="40" selection-start-line="127" selection-start-column="40" selection-end-line="127" selection-end-column="40" />
+          <folding>
+            <element signature="e#2220#2221#0" expanded="true" />
+            <element signature="e#2249#2250#0" expanded="true" />
+            <element signature="e#2294#2295#0" expanded="true" />
+            <element signature="e#2330#2331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/GameServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2061">
-          <caret line="63" column="23" lean-forward="true" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+        <state relative-caret-position="484">
+          <caret line="174" column="9" lean-forward="true" selection-start-line="174" selection-start-column="9" selection-end-line="174" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#findPageForManage#0;class#GameServiceImpl#0" />
             <element signature="method#findCategoryList#0;class#GameServiceImpl#0" />
             <element signature="method#add#0;class#GameServiceImpl#0" />
             <element signature="method#findById#0;class#GameServiceImpl#0" />
@@ -1543,17 +1513,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-786">
-          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="398" column="59" lean-forward="true" selection-start-line="398" selection-start-column="59" selection-end-line="398" selection-end-column="59" />
+        <state relative-caret-position="378">
+          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
           <folding>
             <element signature="n#style#0;n#el-input#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1563,6 +1526,7 @@
             <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#el-table#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
