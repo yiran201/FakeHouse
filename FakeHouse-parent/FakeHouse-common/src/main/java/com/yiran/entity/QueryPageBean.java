@@ -1,5 +1,7 @@
 package com.yiran.entity;
 
+import org.springframework.util.StringUtils;
+
 import java.io.Serializable;
 
 /**
@@ -41,6 +43,10 @@ public class QueryPageBean implements Serializable{
         {
             Integer currentPage = queryPageBean.getCurrentPage();
             Integer pageSize = queryPageBean.getPageSize();
+
+            String queryString = queryPageBean.getQueryString();
+            queryPageBean.setQueryString(produceSrr(queryString));
+
             if (currentPage == null || currentPage <= 0)
             {
                 queryPageBean.setCurrentPage(1);
@@ -53,6 +59,23 @@ public class QueryPageBean implements Serializable{
         }
 
         return false;
+    }
+
+    /**
+     * 由于不允许str中包含 ? 和  %, 所以需要对其进行处理
+     * @param str 需要处理的字符串
+     * @return
+     */
+    private static String produceSrr(String str){
+        if(!StringUtils.isEmpty(str)){
+            str.replaceAll("%", "");
+            str.replaceAll("[?]", "");
+            if (StringUtils.isEmpty(str)){
+                return null;
+            }
+            return str;
+        }
+        return null;
     }
 
 }

@@ -6,6 +6,8 @@ import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.yiran.dao.GameMapper;
+import com.yiran.jdbcTemplate.GameSelectDao;
+import com.yiran.entity.GameQueryPageBean;
 import com.yiran.entity.PageResult;
 import com.yiran.entity.QueryPageBean;
 import com.yiran.pojo.Category;
@@ -18,10 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service(interfaceClass = GameService.class)
 @Transactional
@@ -34,6 +33,10 @@ public class GameServiceImpl implements GameService{
 
     @Autowired
     private GameMapper gameMapper;
+
+    @Autowired
+    private GameSelectDao gameSelectDao;
+
 
     @Autowired
     private CategoryService categoryService;
@@ -49,7 +52,6 @@ public class GameServiceImpl implements GameService{
     private IdWorker idWorker;
 
 
-
     /**
      * 查询游戏数据, 携带游戏查看数和下载数
      * @param queryPageBean 分页条件
@@ -57,7 +59,6 @@ public class GameServiceImpl implements GameService{
      */
     @Override
     public PageResult findPageWithCount(QueryPageBean queryPageBean) {
-
         PageHelper.startPage(queryPageBean.getCurrentPage(), queryPageBean.getPageSize());
 
         // 默认通过游戏名称进行查询
@@ -78,6 +79,140 @@ public class GameServiceImpl implements GameService{
 
         // 没有查询到数据, 返回空
         return null;
+    }
+
+
+    /**
+     * 升级后的分页查询, 可以通过多个字段控制查询
+     * @param queryPageBean 查询条件
+     * @return
+     */
+    @Override
+    public PageResult findPageForManage(GameQueryPageBean queryPageBean) {
+        // 由于查询条件过于复杂, 并且表的结构也过于复杂, 导致无使用mybatis进行查询
+        // 这里也提醒了我, 有时其实没有必要去遵循范式, 现在导致的就是, 查询条件过于复杂
+        // 其实在设计表的时候, 不遵循范式的话, 查询方法会变得很简单;
+        // 就像此处的 游戏表和游戏详情表的破解者的表, 其实应该合为一个表, 这样的话就可以简单的进行查询
+        ArrayList sqlParam = new ArrayList();
+        ArrayList countParam =  new ArrayList();
+
+        // 进行sql的拼接
+        String orderType = queryPageBean.getOrderType();
+        String categoryName = queryPageBean.getCategoryName();
+        Integer currentPage = queryPageBean.getCurrentPage();
+        String orderColumn = queryPageBean.getOrderColumn();
+        Integer pageSize = queryPageBean.getPageSize();
+        String queryColumn = queryPageBean.getQueryColumn();
+        String queryString = queryPageBean.getQueryString();
+        StringBuilder sql = new StringBuilder();
+
+        // 首先判断分类查询是否为空
+        boolean isCategoryNull = false;   // 分类查询是否为空
+        if (!StringUtils.isEmpty(categoryName)){
+            sql.append(" select tg.* from t_game tg, t_game_detail tgd, t_decoder td, t_category tc, t_game_category tgc ");
+        }else{
+            isCategoryNull = true;
+            sql.append(" select tg.* from t_game tg, t_game_detail tgd, t_decoder td ");
+        }
+        // 判断查询条件是否为空
+        if (!StringUtils.isEmpty(queryString) && !StringUtils.isEmpty(queryColumn)){
+            String queryString_s = "%"+queryString+"%";
+            // 判断查询字段
+            if (queryColumn.equals("name")){
+                if (isCategoryNull){
+                    sql.append("where (tg.name like ? or tg.chsName like ?) ");
+                    sql.append("and tg.detail_id = tgd.id ");
+                    sql.append("and tg.decoder_id = td.id ");
+                    sqlParam.add(queryString_s);
+                    sqlParam.add(queryString_s);
+                }else{
+                    sql.append("where tc.name = ? ");
+                    sql.append("and tc.id = tgc.category_id ");
+                    sql.append("and tgc.game_id = tg.id ");
+                    sql.append("and (tg.name like ? or tg.chsName like ?) ");
+                    sql.append("and tg.detail_id = tgd.id ");
+                    sql.append("and tg.decoder_id = td.id ");
+                    sqlParam.add(categoryName);
+                    sqlParam.add(queryString_s);
+                    sqlParam.add(queryString_s);
+                }
+            }else{
+                if (isCategoryNull){
+                    sql.append("where ("+queryColumn+" like ? or "+queryColumn+" = ?) ");
+                    sql.append("and tg.detail_id = tgd.id ");
+                    sql.append("and tg.decoder_id = td.id ");
+                    sqlParam.add(queryString_s);
+                    sqlParam.add(queryString);
+                }else{
+                    sql.append("where tc.name = ? ");
+                    sql.append("and tc.id = tgc.category_id ");
+                    sql.append("and tgc.game_id = tg.id ");
+                    sql.append("and ("+queryColumn+" like ? or "+queryColumn+" = ?) ");
+                    sql.append("and tg.detail_id = tgd.id ");
+                    sql.append("and tg.decoder_id = td.id ");
+                    sqlParam.add(categoryName);
+                    sqlParam.add(queryString_s);
+                    sqlParam.add(queryString);
+                }
+            }
+        }else{
+            // 不需要查询字段
+            if (isCategoryNull){
+                sql.append("where tg.detail_id = tgd.id ");
+                sql.append("and tg.decoder_id = td.id ");
+            }else{
+                sql.append("where tc.name = ? ");
+                sql.append("and tc.id = tgc.category_id ");
+                sql.append("and tgc.game_id = tg.id ");
+                sql.append("and tg.detail_id = tgd.id ");
+                sql.append("and tg.decoder_id = td.id ");
+                sqlParam.add(categoryName);
+            }
+        }
+        // 数目查询条件
+        String countSql = new String(sql).replace("tg.*", "count(tg.id)");
+        // 使用线程安全的方法进行复制
+        for (Object o : sqlParam) {
+            countParam.add(o);
+        }
+
+
+        // 进行排序
+        if (!StringUtils.isEmpty(orderColumn)){
+            sql.append("order by "+orderColumn+" ");
+        }else{
+            sql.append("order by insertTime ");
+        }
+
+        // 排序方式
+        if (!StringUtils.isEmpty(orderType) && orderType.equalsIgnoreCase("desc")){
+            sql.append("desc ");
+        }else{
+            sql.append("asc ");
+        }
+
+        // 分页查询
+        sql.append("limit ?,?");
+        sqlParam.add((currentPage-1)* pageSize);
+        sqlParam.add(pageSize);
+
+        // 测试发现List出现线程不完全的问题, 需要进行处理
+        // 测试拼接的sql是否出问题
+//        System.out.println(sql);
+//        System.out.println(sqlParam);
+//        System.out.println(countSql);
+//        System.out.println(countParam);
+
+        // 使用mybatis解决不了问题, 使用JdbcTemplate去解决问题
+
+        List<Game> gameList = gameSelectDao.findPage(new String(sql), sqlParam);
+//
+        Long count = gameSelectDao.findCounts(countSql, countParam);
+
+        // 查询出下载数和查看数
+        findCount(gameList);
+
+        return new PageResult(count, gameList);
     }
 
 
@@ -154,7 +289,7 @@ public class GameServiceImpl implements GameService{
         // 查询游戏数据
         Game game = gameMapper.selectByPrimaryKey(id);
         // 处理敏感数据
-        game.setInsertTime(null);
+//        game.setInsertTime(null);
         // 填充查看数和下载数数据
 //        findCount(game);
 
@@ -337,6 +472,8 @@ public class GameServiceImpl implements GameService{
         return gameMapper.findIdByDetailId(detailId);
     }
 
+
+
     /**
      * 给游戏填充count数据
      * 该反方法废除, 因为不好用, 对资源消耗大
@@ -359,6 +496,18 @@ public class GameServiceImpl implements GameService{
             game.setDownloadCount(downloadCount);
         }
     }
+
+
+    /**
+     * 为列表数据填充查看数和下载数
+     * @param gameList 列表数据
+     */
+    private void findCount(List<Game> gameList){
+        for (Game game : gameList) {
+            findCount(game);
+        }
+    }
+
 
     /**
      * 查询查看数据

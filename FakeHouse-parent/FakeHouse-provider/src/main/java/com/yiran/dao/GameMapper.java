@@ -79,4 +79,5 @@ public interface GameMapper {
      * @return
      */
     String findIdByDetailId(String detailId);
+
 }

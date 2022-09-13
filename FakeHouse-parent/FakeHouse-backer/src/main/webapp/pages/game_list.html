@@ -55,13 +55,53 @@
         <div class="box">
             <div class="filter-container">
                 <!--  实际上需要通过游戏原名和游戏的中文名进行查询  -->
-                <el-input placeholder="游戏名" v-model="pagination.queryString" style="width: 200px;" class="filter-item"></el-input>
+                <el-input placeholder="" v-model="pagination.queryString" style="width: 200px;" class="filter-item"></el-input>
                 <el-button @click="findQueryPage()" class="dalfBut">查询</el-button>
+                <el-button type="primary" class="butT" @click="handleCreate()">新建游戏</el-button>
+
+                <span style="font-size: 10px">&nbsp;&nbsp;查询字段&nbsp;</span>
+                <template>
+                    <el-select v-model="pagination.queryColumn" placeholder="请选择">
+                        <el-option
+                                v-for="item in queryColumns"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value">
+                        </el-option>
+                    </el-select>
+                </template>
+                <span style="font-size: 10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分类名称&nbsp;</span>
                 <!--  添加一个对框, 设置是否通过分类名称进行查询  -->
+                <el-input placeholder="分类名称" v-model="pagination.categoryName" style="width: 200px;" class="filter-item"></el-input>
+
+
+                <!--  添加两个单选框, 控制排序字段  -->
+                <span style="font-size: 10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;排序方式&nbsp;</span>
+                <template>
+                    <el-select v-model="pagination.orderColumn" placeholder="请选择">
+                        <el-option
+                                v-for="item in orderColumns"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value">
+                        </el-option>
+                    </el-select>
+                </template>
+
 
                 <!--  添加两个单选框, 控制排序方式  -->
+                <span style="font-size: 10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;排序方式&nbsp;</span>
+                <template>
+                    <el-select v-model="pagination.orderType" placeholder="请选择">
+                        <el-option
+                                v-for="item in orderTypes"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value">
+                        </el-option>
+                    </el-select>
+                </template>
 
-                <el-button type="primary" class="butT" @click="handleCreate()">新建游戏</el-button>
             </div>
             <!--  列表数据展示  -->
             <el-table size="small" style="width: 100%" current-row-key="id" :data="gameList" stripe highlight-current-row>
@@ -356,6 +396,20 @@
                                     </el-row>
 
                                     <el-row>
+                                        <el-col :span="10">
+                                            <el-form-item label="插入时间">
+                                                <el-input  v-model="gameFormData.insertTime" :disabled="true"/>
+                                            </el-form-item>
+                                        </el-col>
+                                        <el-col :span="10">
+                                            <el-form-item label="上传时间">
+                                                <!--  封装时需要将decoderName封装到gameFormData中  -->
+                                                <el-input v-model="gameFormData.uploadTime" :disabled="true"/>
+                                            </el-form-item>
+                                        </el-col>
+                                    </el-row>
+
+                                    <el-row>
                                         <el-col :span="12">
                                             <el-form-item label="id">
                                                 <el-input  v-model="gameFormData.id" :disabled="true"/>
@@ -490,7 +544,11 @@
                 currentPage: 1,//当前页码
                 pageSize:10,//每页显示的记录数
                 total:0,//总记录数
-                queryString:null//查询条件
+                queryString: "",//查询条件
+                categoryName: "", // 分类名称, 需要给定准确的分类名称
+                queryColumn: "name",  // 查询字段
+                orderColumn: "insertTime", // 排序字段
+                orderType: "desc", // 排序方式 升序还是降序
             },
             gameList: [],//当前页要展示的分页列表数据
             gameFormData: {},// 游戏的表单数据
@@ -505,7 +563,49 @@
                 capacity: [{required: true, message: '游戏大小为必填项', trigger: 'blur'}],
                 size: [{required: true, message: '游戏数值必填项', trigger: 'blur'}],
                 originUrl: [{required: true, message: '下载链接为必填项', trigger: 'blur'}]
-            }
+            },
+            // 查询字段取值
+            queryColumns: [{
+                value: 'name',
+                label: '名字'
+            }, {
+                value: 'td.name',
+                label: '破解者'
+            }, {
+                value: 'development',
+                label: '开发商'
+            }, {
+                value: 'deliver',
+                label: '发行商'
+            }, {
+                value: 'platform',
+                label: '平台'
+            }, {
+                value: 'backgroundLanguage',
+                label: '文字语言'
+            }, {
+                value: 'voiceLanguage',
+                label: '语音语言'
+            }],
+            // 排序字段取值
+            orderColumns: [{
+                value: 'insertTime',
+                label: '插入时间'
+            }, {
+                value: 'uploadTime',
+                label: '上传时间'
+            }, {
+                value: 'size',
+                label: '大小'
+            }],
+            // 排序类型取值
+            orderTypes: [{
+                value: 'desc',
+                label: '降序'
+            }, {
+                value: 'asc',
+                label: '升序'
+            }]
         },
         //钩子函数，VUE对象初始化完成后自动执行
         created() {
@@ -608,9 +708,13 @@
                 var param = {
                     currentPage:this.pagination.currentPage,
                     pageSize:this.pagination.pageSize,
-                    queryString: this.pagination.queryString
+                    queryString: this.pagination.queryString,
+                    categoryName: this.pagination.categoryName, // 分类名称, 需要给定准确的分类名称
+                    queryColumn: this.pagination.queryColumn,  // 查询字段
+                    orderColumn: this.pagination.orderColumn, // 排序字段
+                    orderType: this.pagination.orderType // 排序方式 升序还是降序
                 };
-                axios.post("/FakeHouse-backer/game/findPageWithCount.do",param).then((res)=>{
+                axios.post("/FakeHouse-backer/game/findPageForManage.do",param).then((res)=>{
                     if(res.data.flag) {
 
                         //解析Controller响应回的数据，为模型数据赋值
@@ -632,9 +736,14 @@
                 var param = {
                     currentPage:1,
                     pageSize:this.pagination.pageSize,
-                    queryString: this.pagination.queryString
+                    queryString: this.pagination.queryString,
+                    categoryName: this.pagination.categoryName, // 分类名称, 需要给定准确的分类名称
+                    queryColumn: this.pagination.queryColumn,  // 查询字段
+                    orderColumn: this.pagination.orderColumn, // 排序字段
+                    orderType: this.pagination.orderType // 排序方式 升序还是降序
+
                 };
-                axios.post("/FakeHouse-backer/game/findPageWithCount.do",param).then((res)=>{
+                axios.post("/FakeHouse-backer/game/findPageForManage.do",param).then((res)=>{
 
                     if (res.data.flag)
                     {

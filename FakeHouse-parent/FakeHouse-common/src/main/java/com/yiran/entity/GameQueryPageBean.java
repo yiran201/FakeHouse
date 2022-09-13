@@ -1,6 +1,9 @@
 package com.yiran.entity;
 
+import org.springframework.util.StringUtils;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,23 +16,28 @@ public class GameQueryPageBean implements Serializable{
     private String queryString;//查询条件
 
 
-    // 用于指明queryString对应要查询的字段
-    // 默认通过名字进行搜索
-    private Integer queryType;
-    public static String[] queryTypeList = {"name", "category", "decoder"};
+    // 分类名称, 需要给定准确的分类名称
+    // 允许为空, 此时不通过分类名称进行筛选
+    private String categoryName;
 
-    // 用于指定排序字段
-    // int 中的值对应orderTypeList中的值
-    // 默认为 通过破解游戏的上传时间进行排序
-    private Integer orderType;
-    // 游戏大小  对于insertTime, 是给管理员查看使用的, 对于会员没有价值
-    public static String[] orderTypeList = {"uploadTime", "size",  "insertTime", "downloadCount", "watchCount"};
+    // 查询字段
+    private String queryColumn;
 
-    // 排序顺序
-    // 默认设置为0, 降序排序
-    private Integer order;
-    // 升序和降序
-    public static String[] orderList = {"desc", "asc"};
+    // 排序字段
+    private String orderColumn;
+
+    // 排序方式 升序还是降序
+    private String orderType;
+
+    // queryColumn的允许取值
+    public static final String[] queryColumnList = {"name", "td.name", "development", "deliver",
+            "platform", "backgroundLanguage", "voiceLanguage"};
+
+    // orderColumn的允许取值
+    public static final String[] orderColumnList = {"insertTime", "uploadTime", "size"};
+
+    // orderType的允许取值
+    public static final String[] orderTypeList = {"desc", "asc"};
 
 
     public Integer getCurrentPage() {
@@ -56,29 +64,36 @@ public class GameQueryPageBean implements Serializable{
         this.queryString = queryString;
     }
 
-
-    public Integer getQueryType() {
-        return queryType;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setQueryType(Integer queryType) {
-        this.queryType = queryType;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
-    public Integer getOrderType() {
+    public String getQueryColumn() {
+        return queryColumn;
+    }
+
+    public void setQueryColumn(String queryColumn) {
+        this.queryColumn = queryColumn;
+    }
+
+    public String getOrderColumn() {
+        return orderColumn;
+    }
+
+    public void setOrderColumn(String orderColumn) {
+        this.orderColumn = orderColumn;
+    }
+
+    public String getOrderType() {
         return orderType;
     }
 
-    public void setOrderType(Integer orderType) {
+    public void setOrderType(String orderType) {
         this.orderType = orderType;
-    }
-
-    public Integer getOrder() {
-        return order;
-    }
-
-    public void setOrder(Integer order) {
-        this.order = order;
     }
 
     public static boolean checkGameQueryPageBean(GameQueryPageBean queryPageBean) {
@@ -87,9 +102,15 @@ public class GameQueryPageBean implements Serializable{
         {
             Integer currentPage = queryPageBean.getCurrentPage();
             Integer pageSize = queryPageBean.getPageSize();
-            Integer queryType = queryPageBean.getQueryType();
-            Integer orderType = queryPageBean.getOrderType();
-            Integer order = queryPageBean.getOrder();
+            String queryColumn = queryPageBean.getQueryColumn();
+            String orderColumn = queryPageBean.getOrderColumn();
+            String orderType = queryPageBean.getOrderType();
+
+            // 对查询字符串进行处理, 防止出错
+            String queryString = queryPageBean.getQueryString();
+            String categoryName = queryPageBean.getCategoryName();
+            queryPageBean.setQueryString(produceSrr(queryString));
+            queryPageBean.setCategoryName(produceSrr(categoryName));
 
             if (currentPage == null || currentPage <= 0) {
                 queryPageBean.setCurrentPage(1);
@@ -97,18 +118,71 @@ public class GameQueryPageBean implements Serializable{
             if (pageSize == null || pageSize <= 0) {
                 queryPageBean.setPageSize(10);
             }
-            if (queryType == null) {
-                queryPageBean.setQueryType(0);
+            if (StringUtils.isEmpty(queryColumn) || !strInList(queryColumn, queryColumnList)){
+                // 默认通过名字进行查询
+                queryColumn = queryColumnList[0];
+                queryPageBean.setQueryColumn(queryColumn);
             }
-            if (orderType == null){
-                queryPageBean.setOrderType(0);
+            if (StringUtils.isEmpty(orderColumn) || !strInList(orderColumn, orderColumnList)){
+                // 默认通过插入时间进行排序
+                orderColumn = orderColumnList[0];
+                queryPageBean.setOrderColumn(orderColumn);
             }
-            if (order == null){
-                queryPageBean.setOrder(0);
+            if (StringUtils.isEmpty(orderType) || !strInList(orderType, orderTypeList)){
+                // 默认降序排序
+                orderType = orderTypeList[0];
+                queryPageBean.setOrderType(orderType);
             }
             return true;
         }
 
         return false;
+    }
+
+    /**
+     * 判断str是否存在于对应的取值范围中
+     * @param str 目标字符串
+     * @param list 取值集合
+     * @return true 在; false 不在
+     */
+    private static boolean strInList(String str, String [] list){
+        for (String s : list) {
+            if (s.equals(str)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 由于不允许str中包含 ? 和  %, 所以需要对其进行处理
+     * @param str 需要处理的字符串
+     * @return
+     */
+    private static String produceSrr(String str){
+        if(!StringUtils.isEmpty(str)){
+            str.replaceAll("%", "");
+            str.replaceAll("[?]", "");
+            if (StringUtils.isEmpty(str)){
+                return null;
+            }
+            return str;
+        }
+        return null;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "GameQueryPageBean{" +
+                "currentPage=" + currentPage +
+                ", pageSize=" + pageSize +
+                ", queryString='" + queryString + '\'' +
+                ", categoryName='" + categoryName + '\'' +
+                ", queryColumn='" + queryColumn + '\'' +
+                ", orderColumn='" + orderColumn + '\'' +
+                ", orderType='" + orderType + '\'' +
+                '}';
     }
 }

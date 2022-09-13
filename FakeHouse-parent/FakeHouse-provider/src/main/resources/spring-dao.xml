@@ -39,5 +39,12 @@
         <property name="basePackage" value="com.yiran.dao" />
     </bean>
 
+    <!--  配置JdbcTemplate  -->
+    <bean class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--  配置包扫描  -->
+    <context:component-scan base-package="com.yiran.jdbcTemplate"/>
 
 </beans>

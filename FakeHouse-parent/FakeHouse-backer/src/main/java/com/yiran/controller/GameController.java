@@ -4,6 +4,7 @@ package com.yiran.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
 import com.yiran.constant.MessageConstant;
+import com.yiran.entity.GameQueryPageBean;
 import com.yiran.entity.PageResult;
 import com.yiran.entity.QueryPageBean;
 import com.yiran.entity.Result;
@@ -50,6 +51,33 @@ public class GameController {
         }
         return new Result(false, MessageConstant.QUERY_GAME_FAIL);
     }
+
+
+    /**
+     * 由于上面的查询方式无法满足复杂的情形, 所以需要进行等复杂查询方法的设计
+     *  查询游戏数据, 携带游戏查看数和下载数
+     * @param queryPageBean  分页条件
+     * @return
+     */
+    @PostMapping("/findPageForManage")
+    @PreAuthorize("hasAuthority('GAME_SELECT')")
+    public Result findPageForManage(@RequestBody GameQueryPageBean queryPageBean){
+
+//        System.out.println(queryPageBean);
+        try {
+            if (GameQueryPageBean.checkGameQueryPageBean(queryPageBean)){
+//                System.out.println(queryPageBean);
+                PageResult result = gameService.findPageForManage(queryPageBean);
+                if (result != null){
+                    return new Result(true, MessageConstant.QUERY_GAME_SUCCESS, result);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new Result(false, MessageConstant.QUERY_GAME_FAIL);
+    }
+
 
 
     /**

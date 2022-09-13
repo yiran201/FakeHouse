@@ -17,6 +17,9 @@
     <result column="decoder_id" property="decoderId" jdbcType="INTEGER" />
   </resultMap>
 
+  <!--<resultMap id="PageResultMap" type="com.yiran.pojo.Game" extends="BaseResultMap">-->
+    <!---->
+  <!--</resultMap>-->
 
   <sql id="Base_Column_List" >
     id, name, chsName, uploadTime, capacity, size, originUrl, downloadUrl, active, insertTime,
@@ -266,4 +269,5 @@
       from t_game
       where detail_id = #{value}
   </select>
+
 </mapper>

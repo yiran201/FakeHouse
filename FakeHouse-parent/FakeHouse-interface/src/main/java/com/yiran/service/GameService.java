@@ -1,5 +1,6 @@
 package com.yiran.service;
 
+import com.yiran.entity.GameQueryPageBean;
 import com.yiran.entity.PageResult;
 import com.yiran.entity.QueryPageBean;
 import com.yiran.pojo.Category;
@@ -92,4 +93,13 @@ public interface GameService {
      * @return
      */
     String findIdByDetailId(String detailId);
+
+
+    /**
+     * 升级后的分页查询, 可以通过多个字段控制查询
+     * @param queryPageBean 查询条件
+     * @return
+     */
+    PageResult findPageForManage(GameQueryPageBean queryPageBean);
+
 }
