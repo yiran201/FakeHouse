@@ -7,9 +7,131 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="082ee9dd-7221-4530-8188-0be64685dd02" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/entity/GameQueryPageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/entity/GameQueryPageBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/GameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/GameServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/orderset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/style-login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/112.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/113.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/114.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/115.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/js/axios-0.18.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/js/check.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/js/echarts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/js/healthmobile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/js/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/game.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/myHome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/resources/Game_find_Page" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-information.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-informationDetail.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-intervention.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-order.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-orderDetail.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-orderInfo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-orderNotice.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-record.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-recordDetail.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-report.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-risk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-riskPageComplete.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-health-riskQuestion.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/page-index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-article.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-bg-link.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-card.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-carousel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-form-info.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-ind-cont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-ind-group.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-ind-nav.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-list-column1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-list-column2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-list-content.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-list-row3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-news-list.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-notice-article.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-question.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-select-drop.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-tab-wrapper.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-table-listbox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-text-link.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/css/widget-top-header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/fonts/health-icon.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/fonts/health-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/fonts/health-icon.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/fonts/health-icon.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/asset-ad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/asset-favico.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-banner1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-banner2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-banner3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-banner3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-banner_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-banner_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-banner_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-detail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-group-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-group-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-group-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-group-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-icon_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-info01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-info02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-it-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-it-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-it-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-nav-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-nav-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-nav-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-nav-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-order_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-order_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-order_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-order_04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-program01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-risk01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-risk02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-risk03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-zx01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-zx02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-zx03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-zx04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/img/widget-zx05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/checkrecord_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/health-recordDetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/m_setmeal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/member.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/orderInfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/orderNotice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/orderSuccess.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/setmeal.html" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/category_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/setmeal_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/game_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/setmeal_detail_11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/setmeal_detail_27.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/setmeal_detail_28.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/setmeal_detail_5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/setmeal_detail_6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/setmeal_detail_7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/setmeal_detail_9.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/FakeHouse-parent/target/" />
     <ignored path="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/target/" />
@@ -27,17 +149,17 @@
     <session id="1574262746">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="30" />
+          <entry key="project.closed" value="32" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="6" />
+          <entry key="project.open.time.7" value="7" />
           <entry key="project.open.time.8" value="4" />
-          <entry key="project.opened" value="30" />
+          <entry key="project.opened" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -46,35 +168,35 @@
           <entry key="class" value="9" />
           <entry key="css" value="2" />
           <entry key="gitignore" value="3" />
-          <entry key="html" value="69" />
+          <entry key="html" value="108" />
           <entry key="java" value="284" />
           <entry key="jpg" value="9" />
-          <entry key="js" value="3" />
+          <entry key="js" value="5" />
           <entry key="png" value="7" />
           <entry key="properties" value="14" />
           <entry key="svg" value="1" />
           <entry key="woff" value="1" />
-          <entry key="xml" value="92" />
+          <entry key="xml" value="93" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="9" />
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="69" />
+          <entry key="HTML" value="108" />
           <entry key="Image" value="16" />
           <entry key="JAVA" value="284" />
-          <entry key="JavaScript" value="3" />
+          <entry key="JavaScript" value="5" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="Properties" value="14" />
           <entry key="SVG" value="1" />
-          <entry key="XML" value="92" />
+          <entry key="XML" value="93" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="53" />
-          <entry key="html" value="4369" />
+          <entry key="html" value="6000" />
           <entry key="java" value="28235" />
           <entry key="properties" value="8" />
           <entry key="txt" value="1094" />
@@ -83,7 +205,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="4369" />
+          <entry key="HTML" value="6000" />
           <entry key="JAVA" value="28235" />
           <entry key="PLAIN_TEXT" value="1147" />
           <entry key="Properties" value="8" />
@@ -102,14 +224,85 @@
     <favorites_list name="FakeHouse" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-447">
+              <caret line="50" column="23" lean-forward="true" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="116" column="69" selection-start-line="116" selection-start-column="69" selection-end-line="116" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/category_search.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/myHome.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/game.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-input#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-input#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/game_detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-44">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -182,16 +375,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/main.html" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/Game.java" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/pojo/DetailGame.java" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/user.html" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/utils/IdWorker.java" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/resources/springmvc.xml" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/spring-service.xml" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/RecodeService.java" />
-        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/RecodeServiceImpl.java" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/RecodeMapper.java" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/RecodeMapper.xml" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/CategoryService.java" />
@@ -233,6 +416,16 @@
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/entity/GameQueryPageBean.java" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/GameServiceImpl.java" />
         <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/login.html" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/orderNotice.html" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/member.html" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/game_detail.html" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/myHome.html" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/game.html" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/game_detail.html" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/index.html" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/category_search.html" />
+        <option value="$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/myHome.html" />
       </list>
     </option>
   </component>
@@ -282,9 +475,9 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="586" />
-    <option name="width" value="1346" />
-    <option name="height" value="688" />
+    <option name="y" value="61" />
+    <option name="width" value="1219" />
+    <option name="height" value="842" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -294,8 +487,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -306,70 +497,25 @@
             <path>
               <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-backer" type="462c0819:PsiDirectoryNode" />
+              <item name="FakeHouse-presenter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-backer" type="462c0819:PsiDirectoryNode" />
+              <item name="FakeHouse-presenter" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-backer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-backer" type="462c0819:PsiDirectoryNode" />
+              <item name="FakeHouse-presenter" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-backer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yiran" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-backer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yiran" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-backer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yiran" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-backer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-backer" type="462c0819:PsiDirectoryNode" />
+              <item name="FakeHouse-presenter" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
@@ -377,205 +523,19 @@
             <path>
               <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-backer" type="462c0819:PsiDirectoryNode" />
+              <item name="FakeHouse-presenter" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-backer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yiran" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yiran" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yiran" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-interface" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-interface" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-interface" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-interface" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-interface" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yiran" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-provider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yiran" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yiran" type="462c0819:PsiDirectoryNode" />
-              <item name="jdbcTemplate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yiran" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FakeHouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FakeHouse-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="FakeHouse-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -583,9 +543,9 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1663072235149" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1663128924105" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="G:/java_idea/UI_Learn" />
+    <property name="last_opened_file_path" value="G:/idea项目/数据结构-算法" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -595,6 +555,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\gitRepos\FakeHouse\FakeHouse-parent\FakeHouse-presenter\src\main\webapp" />
+      <recent name="G:\gitRepos\FakeHouse\FakeHouse-parent\FakeHouse-presenter\src\main\webapp\pages" />
       <recent name="G:\gitRepos\FakeHouse\FakeHouse-parent\FakeHouse-provider\src\main\resources\com\yiran\dao" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -603,11 +565,11 @@
       <recent name="com.yiran.constant" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\gitRepos\FakeHouse\FakeHouse-parent\FakeHouse-presenter\src\main\webapp" />
+      <recent name="G:\gitRepos\FakeHouse\FakeHouse-parent\FakeHouse-presenter\src\main\webapp\img" />
       <recent name="G:\gitRepos\FakeHouse\FakeHouse-parent\FakeHouse-backer\src\main\webapp\pages" />
       <recent name="G:\gitRepos\FakeHouse\FakeHouse-parent\FakeHouse-common\src\main\java\com\yiran\utils" />
       <recent name="G:\gitRepos\FakeHouse\FakeHouse-parent\FakeHouse-provider\src\main\resources\com\yiran\dao" />
-      <recent name="G:\gitRepos\FakeHouse\FakeHouse-parent\FakeHouse-provider\src\main\java\com\yiran\dao" />
-      <recent name="G:\gitRepos\FakeHouse\FakeHouse-parent\FakeHouse-interface\src\main\java\com\yiran\pojo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -838,6 +800,8 @@
       <workItem from="1662982381553" duration="10675000" />
       <workItem from="1663040387695" duration="3644000" />
       <workItem from="1663051165514" duration="10587000" />
+      <workItem from="1663072431814" duration="4967000" />
+      <workItem from="1663123732523" duration="5254000" />
     </task>
     <task id="LOCAL-00001" summary="初始化数据库;&#10;测试并引用OauthConsole模块, 导入部分代码.">
       <created>1661919009409</created>
@@ -976,12 +940,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134775000" />
+    <option name="totallyTimeSpent" value="144996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4985507" visible="true" weight="0.2510661" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4985507" visible="true" weight="0.19616205" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1110,193 +1075,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="完成游戏查询的复杂查询功能;&#10;修正了mybatis查询导致的复杂问题, 使用JdbcTemplate进行处理, 实现复杂的查询." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/DecoderMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="123" column="65" selection-start-line="123" selection-start-column="65" selection-end-line="123" selection-end-column="65" />
-          <folding>
-            <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
-            <element signature="n#sql#0;n#mapper#0;n#!!top" />
-            <element signature="n#select#0;n#mapper#0;n#!!top" />
-            <element signature="n#delete#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#update#1;n#mapper#0;n#!!top" />
-            <element signature="n#select#1;n#mapper#0;n#!!top" />
-            <element signature="n#insert#2;n#mapper#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/DecoderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="40" column="81" selection-start-line="40" selection-start-column="81" selection-end-line="40" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/CategoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="89" column="31" lean-forward="true" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/PermissionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/DetailGameMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="53" column="20" lean-forward="true" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/CharacterService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/decoder.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="69" column="102" selection-start-line="69" selection-start-column="102" selection-end-line="69" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/DetailGameService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/DetailGameMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="902">
-          <caret line="161" column="55" selection-start-line="161" selection-start-column="55" selection-end-line="161" selection-end-column="55" />
-          <folding>
-            <element signature="n#sql#0;n#mapper#0;n#!!top" />
-            <element signature="n#select#0;n#mapper#0;n#!!top" />
-            <element signature="n#delete#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#update#1;n#mapper#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/DetailGameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2713">
-          <caret line="142" column="7" selection-start-line="142" selection-start-column="7" selection-end-line="142" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/detailGame.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1036">
-          <caret line="419" column="19" lean-forward="true" selection-start-line="419" selection-start-column="19" selection-end-line="419" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/dao/CharacterMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="287" column="27" lean-forward="true" selection-start-line="287" selection-start-column="27" selection-end-line="287" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/resources/com/yiran/dao/CharacterMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="117" column="11" lean-forward="true" selection-start-line="117" selection-start-column="11" selection-end-line="117" selection-end-column="11" />
-          <folding>
-            <element signature="n#sql#0;n#mapper#0;n#!!top" />
-            <element signature="n#select#0;n#mapper#0;n#!!top" />
-            <element signature="n#delete#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#update#1;n#mapper#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-common/src/main/java/com/yiran/constant/MessageConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/java/com/yiran/controller/CharacterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2619">
-          <caret line="120" column="48" lean-forward="true" selection-start-line="120" selection-start-column="48" selection-end-line="120" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/CategoryServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/CharacterServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1805">
-          <caret line="131" column="13" lean-forward="true" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/DecoderServicImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="86" column="56" lean-forward="true" selection-start-line="86" selection-start-column="56" selection-end-line="86" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/DetailGameServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-685">
-          <caret line="92" column="60" lean-forward="true" selection-start-line="92" selection-start-column="60" selection-end-line="92" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/MenuServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/PermissionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-provider/src/main/java/com/yiran/service/impl/RecodeServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="641">
@@ -1351,26 +1129,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="931">
           <caret line="271" column="2" selection-start-line="271" selection-start-column="2" selection-end-line="271" selection-end-column="2" />
-          <folding>
-            <element signature="n#sql#0;n#mapper#0;n#!!top" />
-            <element signature="n#select#0;n#mapper#0;n#!!top" />
-            <element signature="n#delete#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#update#1;n#mapper#0;n#!!top" />
-            <element signature="n#update#2;n#mapper#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/resources/Game_find_Page">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2517">
-          <caret line="257" column="20" selection-start-line="257" selection-start-column="20" selection-end-line="257" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/resources/Game_find_Page" />
     <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-interface/src/main/java/com/yiran/service/GameService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1606">
@@ -1392,10 +1154,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
           <caret line="45" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="e#2471#2472#0" expanded="true" />
-            <element signature="e#2502#2503#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1462,9 +1220,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1486,12 +1241,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="127" column="40" selection-start-line="127" selection-start-column="40" selection-end-line="127" selection-end-column="40" />
-          <folding>
-            <element signature="e#2220#2221#0" expanded="true" />
-            <element signature="e#2249#2250#0" expanded="true" />
-            <element signature="e#2294#2295#0" expanded="true" />
-            <element signature="e#2330#2331#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1499,24 +1248,93 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="174" column="9" lean-forward="true" selection-start-line="174" selection-start-column="9" selection-end-line="174" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#findCategoryList#0;class#GameServiceImpl#0" />
-            <element signature="method#add#0;class#GameServiceImpl#0" />
-            <element signature="method#findById#0;class#GameServiceImpl#0" />
-            <element signature="method#findCategoryIdByGameId#0;class#GameServiceImpl#0" />
-            <element signature="method#update#0;class#GameServiceImpl#0" />
-            <element signature="method#deleteById#0;class#GameServiceImpl#0" />
-            <element signature="method#findGameIdsByDecoderId#0;class#GameServiceImpl#0" />
-            <element signature="method#findIdByDetailId#0;class#GameServiceImpl#0" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/resources/springmvc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/plugins/datapicker/datePicker.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/js/vue.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/setmeal_detail_5.html" />
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5082">
+          <caret line="254" column="27" lean-forward="true" selection-start-line="254" selection-start-column="27" selection-end-line="254" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="134" column="18" selection-start-line="134" selection-start-column="18" selection-end-line="134" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/downloadSuccess.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/health-recordDetail.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/orderNotice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/setmeal_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="83" column="18" lean-forward="true" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/orderInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/member.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/m_setmeal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-337" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/checkrecord_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="69" lean-forward="true" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="73" column="31" lean-forward="true" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-backer/src/main/webapp/pages/game_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+        <state relative-caret-position="356">
+          <caret line="109" column="27" lean-forward="true" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#el-input#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1527,6 +1345,64 @@
             <element signature="n#el-table#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/myHome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-input#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-input#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-447">
+          <caret line="50" column="23" lean-forward="true" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="116" column="69" selection-start-line="116" selection-start-column="69" selection-end-line="116" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/category_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/src/main/webapp/pages/game_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
@@ -1586,11 +1462,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Web|FakeHouse-provider</last-edited>
+          <last-edited>FakeHouse-backer</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.21350364" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1610,7 +1487,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: bouncycastle:bcmail-jdk14:138</last-edited>
+          <last-edited>Maven: com.alibaba:druid:1.0.9</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

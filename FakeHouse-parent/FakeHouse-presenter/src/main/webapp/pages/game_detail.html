@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../img/asset-favico.ico">-->
+    <title>游戏详情</title>
+    <script src="../plugins/vue/vue.js"></script>
+    <script src="../plugins/vue/axios-0.18.0.js"></script>
+    <script src="../plugins/healthmobile.js"></script>
+    <script>
+        //alert(window.location.toString());
+        var id = getUrlParam("id");//根据地址栏参数名称获取对应的参数值
+    </script>
+</head>
+<body>
+
+<div id="app">
+
+    <!-- 页面内容 -->
+    <!--  展示游戏详情数据  -->
+    <div class="contentBox">
+        <!--  第一个框, 展示游戏基本数据  -->
+        <div>
+            <div class="project-img">
+                <img :src="imgUrl" width="100%" height="100%" />
+            </div>
+            <div class="project-text">
+                <h4 class="tit">{{setmeal.name}}</h4>
+                <p class="subtit">{{setmeal.remark}}</p>
+                <p class="keywords">
+                    <span>{{setmeal.sex == '0' ? '性别不限' : setmeal.sex == '1' ? '男':'女'}}</span>
+                    <span>{{setmeal.age}}</span>
+                </p>
+            </div>
+        </div>
+        <!--  第二个框, 展示游戏详情数据  -->
+        <div>
+            <div class="box-title">
+                <i class="icon-zhen"><span class="path1"></span><span class="path2"></span></i>
+                <span>游戏详情</span>
+            </div>
+            <div class="box-table">
+                <div class="table-title">
+                    <div class="tit-item flex2">项目名称</div>
+                    <div class="tit-item  flex3">项目内容</div>
+                    <div class="tit-item  flex3">项目解读</div>
+                </div>
+                <div class="table-content">
+                    <ul class="table-list">
+                        <li class="table-item" v-for="checkgroup in setmeal.checkGroups">
+                            <div class="item flex2">{{checkgroup.name}}</div>
+                            <div class="item flex3">
+                                <label v-for="checkitem in checkgroup.checkItems">
+                                    {{checkitem.name}}
+                                </label>
+                            </div>
+                            <div class="item flex3">{{checkgroup.remark}}</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-button">
+                    <a @click="toOrderInfo()" class="order-btn">立即预约</a>
+                </div>
+            </div>
+        </div>
+
+        <!--  第三个框, 展示游戏特色数据和游戏的特色数据  -->
+        <div></div>
+
+        <!--  下载链接按钮. 点击可以进行下载  -->
+
+
+        <!--  下载说明, 防止用户不知道怎么下载  -->
+
+
+        <!--  反馈, 提供位置让用户进行反馈, 如果游戏下载失败, 或者游戏连接失效, 用户可以在此处进行反馈  -->
+    </div>
+
+    <!--  之后会制作成静态页面, 所以暂时数据查询是无所谓的  -->
+
+
+
+</div>
+
+<script>
+    var vue = new Vue({
+        el:'#app',
+        data:{
+            setmeal:{}//套餐数据
+        },
+        methods:{
+            toOrderInfo(){
+                window.location.href = "orderInfo.html?id=" + id;
+            }
+        },
+        mounted(){
+            // 根据游戏id查询有关游戏的所有数据
+            // axios.post("/setmeal/findById.do?id=" + id).then((response) => {
+            //     if(response.data.flag){
+            //         this.setmeal = response.data.data;
+            //
+            //     }
+            // });
+        }
+    });
+</script>
+</body>
