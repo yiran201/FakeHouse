@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GameList</title>
+    <meta name="description" content="permission">
+    <meta name="keywords" content="permission">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../plugins/elementui/index.css">
+    <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 引入组件库 -->
+    <script src="../js/vue.js"></script>
+    <script src="../plugins/elementui/index.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script src="../js/axios-0.18.0.js"></script>
+    <script src="../js/healthmobile.js"></script>
+    <style>
+        .datatable {
+            position: relative;
+            box-sizing: border-box;
+            -webkit-box-flex: 1;
+            width: 100%;
+            max-width: 100%;
+            font-size: 14px;
+            color: rgb(96, 98, 102);
+            overflow: hidden;
+            flex: 1 1 0%;
+        }
+        .datatable td, .datatable th {
+            padding: 12px 0;
+            min-width: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+            position: relative;
+            text-align: left;
+        }
+    </style>
+</head>
+<body class="hold-transition">
+<div id="app">
+    <div class="content-header">
+        <h1>搜索游戏</h1>
+    </div>
+    <div class="app-container">
+        <div class="box">
+            <div class="filter-container">
+
+                <div style="margin-top: 20px">
+                    <!--  实际上需要通过游戏原名和游戏的中文名进行查询  -->
+                    <el-input placeholder="" v-model="pagination.queryString" style="width: 200px;" class="filter-item"></el-input>
+                    <el-button @click="findQueryPage()" class="dalfBut">查询</el-button>
+
+                    <span style="font-size: 10px">&nbsp;查询字段&nbsp;</span>
+                    <template>
+                        <el-select v-model="pagination.queryColumn" placeholder="请选择">
+                            <el-option
+                                    v-for="item in queryColumns"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </template>
+                </div>
+
+                <div style="margin-top: 20px">
+                    <span style="font-size: 10px">&nbsp;分类名称&nbsp;</span>
+                    <!--  添加一个对框, 设置是否通过分类名称进行查询  -->
+                    <el-input placeholder="分类名称" v-model="pagination.categoryName" style="width: 200px;" class="filter-item"></el-input>
+
+                    <!--  添加两个单选框, 控制排序字段  -->
+                    <span style="font-size: 10px">&nbsp;排序方式&nbsp;</span>
+                    <template>
+                        <el-select v-model="pagination.orderColumn" placeholder="请选择">
+                            <el-option
+                                    v-for="item in orderColumns"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </template>
+
+                    <!--  添加两个单选框, 控制排序方式  -->
+                    <span style="font-size: 10px">&nbsp;排序方式&nbsp;</span>
+                    <template>
+                        <el-select v-model="pagination.orderType" placeholder="请选择">
+                            <el-option
+                                    v-for="item in orderTypes"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </template>
+                </div>
+
+
+
+            </div>
+            <!--  列表数据展示  -->
+            <el-table size="small" style="width: 100%" current-row-key="id" :data="gameList" stripe highlight-current-row>
+
+                <el-table-column type="index" align="center" label="序号"></el-table-column>
+
+                <el-table-column prop="name" label="游戏名称" align="center"></el-table-column>
+
+                <el-table-column prop="capacity" label="容量" align="center"></el-table-column>
+
+                <el-table-column prop="downloadCount" label="下载数" align="center"></el-table-column>
+
+                <el-table-column prop="watchCount" label="查看数" align="center"></el-table-column>
+
+                <el-table-column label="操作" align="center">
+                    <template slot-scope="scope">
+                        <!--  包括游戏详情信息的修改  -->
+                        <el-button type="primary" size="mini" @click="handleUpdate(scope.row)">下载</el-button>
+                        <el-button size="mini" type="danger" @click="handleDelete(scope.row)">查看详情</el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+
+            <!--  分页插件  -->
+            <div class="pagination-container">
+                <el-pagination
+                        class="pagiantion"
+                        @current-change="handleCurrentChange"
+                        :current-page="pagination.currentPage"
+                        :page-size="pagination.pageSize"
+                        layout="total, prev, pager, next, jumper"
+                        :total="pagination.total">
+                </el-pagination>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data:{
+            pagination: {//分页相关模型数据
+                currentPage: 1,//当前页码
+                pageSize:10,//每页显示的记录数
+                total:0,//总记录数
+                queryString: "",//查询条件
+                categoryName: "", // 分类名称, 需要给定准确的分类名称
+                queryColumn: "name",  // 查询字段
+                orderColumn: "insertTime", // 排序字段
+                orderType: "desc" // 排序方式 升序还是降序
+            },
+            gameList: [],//当前页要展示的分页列表数据
+            gameFormData: {},// 游戏的表单数据
+            gameDetailFormData: {}, // 游戏详情表单
+            characterList: [], // 游戏特色
+            categoryData:[],//新增和编辑表单中对应的权限列表数据
+            categoryId:[],//新增和编辑表单中权限对应的复选框，基于双向绑定可以进行回显和数据提交;
+            dialogFormVisible: false,//增加表单是否可见
+            dialogFormVisible4Edit:false,//编辑表单是否可见
+            rules: {//校验规则
+                name: [{required: true, message: '名字为必填项', trigger: 'blur'}],
+                capacity: [{required: true, message: '游戏大小为必填项', trigger: 'blur'}],
+                size: [{required: true, message: '游戏数值必填项', trigger: 'blur'}],
+                originUrl: [{required: true, message: '下载链接为必填项', trigger: 'blur'}]
+            },
+            // 查询字段取值
+            queryColumns: [{
+                value: 'name',
+                label: '名字'
+            }, {
+                value: 'td.name',
+                label: '破解者'
+            }, {
+                value: 'development',
+                label: '开发商'
+            }, {
+                value: 'deliver',
+                label: '发行商'
+            }, {
+                value: 'platform',
+                label: '平台'
+            }, {
+                value: 'backgroundLanguage',
+                label: '文字语言'
+            }, {
+                value: 'voiceLanguage',
+                label: '语音语言'
+            }],
+            // 排序字段取值
+            orderColumns: [{
+                value: 'insertTime',
+                label: '插入时间'
+            }, {
+                value: 'uploadTime',
+                label: '上传时间'
+            }, {
+                value: 'size',
+                label: '大小'
+            }],
+            // 排序类型取值
+            orderTypes: [{
+                value: 'desc',
+                label: '降序'
+            }, {
+                value: 'asc',
+                label: '升序'
+            }]
+        },
+        //钩子函数，VUE对象初始化完成后自动执行
+        created() {
+            this.findPage();//VUE对象初始化完成后调用分页查询方法，完成分页查询
+        },
+        methods: {
+            //权限不足提示
+            showMessage(r){
+                if(r == 'Error: Request failed with status code 403'){
+                    //权限不足
+                    this.$message.error('无访问权限');
+                    return;
+                }else{
+                    this.$message.error('未知错误');
+                    return;
+                }
+            },
+            //分页查询
+            findPage() {
+                //发送ajax请求，提交分页相关请求参数（页码、每页显示记录数、查询条件）
+                var param = {
+                    currentPage:this.pagination.currentPage,
+                    pageSize:this.pagination.pageSize,
+                    queryString: this.pagination.queryString,
+                    categoryName: this.pagination.categoryName, // 分类名称, 需要给定准确的分类名称
+                    queryColumn: this.pagination.queryColumn,  // 查询字段
+                    orderColumn: this.pagination.orderColumn, // 排序字段
+                    orderType: this.pagination.orderType, // 排序方式 升序还是降序
+                    active: this.pagination.active   // 是否通过 active = false 进行查询
+                };
+                axios.post("/FakeHouse-backer/game/findPageForManage.do",param).then((res)=>{
+                    if(res.data.flag) {
+
+                        //解析Controller响应回的数据，为模型数据赋值
+                        this.pagination.total = res.data.data.total;
+                        this.gameList = res.data.data.rows;
+                    }else
+                    {
+                        // 查询数据失败
+                        this.$message.error(res.data.message);
+                    }
+                }).catch((bad)=> {
+                    // 403处理
+                    this.showMessage(bad);
+                });
+            },
+            // 与findPage的区别是 该方法会将页数设置为1
+            findQueryPage() {
+                //发送ajax请求，提交分页相关请求参数（页码、每页显示记录数、查询条件）
+                var param = {
+                    currentPage:1,
+                    pageSize:this.pagination.pageSize,
+                    queryString: this.pagination.queryString,
+                    categoryName: this.pagination.categoryName, // 分类名称, 需要给定准确的分类名称
+                    queryColumn: this.pagination.queryColumn,  // 查询字段
+                    orderColumn: this.pagination.orderColumn, // 排序字段
+                    orderType: this.pagination.orderType, // 排序方式 升序还是降序
+                    active: this.pagination.active   // 是否通过 active = false 进行查询
+                };
+                axios.post("/FakeHouse-backer/game/findPageForManage.do",param).then((res)=>{
+
+                    if (res.data.flag)
+                    {
+                        //解析Controller响应回的数据，为模型数据赋值
+                        this.pagination.total = res.data.data.total;
+                        this.gameList = res.data.data.rows;
+                        this.pagination.currentPage = 1;
+                    }else
+                    {
+                        // 查询数据失败
+                        this.$message.error(res.data.message)
+                    }
+                }).catch((bad)=> {
+                    // 403错误处理
+                    this.showMessage(bad);
+                });
+            },
+            // 重置表单
+            resetForm() {
+                this.gameFormData = {};
+                this.gameDetailFormData = {};
+                // 默认切换到第一个标签页
+                this.activeName = "first";
+                this.categoryId = [];
+            },
+            //切换页码
+            handleCurrentChange(currentPage) {
+                //设置最新的页码
+                this.pagination.currentPage = currentPage;
+                //重新调用findPage方法进行分页查询
+                this.findPage();
+            }
+        }
+    });
+</script>
+</html>
