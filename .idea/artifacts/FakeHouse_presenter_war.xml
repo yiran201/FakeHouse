@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="FakeHouse-presenter:war">
-    <output-path>$PROJECT_DIR$/FakeHouse-parent/FakeHouse-presenter/target</output-path>
-    <root id="archive" name="FakeHouse-presenter-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="FakeHouse-presenter:war exploded" />
-    </root>
-  </artifact>
-</component>
